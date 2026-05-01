@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "optimizer-job-error.sample.v1",
+  "errorId": "weekly_optimizer_job.error.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:36:00Z",
+  "errorCode": "input_resolution_failure",
+  "failureStage": "input_resolution",
+  "retryable": false,
+  "ownerHint": "input_pipeline",
+  "failureSummary": "scheduled optimizer job could not resolve required runtime inputs",
+  "errorMessage": "scheduled weekly optimizer job must resolve a weekly review window input",
+  "scheduleId": "weekly_optimizer_job",
+  "generatedFrom": {
+    "optimizerJobExecutionContextId": "optimizer-job-execution-context.autotiktok.fixture.2026-04-19",
+    "optimizerJobSchedulePlanId": "optimizer-job-schedule.external.autotiktok.fixture.2026-04-18",
+    "optimizerJobSchedulerRunId": "optimizer-scheduler.autotiktok.fixture.2026-04-19.weekly_optimizer_job.real_shadow_validation",
+    "optimizerJobTriggerKind": "cron",
+    "optimizerJobSchedulerOwner": "external_scheduler",
+    "optimizerJobExecutionEnvironment": "scheduler_managed",
+    "optimizerJobSchedulerRolloutIntent": "real_provider_shadow_validation",
+    "optimizerInputRolloutClass": "real_shadow_validation",
+    "optimizerJobKind": "weekly_optimizer_job",
+    "optimizerJobScheduleProfile": "external_scheduler",
+    "optimizerJobRuntimeProfileRolloutClass": "production",
+    "optimizerJobWindowSetPurpose": null,
+    "optimizerJobComparisonDimension": null
+  }
+}

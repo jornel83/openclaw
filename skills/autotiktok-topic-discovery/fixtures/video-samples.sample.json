@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "discovery-video-samples.sample.v1",
+  "snapshotId": "snap.discovery.fixture.2026-04-15",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-04-15T05:12:00Z",
+  "videoSamples": [
+    {
+      "videoSampleId": "video.discovery.trend.earbuds.01",
+      "sourceSnapshotId": "snap.public-video.us.2026-04-15",
+      "publishedAt": "2026-04-15T03:40:00Z",
+      "title": "Wired earbuds outfit check is back",
+      "desc": "Street-style clip showing why wired earbuds became a nostalgia accessory again.",
+      "hashtags": ["wiredearbuds", "nostalgia"],
+      "authorId": "creator_demo_001",
+      "metrics": {
+        "views": 182000,
+        "likes": 13200,
+        "shares": 740
+      }
+    }
+  ]
+}

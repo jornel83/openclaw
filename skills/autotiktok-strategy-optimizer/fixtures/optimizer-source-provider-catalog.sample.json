@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "optimizer-source-provider-catalog.sample.v1",
+  "catalogId": "optimizer-source-provider-catalog.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T03:06:00Z",
+  "generatedFrom": {
+    "providerCount": 5,
+    "laneCount": 1
+  },
+  "providers": [
+    {
+      "sourceProviderId": "ranking_real_shadow_provider",
+      "artifactKey": "ranking",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "materialized_fixture",
+      "upstreamJobKind": "ranking_output_materialization",
+      "providerClass": "artifact_catalog_service",
+      "providerHandle": "autotiktok.optimizer.real_provider.ranking",
+      "locatorKind": "artifact_uri",
+      "providerEndpoint": "autotiktok://optimizer-source-provider/ranking",
+      "resolutionMode": "provider_binding_registry",
+      "providerBindingId": "ranking_real_shadow_binding"
+    },
+    {
+      "sourceProviderId": "context_real_shadow_provider",
+      "artifactKey": "context",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "materialized_fixture",
+      "upstreamJobKind": "scoring_context_materialization",
+      "providerClass": "artifact_catalog_service",
+      "providerHandle": "autotiktok.optimizer.real_provider.context",
+      "locatorKind": "artifact_uri",
+      "providerEndpoint": "autotiktok://optimizer-source-provider/context",
+      "resolutionMode": "provider_binding_registry",
+      "providerBindingId": "context_real_shadow_binding"
+    },
+    {
+      "sourceProviderId": "backfills_real_shadow_provider",
+      "artifactKey": "backfills",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "topic_outcome_backfill",
+      "providerClass": "artifact_catalog_service",
+      "providerHandle": "autotiktok.optimizer.real_provider.backfills",
+      "locatorKind": "artifact_uri",
+      "providerEndpoint": "autotiktok://optimizer-source-provider/backfills",
+      "resolutionMode": "provider_binding_registry",
+      "providerBindingId": "backfills_real_shadow_binding"
+    },
+    {
+      "sourceProviderId": "performance_real_shadow_provider",
+      "artifactKey": "performance",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "post_performance_signal",
+      "providerClass": "artifact_catalog_service",
+      "providerHandle": "autotiktok.optimizer.real_provider.performance",
+      "locatorKind": "artifact_uri",
+      "providerEndpoint": "autotiktok://optimizer-source-provider/performance",
+      "resolutionMode": "provider_binding_registry",
+      "providerBindingId": "performance_real_shadow_binding"
+    },
+    {
+      "sourceProviderId": "challenger_real_shadow_provider",
+      "artifactKey": "challengerInput",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "challenger_evaluation",
+      "providerClass": "artifact_catalog_service",
+      "providerHandle": "autotiktok.optimizer.real_provider.challengerInput",
+      "locatorKind": "artifact_uri",
+      "providerEndpoint": "autotiktok://optimizer-source-provider/challengerInput",
+      "resolutionMode": "provider_binding_registry",
+      "providerBindingId": "challenger_real_shadow_binding"
+    }
+  ],
+  "inputSourceProviderRegistryReference": {
+    "schemaVersion": "optimizer-source-provider-registry.sample.v1",
+    "registryId": "optimizer-source-provider-registry.autotiktok.fixture.2026-04-18",
+    "path": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-source-provider-registry.sample.json"
+  }
+}

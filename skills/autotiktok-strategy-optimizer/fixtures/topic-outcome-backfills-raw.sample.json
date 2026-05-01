@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "topic-outcome-backfills-raw.sample.v1",
+  "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+  "snapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+  "evaluationWindow": "t_plus_1",
+  "evaluatedAt": "2026-04-16T00:00:00Z",
+  "items": [
+    {
+      "schemaVersion": "topic-outcome-backfill-raw-item.v1",
+      "backfillId": "backfill.tp_evergreen_ad_mistakes_001.t1",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "observedWindow": "t_plus_1",
+      "matchedAt": "2026-04-16T00:00:00Z",
+      "matchStrategy": "topic_fingerprint",
+      "coverageDays": 1,
+      "queryLiftScore": 0.82,
+      "futureTopicDensityScore": 0.74,
+      "contentGapPersistenceScore": 0.71,
+      "matchedFutureFingerprints": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+      "evidenceSourceRefs": [
+        "future.search.us.ad_creative_mistakes",
+        "future.video.us.ad_breakdown_cluster"
+      ],
+      "matchConfidence": 0.84
+    },
+    {
+      "schemaVersion": "topic-outcome-backfill-raw-item.v1",
+      "backfillId": "backfill.tp_search_ai_ad_hooks_001.t1",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "observedWindow": "t_plus_1",
+      "matchedAt": "2026-04-16T00:00:00Z",
+      "matchStrategy": "topic_fingerprint",
+      "coverageDays": 1,
+      "queryLiftScore": 0.74,
+      "futureTopicDensityScore": 0.66,
+      "contentGapPersistenceScore": 0.63,
+      "matchedFutureFingerprints": ["fp.search.ai_ads.scroll_stop_hooks"],
+      "evidenceSourceRefs": ["future.search.us.ai_video_ads", "future.video.us.ad_hooks_cluster"],
+      "matchConfidence": 0.79
+    },
+    {
+      "schemaVersion": "topic-outcome-backfill-raw-item.v1",
+      "backfillId": "backfill.tp_trend_wired_earbuds_001.t1",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "observedWindow": "t_plus_1",
+      "matchedAt": "2026-04-16T00:00:00Z",
+      "matchStrategy": "weak_semantic_match",
+      "coverageDays": 1,
+      "queryLiftScore": 0.38,
+      "futureTopicDensityScore": 0.49,
+      "contentGapPersistenceScore": 0.22,
+      "matchedFutureFingerprints": [],
+      "evidenceSourceRefs": ["future.search.us.wired_earbuds_trend"],
+      "matchConfidence": 0.63
+    }
+  ]
+}

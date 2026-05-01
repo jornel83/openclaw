@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "optimizer-eval-batch-manifest.sample.v1",
+  "manifestId": "optimizer-eval-batch-history-manifest.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "comparisonDimension": "historyBatchLabel",
+  "batchWindowLabel": "2026-04-12..2026-04-15",
+  "generatedFrom": {
+    "evalRunCount": 4,
+    "windowSetPurpose": "production_replay",
+    "windowSetBatchType": "standard_replay",
+    "windowSetBatchTypeSelectionSource": "fallback_default",
+    "comparisonDimensionSelectionSource": "fallback_default"
+  },
+  "windowSetPurpose": "production_replay",
+  "windowSetBatchType": "standard_replay",
+  "windowSetBatchTypeSelectionSource": "fallback_default",
+  "comparisonDimensionSelectionSource": "fallback_default",
+  "evalRunEntries": [
+    {
+      "runtimeSource": {
+        "runtimeSourceId": "recent-daily-manifest",
+        "includeWeeklyPromotion": false,
+        "sourceDescriptor": {
+          "descriptorKind": "planner_runtime_binding",
+          "profileId": "optimizer_input_manifest_profile"
+        },
+        "rankingContractVersion": "ranking-optimizer-contract.v1",
+        "rankingContractValidationMode": "exact",
+        "runtimeSourceKind": "input_manifest",
+        "runtimeProfileCatalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+        "runtimeProfileCatalogFamily": "autotiktok-runtime-profiles",
+        "runtimeProfileCatalogVersion": "2026-04-15",
+        "runtimeProfileCatalogSchemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+        "runtimeProfileRequestedId": "optimizer_input_manifest_profile",
+        "runtimeProfileId": "optimizer_input_manifest_profile",
+        "runtimeProfileAliasApplied": false,
+        "jobFamilyGroup": "optimizer_input_jobs",
+        "materializationProfile": "manifest_from_job_runs",
+        "inputManifestPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-manifest.sample.json",
+        "materializationPlanId": "optimizer_input_manifest_plan",
+        "materializationStrategy": "job_run_aggregation",
+        "upstreamJobFamilies": [
+          "topic_outcome_backfill",
+          "post_performance_signal",
+          "challenger_evaluation"
+        ],
+        "requiredArtifactKinds": ["ranking_output", "scoring_context"]
+      },
+      "entryId": "recent-daily",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-15.daily",
+      "generatedAt": "2026-04-15T06:00:00Z",
+      "mode": "daily_review_only",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-15.daily",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-15.daily",
+      "historyBatchLabel": "2026-04-15",
+      "historyWindowLabel": "recent_batch",
+      "scenarioLabel": "current_daily"
+    },
+    {
+      "runtimeSource": {
+        "runtimeSourceId": "recent-weekly-bundle",
+        "includeWeeklyPromotion": true,
+        "sourceDescriptor": {
+          "descriptorKind": "planner_runtime_binding",
+          "profileId": "optimizer_input_bundle_profile"
+        },
+        "rankingContractVersion": "ranking-optimizer-contract.v1",
+        "rankingContractValidationMode": "exact",
+        "runtimeSourceKind": "input_bundle",
+        "runtimeProfileCatalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+        "runtimeProfileCatalogFamily": "autotiktok-runtime-profiles",
+        "runtimeProfileCatalogVersion": "2026-04-15",
+        "runtimeProfileCatalogSchemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+        "runtimeProfileRequestedId": "optimizer_input_bundle_profile",
+        "runtimeProfileId": "optimizer_input_bundle_profile",
+        "runtimeProfileAliasApplied": false,
+        "jobFamilyGroup": "optimizer_input_jobs",
+        "materializationProfile": "bundle_from_manifest",
+        "inputBundlePath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-bundle.sample.json",
+        "materializationPlanId": "optimizer_input_bundle_plan",
+        "materializationStrategy": "manifest_materialization",
+        "upstreamJobFamilies": [],
+        "requiredArtifactKinds": ["optimizer_input_manifest"]
+      },
+      "entryId": "recent-weekly",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-15",
+      "generatedAt": "2026-04-15T06:00:00Z",
+      "mode": "daily_with_weekly_promotion",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-15",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "historyBatchLabel": "2026-04-15",
+      "historyWindowLabel": "recent_batch",
+      "scenarioLabel": "current_weekly"
+    },
+    {
+      "runtimeSource": {
+        "runtimeSourceId": "historical-daily-cycle",
+        "includeWeeklyPromotion": false,
+        "sourceDescriptor": {
+          "descriptorKind": "planner_runtime_binding",
+          "profileId": "optimizer_offline_cycle_daily_profile"
+        },
+        "rankingContractVersion": "ranking-optimizer-contract.v1",
+        "rankingContractValidationMode": "exact",
+        "runtimeSourceKind": "offline_cycle",
+        "runtimeProfileCatalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+        "runtimeProfileCatalogFamily": "autotiktok-runtime-profiles",
+        "runtimeProfileCatalogVersion": "2026-04-15",
+        "runtimeProfileCatalogSchemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+        "runtimeProfileRequestedId": "optimizer_offline_cycle_daily_profile",
+        "runtimeProfileId": "optimizer_offline_cycle_daily_profile",
+        "runtimeProfileAliasApplied": false,
+        "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+        "materializationProfile": "daily_cycle_from_manifest",
+        "inputOfflineCyclePath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-offline-cycle-daily.sample.json",
+        "materializationPlanId": "optimizer_offline_cycle_daily_plan",
+        "materializationStrategy": "offline_cycle_execution",
+        "upstreamJobFamilies": [],
+        "requiredArtifactKinds": ["optimizer_input_manifest"],
+        "planIncludeWeeklyPromotion": false
+      },
+      "entryId": "historical-daily",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-12.daily",
+      "generatedAt": "2026-04-12T06:00:00Z",
+      "mode": "daily_review_only",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-12.daily",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-12.daily",
+      "historyBatchLabel": "2026-04-12",
+      "historyWindowLabel": "historical_batch",
+      "scenarioLabel": "historical_daily",
+      "summaryOverrides": {
+        "topicReward": 0.59,
+        "performanceReward": 0.432,
+        "combinedReward": 0.5742,
+        "postCoverageRate": 0.5,
+        "rejectedCount": 2,
+        "shadowLeaderProfileId": "scale-default"
+      }
+    },
+    {
+      "runtimeSource": {
+        "runtimeSourceId": "historical-weekly-cycle",
+        "includeWeeklyPromotion": true,
+        "sourceDescriptor": {
+          "descriptorKind": "planner_runtime_binding",
+          "profileId": "optimizer_offline_cycle_weekly_profile"
+        },
+        "rankingContractVersion": "ranking-optimizer-contract.v1",
+        "rankingContractValidationMode": "exact",
+        "runtimeSourceKind": "offline_cycle",
+        "runtimeProfileCatalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+        "runtimeProfileCatalogFamily": "autotiktok-runtime-profiles",
+        "runtimeProfileCatalogVersion": "2026-04-15",
+        "runtimeProfileCatalogSchemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+        "runtimeProfileRequestedId": "optimizer_offline_cycle_weekly_profile",
+        "runtimeProfileId": "optimizer_offline_cycle_weekly_profile",
+        "runtimeProfileAliasApplied": false,
+        "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+        "materializationProfile": "weekly_cycle_from_bundle",
+        "inputOfflineCyclePath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-offline-cycle.sample.json",
+        "materializationPlanId": "optimizer_offline_cycle_weekly_plan",
+        "materializationStrategy": "offline_cycle_execution",
+        "upstreamJobFamilies": [],
+        "requiredArtifactKinds": ["optimizer_input_bundle"],
+        "planIncludeWeeklyPromotion": true
+      },
+      "entryId": "historical-weekly",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-12",
+      "generatedAt": "2026-04-12T06:00:00Z",
+      "mode": "daily_with_weekly_promotion",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-12",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-12",
+      "historyBatchLabel": "2026-04-12",
+      "historyWindowLabel": "historical_batch",
+      "scenarioLabel": "historical_weekly",
+      "summaryOverrides": {
+        "topicReward": 0.59,
+        "performanceReward": 0.432,
+        "combinedReward": 0.5742,
+        "postCoverageRate": 0.5,
+        "rejectedCount": 2,
+        "shadowLeaderProfileId": "scale-default",
+        "weeklyDecision": "keep_champion",
+        "selectedChallengerProfileId": null
+      }
+    }
+  ]
+}

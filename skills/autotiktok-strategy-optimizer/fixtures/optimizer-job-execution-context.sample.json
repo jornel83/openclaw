@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "optimizer-job-execution-context.sample.v1",
+  "executionContextId": "optimizer-job-execution-context.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:30:00Z",
+  "runtimeRole": "compatibility_rehearsal",
+  "preferredRecurringRuntime": "openclaw_cron",
+  "intendedUses": ["fixture_generation", "deterministic_rehearsal", "cutover_validation"],
+  "generatedFrom": {
+    "optimizerJobScheduleSchemaVersion": "optimizer-job-schedule.sample.v1",
+    "optimizerJobSchedulePlanId": "optimizer-job-schedule.external.autotiktok.fixture.2026-04-18",
+    "optimizerJobSchedulePath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-job-schedule.external.sample.json",
+    "optimizerInputRolloutPolicySchemaVersion": "optimizer-input-rollout-policy.sample.v1",
+    "optimizerInputRolloutPolicyId": "optimizer-input-rollout-policy.autotiktok.fixture.2026-04-18",
+    "optimizerInputRolloutPolicyPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-rollout-policy.sample.json",
+    "scheduleCount": 2,
+    "enabledScheduleCount": 2
+  },
+  "defaultRunContext": {
+    "schedulerRunId": "optimizer-scheduler.autotiktok.fixture.2026-04-19",
+    "triggerKind": "planner",
+    "schedulerOwner": "repo_scheduler_fixture",
+    "executionEnvironment": "scheduler_managed",
+    "artifactEmissionMode": "inline_only",
+    "outputRoot": null,
+    "emitShadowCompare": true,
+    "emitCompareBatch": true,
+    "emitErrorArtifact": true
+  },
+  "defaultInputs": {
+    "inputManifestPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-manifest.sample.json",
+    "inputBundlePath": null,
+    "policyPath": "skills/autotiktok-strategy-optimizer/config/optimizer-policy.v1.json",
+    "inputSourceRegistryPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-source-registry.sample.json",
+    "inputRolloutPolicyPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-rollout-policy.sample.json",
+    "weeklyReviewWindowPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-weekly-review-window.sample.json"
+  },
+  "schedules": [
+    {
+      "scheduleId": "daily_optimizer_job",
+      "enabled": true,
+      "productionSchedulerRolloutIntent": "production",
+      "shadowSchedulerRolloutIntent": "raw_shadow_validation",
+      "productionRolloutClass": "production",
+      "shadowRolloutClass": "raw_shadow_validation",
+      "comparisonId": "daily_raw_shadow_vs_production"
+    },
+    {
+      "scheduleId": "weekly_optimizer_job",
+      "enabled": true,
+      "productionSchedulerRolloutIntent": "production",
+      "shadowSchedulerRolloutIntent": "real_provider_shadow_validation",
+      "productionRolloutClass": "production",
+      "shadowRolloutClass": "real_shadow_validation",
+      "comparisonId": "weekly_real_shadow_vs_production"
+    }
+  ]
+}

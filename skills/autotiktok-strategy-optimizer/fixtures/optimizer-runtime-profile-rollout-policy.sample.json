@@ -1,0 +1,170 @@
+{
+  "schemaVersion": "optimizer-runtime-profile-rollout-policy.sample.v1",
+  "policyId": "optimizer-runtime-profile-rollout-policy.autotiktok.fixture.2026-04-15",
+  "policyFamily": "autotiktok-runtime-profile-rollout",
+  "policyVersion": "2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "familyPolicyCount": 1,
+    "runtimeProfileFamilyRegistryId": "optimizer-runtime-profile-family-registry.autotiktok.fixture.2026-04-15"
+  },
+  "runtimeProfileFamilyRegistryReference": {
+    "registryId": "optimizer-runtime-profile-family-registry.autotiktok.fixture.2026-04-15",
+    "schemaVersion": "optimizer-runtime-profile-family-registry.sample.v1"
+  },
+  "familyPolicies": [
+    {
+      "familyId": "autotiktok-runtime-profiles",
+      "activeLane": "current",
+      "defaultLane": "current",
+      "defaultRolloutClass": "production",
+      "allowedLanes": ["current", "preview"],
+      "rolloutClasses": [
+        {
+          "rolloutClass": "production",
+          "selectedLane": "current"
+        },
+        {
+          "rolloutClass": "preview_canary",
+          "selectedLane": "preview"
+        }
+      ],
+      "previewLane": "preview",
+      "previewEnabled": true,
+      "rolloutStrategy": "manual_gated_preview"
+    }
+  ],
+  "plannerMetadataContractFamilies": [
+    {
+      "metadataContractFamilyId": "standard_replay_metadata_contract_family",
+      "defaultMetadataContractId": "standard_replay_metadata_contract",
+      "allowedWindowSetBatchTypes": ["standard_replay"],
+      "allowedComparisonDimensions": [
+        "historyBatchLabel",
+        "historyWindowLabel",
+        "mode",
+        "evaluationWindow"
+      ]
+    },
+    {
+      "metadataContractFamilyId": "cross_profile_compare_metadata_contract_family",
+      "defaultMetadataContractId": "cross_profile_compare_metadata_contract",
+      "allowedWindowSetBatchTypes": ["cross_profile_comparison"],
+      "allowedComparisonDimensions": ["rankingProfileId", "rankingSnapshotId"]
+    }
+  ],
+  "plannerMetadataContracts": [
+    {
+      "metadataContractFamilyId": "standard_replay_metadata_contract_family",
+      "metadataContractId": "standard_replay_metadata_contract",
+      "allowedWindowSetBatchTypes": ["standard_replay"],
+      "allowedComparisonDimensions": [
+        "historyBatchLabel",
+        "historyWindowLabel",
+        "mode",
+        "evaluationWindow"
+      ]
+    },
+    {
+      "metadataContractFamilyId": "cross_profile_compare_metadata_contract_family",
+      "metadataContractId": "cross_profile_compare_metadata_contract",
+      "allowedWindowSetBatchTypes": ["cross_profile_comparison"],
+      "allowedComparisonDimensions": ["rankingProfileId", "rankingSnapshotId"]
+    }
+  ],
+  "plannerMetadataPolicies": [
+    {
+      "metadataPolicyId": "standard_replay_metadata_policy",
+      "metadataContractFamilyId": "standard_replay_metadata_contract_family",
+      "metadataContractId": "standard_replay_metadata_contract",
+      "defaultWindowSetBatchType": "standard_replay",
+      "defaultComparisonDimension": "historyBatchLabel",
+      "windowSetBatchTypePriority": [
+        "purpose_template",
+        "purpose_template_family",
+        "metadata_policy_default",
+        "fallback_default"
+      ],
+      "comparisonDimensionPriority": [
+        "purpose_template",
+        "purpose_template_family",
+        "metadata_policy_default",
+        "fallback_default"
+      ]
+    },
+    {
+      "metadataPolicyId": "cross_profile_compare_metadata_policy",
+      "metadataContractFamilyId": "cross_profile_compare_metadata_contract_family",
+      "metadataContractId": "cross_profile_compare_metadata_contract",
+      "defaultWindowSetBatchType": "cross_profile_comparison",
+      "defaultComparisonDimension": "rankingProfileId",
+      "windowSetBatchTypePriority": [
+        "purpose_template",
+        "purpose_template_family",
+        "metadata_policy_default",
+        "fallback_default"
+      ],
+      "comparisonDimensionPriority": [
+        "purpose_template",
+        "purpose_template_family",
+        "metadata_policy_default",
+        "fallback_default"
+      ]
+    }
+  ],
+  "evalPurposeTemplateFamilies": [
+    {
+      "templateFamilyId": "preview_validation_family",
+      "runtimeProfileFamilyId": "autotiktok-runtime-profiles",
+      "defaultRolloutClass": "preview_canary",
+      "plannerMetadataPolicyId": "standard_replay_metadata_policy"
+    },
+    {
+      "templateFamilyId": "cross_profile_validation_family",
+      "runtimeProfileFamilyId": "autotiktok-runtime-profiles",
+      "defaultRolloutClass": "preview_canary",
+      "plannerMetadataPolicyId": "cross_profile_compare_metadata_policy"
+    }
+  ],
+  "evalPurposeTemplates": [
+    {
+      "templateId": "preview_validation_template",
+      "templateFamilyId": "preview_validation_family"
+    },
+    {
+      "templateId": "profile_compare_validation_template",
+      "templateFamilyId": "cross_profile_validation_family"
+    }
+  ],
+  "evalPurposePolicies": [
+    {
+      "purposePolicyId": "preview_validation_default",
+      "windowSetPurpose": "preview_validation",
+      "templateId": "preview_validation_template"
+    },
+    {
+      "purposePolicyId": "profile_compare_validation_default",
+      "windowSetPurpose": "profile_compare_validation",
+      "templateId": "profile_compare_validation_template"
+    }
+  ],
+  "rolloutClassRules": [
+    {
+      "ruleId": "preview_batch_label",
+      "rolloutClass": "preview_canary",
+      "batchWindowLabelPrefix": "preview:"
+    },
+    {
+      "ruleId": "preview_weekly_shadow_rehearsal",
+      "rolloutClass": "preview_canary",
+      "windowSetPurpose": "weekly_shadow_rehearsal",
+      "historyWindowLabelPrefix": "historical_",
+      "mode": "daily_with_weekly_promotion"
+    },
+    {
+      "ruleId": "preview_scenario_prefix",
+      "rolloutClass": "preview_canary",
+      "scenarioLabelPrefix": "preview_"
+    }
+  ]
+}

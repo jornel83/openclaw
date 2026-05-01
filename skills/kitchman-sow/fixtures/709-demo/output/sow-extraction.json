@@ -1,0 +1,366 @@
+{
+  "schema_version": "kitchman-sow.v1",
+  "sow_id": "sow-709-riversdale-road-camberwell-demo",
+  "sow_status": "awaiting_review",
+  "project": {
+    "project_name": "709 Riversdale Road Camberwell",
+    "project_address": "709 Riversdale Road, Camberwell",
+    "client_name": "Calvin Huang",
+    "quote_id": "Q2248",
+    "source_type": "client_confirmed",
+    "confidence": "high"
+  },
+  "proposal_header": {
+    "client_name": "Calvin Huang",
+    "salutation": "Calvin",
+    "proposal_date": "18 March 2026",
+    "quote_id": "Q2248",
+    "revision": "Rev1",
+    "project_name": "709 Riversdale Road Camberwell",
+    "site_address": "709 Riversdale Road, Camberwell",
+    "prepared_by": "Kitchman",
+    "source_type": "client_confirmed",
+    "confidence": "high"
+  },
+  "documents_provided": [
+    {
+      "type": "Joinery Drawing",
+      "file_name": "709 Riversdale Road, Camberwell_JD_客户橱柜图纸.pdf",
+      "received_on": "TBC",
+      "source_document_id": "doc-001",
+      "confidence": "high"
+    }
+  ],
+  "source_documents": [
+    {
+      "id": "doc-001",
+      "file_name": "709 Riversdale Road, Camberwell_JD_客户橱柜图纸.pdf",
+      "type": "joinery_drawing",
+      "source_type": "uploaded_attachment",
+      "confidence": "high",
+      "notes": ["Demo drawing material supplied by the user."]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room-gf-kitchen",
+      "name": "GF Kitchen",
+      "level": "Ground Floor",
+      "source_pages": [4, 5],
+      "drawing_refs": ["JD 04", "JD 05"],
+      "evidence_summary": "Kitchen plan and elevations are visible on JD 04-05.",
+      "scope_items": [
+        {
+          "id": "scope-gf-kitchen-overheads",
+          "item": "Overhead cabinets",
+          "category": "cabinet",
+          "included": true,
+          "description": "Provide overhead cabinets where shown in the joinery drawings.",
+          "source_type": "observed_from_drawing",
+          "confidence": "medium",
+          "review_status": "approved_for_proposal",
+          "source_pages": [4, 5],
+          "drawing_refs": ["JD 04", "JD 05"],
+          "evidence_summary": "Kitchen elevations show overhead cabinet scope.",
+          "evidence": []
+        },
+        {
+          "id": "scope-gf-kitchen-base-drawers",
+          "item": "Base cabinets and drawer units",
+          "category": "drawer",
+          "included": true,
+          "description": "Provide kitchen base cabinets and drawer units where shown.",
+          "source_type": "observed_from_drawing",
+          "confidence": "medium",
+          "review_status": "approved_for_proposal",
+          "source_pages": [4, 5],
+          "drawing_refs": ["JD 04", "JD 05"],
+          "evidence_summary": "Kitchen plan/elevations show base cabinets and drawer units.",
+          "evidence": []
+        },
+        {
+          "id": "scope-gf-kitchen-stone",
+          "item": "Stone benchtop",
+          "category": "stone",
+          "included": "tbc",
+          "description": "Stone benchtop responsibility requires estimator confirmation.",
+          "source_type": "unknown",
+          "confidence": "low",
+          "review_status": "needs_confirmation",
+          "evidence": []
+        }
+      ],
+      "finishes": [],
+      "exclusions": [],
+      "special_notes": [],
+      "open_questions": [],
+      "source_type": "observed_from_drawing",
+      "confidence": "medium",
+      "evidence": []
+    },
+    {
+      "id": "room-gf-pantry",
+      "name": "GF Pantry",
+      "level": "Ground Floor",
+      "source_pages": [6],
+      "drawing_refs": ["JD 06"],
+      "evidence_summary": "Pantry joinery is visible on JD 06.",
+      "scope_items": [
+        {
+          "id": "scope-gf-pantry-open-shelves",
+          "item": "Open shelving",
+          "category": "shelf",
+          "included": true,
+          "description": "Provide pantry open shelving where shown.",
+          "source_type": "observed_from_drawing",
+          "confidence": "medium",
+          "review_status": "approved_for_proposal",
+          "source_pages": [6],
+          "drawing_refs": ["JD 06"],
+          "evidence_summary": "Pantry elevations show open shelving.",
+          "evidence": []
+        },
+        {
+          "id": "scope-gf-pantry-door",
+          "item": "Pantry door cladding",
+          "category": "door",
+          "included": "tbc",
+          "description": "Confirm whether pantry door scope is cladding only or includes door structure and hardware.",
+          "source_type": "unknown",
+          "confidence": "low",
+          "review_status": "needs_confirmation",
+          "evidence": []
+        }
+      ],
+      "finishes": [],
+      "exclusions": [],
+      "special_notes": [],
+      "open_questions": [],
+      "source_type": "observed_from_drawing",
+      "confidence": "medium",
+      "evidence": []
+    },
+    {
+      "id": "room-master-wir",
+      "name": "Master WIR",
+      "level": "First Floor",
+      "source_pages": [18, 19, 20],
+      "drawing_refs": ["JD 18", "JD 19", "JD 20"],
+      "evidence_summary": "Master WIR elevations are visible on JD 18-20.",
+      "scope_items": [
+        {
+          "id": "scope-master-wir-wardrobe",
+          "item": "Wardrobe carcasses, shelves, hanging rails, and drawers",
+          "category": "cabinet",
+          "included": true,
+          "description": "Provide WIR joinery scope where shown, subject to finish and hardware confirmation.",
+          "source_type": "observed_from_drawing",
+          "confidence": "medium",
+          "review_status": "approved_for_proposal",
+          "source_pages": [18, 19, 20],
+          "drawing_refs": ["JD 18", "JD 19", "JD 20"],
+          "evidence_summary": "WIR elevations show robe carcasses, shelves, rails, and drawers.",
+          "evidence": []
+        },
+        {
+          "id": "scope-master-wir-mirror",
+          "item": "Mirror",
+          "category": "mirror",
+          "included": "tbc",
+          "description": "Mirror supply and installation responsibility requires confirmation.",
+          "source_type": "unknown",
+          "confidence": "low",
+          "review_status": "needs_confirmation",
+          "evidence": []
+        }
+      ],
+      "finishes": [],
+      "exclusions": [],
+      "special_notes": [],
+      "open_questions": [],
+      "source_type": "observed_from_drawing",
+      "confidence": "medium",
+      "evidence": []
+    }
+  ],
+  "working_area_rows": [
+    {
+      "room_id": "room-gf-kitchen",
+      "room": "GF Kitchen",
+      "description": "Overhead cabinets / base cabinets / drawer units. TBC: stone benchtop responsibility.",
+      "joinery_finish": "Door/Panel: TBC; Carcass: TBC",
+      "source_pages": [4, 5],
+      "drawing_refs": ["JD 04", "JD 05"],
+      "evidence_summary": "Kitchen plan/elevations reviewed.",
+      "status": "awaiting_review",
+      "source_type": "observed_from_drawing",
+      "confidence": "medium"
+    },
+    {
+      "room_id": "room-gf-pantry",
+      "room": "GF Pantry",
+      "description": "Open shelving. TBC: pantry door cladding scope.",
+      "joinery_finish": "Open shelf finish: TBC",
+      "source_pages": [6],
+      "drawing_refs": ["JD 06"],
+      "evidence_summary": "Pantry elevation reviewed.",
+      "status": "awaiting_review",
+      "source_type": "observed_from_drawing",
+      "confidence": "medium"
+    },
+    {
+      "room_id": "room-master-wir",
+      "room": "Master WIR",
+      "description": "Wardrobe carcasses / shelves / hanging rails / drawers. TBC: mirror responsibility.",
+      "joinery_finish": "Door/Panel: TBC; Carcass: TBC",
+      "source_pages": [18, 19, 20],
+      "drawing_refs": ["JD 18", "JD 19", "JD 20"],
+      "evidence_summary": "Master WIR elevations reviewed.",
+      "status": "awaiting_review",
+      "source_type": "observed_from_drawing",
+      "confidence": "medium"
+    }
+  ],
+  "finish_schedule": [
+    {
+      "item_abbr": "TBC",
+      "description": "Door and panel finish",
+      "area": "All included rooms",
+      "status": "TBC",
+      "source_type": "unknown",
+      "confidence": "low"
+    },
+    {
+      "item_abbr": "TBC",
+      "description": "Carcass material and color",
+      "area": "All included rooms",
+      "status": "TBC",
+      "source_type": "unknown",
+      "confidence": "low"
+    }
+  ],
+  "hardware_schedule": [
+    {
+      "item_abbr": "TBC",
+      "description": "Door and drawer hardware",
+      "area": "All included rooms",
+      "status": "TBC",
+      "source_type": "unknown",
+      "confidence": "low"
+    }
+  ],
+  "standard_terms": {
+    "lead_time": {
+      "value": "TBC",
+      "status": "estimator_required",
+      "source_type": "unknown"
+    },
+    "installation": {
+      "value": "TBC",
+      "status": "estimator_required",
+      "source_type": "unknown"
+    },
+    "payment_terms": {
+      "value": "TBC",
+      "status": "estimator_required",
+      "source_type": "unknown"
+    }
+  },
+  "pricing": {
+    "status": "estimator_required",
+    "note": "Pricing is excluded from this demo output and must be completed by the estimator."
+  },
+  "exclusions": [
+    "Final pricing and quote totals",
+    "Electrical, plumbing, appliance supply, and building works unless separately confirmed",
+    "Door structures and operating hardware for cladding-only doors unless confirmed"
+  ],
+  "special_notes": [
+    {
+      "note": "All TBC items must be reviewed by the estimator before customer issue.",
+      "source_type": "company_default",
+      "confidence": "high"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "question-finish",
+      "question": "Confirm door, panel, and carcass finishes.",
+      "applies_to": "All included rooms",
+      "reason": "Current project finish schedule was not supplied.",
+      "priority": "high",
+      "source_type": "unknown",
+      "confidence": "low"
+    },
+    {
+      "id": "question-stone",
+      "question": "Confirm whether stone benchtops are included or excluded.",
+      "applies_to": "GF Kitchen",
+      "reason": "Stone responsibility affects estimator review.",
+      "priority": "high",
+      "source_type": "unknown",
+      "confidence": "low"
+    },
+    {
+      "id": "question-pantry-door",
+      "question": "Confirm whether pantry door scope is cladding only or includes full door structure and hardware.",
+      "applies_to": "GF Pantry",
+      "reason": "Door responsibility is not confirmed from current project input.",
+      "priority": "medium",
+      "source_type": "unknown",
+      "confidence": "low"
+    },
+    {
+      "id": "question-mirror",
+      "question": "Confirm mirror supply and installation responsibility.",
+      "applies_to": "Master WIR",
+      "reason": "Mirror is visible but supplier responsibility is not confirmed from current project input.",
+      "priority": "medium",
+      "source_type": "unknown",
+      "confidence": "low"
+    }
+  ],
+  "review_flags": [
+    {
+      "id": "flag-demo-pricing-excluded",
+      "severity": "info",
+      "message": "Pricing is excluded from this demo output.",
+      "applies_to": "proposal"
+    }
+  ],
+  "proposal_outputs": {
+    "sow_extraction_json": "output/sow-extraction.json",
+    "proposal_md": "output/proposal.md",
+    "proposal_docx": "output/proposal.docx",
+    "open_questions_md": "output/open-questions.md",
+    "feishu_summary_md": "output/feishu-summary.md",
+    "sow_package_zip": "output/709-riversdale-road-camberwell-sow.zip",
+    "output_manifest_json": "output/output-manifest.json",
+    "workspace_refs": {
+      "sow_extraction_json": "output/sow-extraction.json",
+      "proposal_md": "output/proposal.md",
+      "proposal_docx": "output/proposal.docx",
+      "open_questions_md": "output/open-questions.md",
+      "feishu_summary_md": "output/feishu-summary.md",
+      "sow_package_zip": "output/709-riversdale-road-camberwell-sow.zip",
+      "output_manifest_json": "output/output-manifest.json"
+    },
+    "package_refs": {
+      "sow_extraction_json": "sow-extraction.json",
+      "proposal_md": "proposal.md",
+      "proposal_docx": "proposal.docx",
+      "open_questions_md": "open-questions.md",
+      "feishu_summary_md": "feishu-summary.md",
+      "output_manifest_json": "output-manifest.json"
+    },
+    "delivery_refs": {
+      "sow_extraction_json": "sow-extraction.json",
+      "proposal_md": "proposal.md",
+      "proposal_docx": "proposal.docx",
+      "open_questions_md": "open-questions.md",
+      "feishu_summary_md": "feishu-summary.md",
+      "output_manifest_json": "output-manifest.json",
+      "sow_package_zip": "709-riversdale-road-camberwell-sow.zip"
+    }
+  }
+}

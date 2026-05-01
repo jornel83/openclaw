@@ -1,0 +1,634 @@
+{
+  "schemaVersion": "discovery-dry-run.v1",
+  "policyVersion": "discovery-policy.v1",
+  "snapshotId": "snap.discovery.fixture.2026-04-15",
+  "generatedFrom": {
+    "inputKind": "snapshot_materialization",
+    "inputSchemaVersion": "discovery-snapshot-materialization.sample.v1",
+    "materializedSchemaVersion": "raw-signals.v1",
+    "materializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+    "materializationSource": "separate_snapshot_artifacts",
+    "normalizationRuleVersion": "discovery-normalization.v1",
+    "sourceSnapshotSchemaVersion": "discovery-source-snapshots.sample.v1",
+    "signalItemsSchemaVersion": "discovery-signal-items.sample.v1",
+    "videoSamplesSchemaVersion": "discovery-video-samples.sample.v1",
+    "sourceSnapshotCount": 3,
+    "signalCount": 6,
+    "videoSampleCount": 1,
+    "normalizedSignalCount": 6,
+    "topicAbstractionCount": 3
+  },
+  "normalizedSignals": [
+    {
+      "signalId": "sig.discovery.evergreen.mistakes.01",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "topicType": "evergreen",
+      "sourceType": "evergreen_library",
+      "recommendedMode": "series",
+      "normalizedTopicTitle": "3 ad creative mistakes that kill watch time",
+      "normalizedTopicSummary": "an evergreen education topic with strong search intent repeatable packaging and clear room for serialization",
+      "normalizedKeywords": ["ad creative mistakes", "why ads lose retention"],
+      "normalizedContentAngles": ["mistake diagnosis", "common retention killers"],
+      "normalizedSearchPhrases": ["ad creative mistakes", "watch time mistakes"],
+      "abstractionTerms": ["mistakes", "ad", "creative", "retention"],
+      "fingerprintSeed": "evergreen.series.mistakes_ad_creative",
+      "searchSignalCount": 2,
+      "contentAngleCount": 2,
+      "keywordCount": 2,
+      "expansionSignal": "narrow"
+    },
+    {
+      "signalId": "sig.discovery.evergreen.mistakes.02",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "topicType": "evergreen",
+      "sourceType": "search_insights_content_gap",
+      "recommendedMode": "series",
+      "normalizedTopicTitle": "3 ad creative mistakes that kill watch time",
+      "normalizedTopicSummary": "an evergreen education topic with strong search intent repeatable packaging and clear room for serialization",
+      "normalizedKeywords": ["tiktok ad analysis", "watch time mistakes"],
+      "normalizedContentAngles": ["fix the weak middle section"],
+      "normalizedSearchPhrases": [
+        "why ads lose retention",
+        "ad creative analysis",
+        "how to fix weak ad structure"
+      ],
+      "abstractionTerms": ["ad", "analysis", "creative", "fix"],
+      "fingerprintSeed": "evergreen.series.ad_analysis_creative",
+      "searchSignalCount": 3,
+      "contentAngleCount": 1,
+      "keywordCount": 2,
+      "expansionSignal": "narrow"
+    },
+    {
+      "signalId": "sig.discovery.search.ai_hooks.01",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "topicType": "search",
+      "sourceType": "search_insights_query",
+      "recommendedMode": "growth",
+      "normalizedTopicTitle": "3 tiktok ad hooks that stop the scroll",
+      "normalizedTopicSummary": "a search led topic focused on showing concrete hook rewrites for ai and short form ad creators",
+      "normalizedKeywords": ["ai video ads", "tiktok ad creative"],
+      "normalizedContentAngles": ["before vs after hook rewrite", "3 proven hook patterns"],
+      "normalizedSearchPhrases": ["ai video ads", "tiktok ad creative", "scroll stopping hook"],
+      "abstractionTerms": ["ad", "hook", "tiktok", "ads"],
+      "fingerprintSeed": "search.growth.ad_hook_tiktok",
+      "searchSignalCount": 3,
+      "contentAngleCount": 2,
+      "keywordCount": 2,
+      "expansionSignal": "narrow"
+    },
+    {
+      "signalId": "sig.discovery.search.ai_hooks.02",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "topicType": "search",
+      "sourceType": "search_insights_content_gap",
+      "recommendedMode": "growth",
+      "normalizedTopicTitle": "3 tiktok ad hooks that stop the scroll",
+      "normalizedTopicSummary": "a search led topic focused on showing concrete hook rewrites for ai and short form ad creators",
+      "normalizedKeywords": ["ad hook examples", "hook rewrite"],
+      "normalizedContentAngles": ["bad hook to good hook"],
+      "normalizedSearchPhrases": ["product ad opener", "hook rewrite examples"],
+      "abstractionTerms": ["hook", "ad", "examples", "rewrite"],
+      "fingerprintSeed": "search.growth.hook_ad_examples",
+      "searchSignalCount": 2,
+      "contentAngleCount": 1,
+      "keywordCount": 2,
+      "expansionSignal": "narrow"
+    },
+    {
+      "signalId": "sig.discovery.trend.earbuds.01",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "topicType": "trend",
+      "sourceType": "creative_center_trend",
+      "recommendedMode": "growth",
+      "normalizedTopicTitle": "why wired earbuds are suddenly back in 2026",
+      "normalizedTopicSummary": "a trend reaction topic built from hot video samples and trending discussion around wired earbuds returning as a style signal",
+      "normalizedKeywords": ["wired earbuds", "wired headphones trend"],
+      "normalizedContentAngles": ["trend reaction explainer", "style signal breakdown"],
+      "normalizedSearchPhrases": ["wired earbuds", "wired headphones trend"],
+      "abstractionTerms": ["wired", "earbuds", "trend", "headphones"],
+      "fingerprintSeed": "trend.growth.wired_earbuds_trend",
+      "searchSignalCount": 2,
+      "contentAngleCount": 2,
+      "keywordCount": 2,
+      "expansionSignal": "narrow"
+    },
+    {
+      "signalId": "sig.discovery.trend.earbuds.02",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "topicType": "trend",
+      "sourceType": "public_video_sample",
+      "recommendedMode": "growth",
+      "normalizedTopicTitle": "why wired earbuds are suddenly back in 2026",
+      "normalizedTopicSummary": "a trend reaction topic built from hot video samples and trending discussion around wired earbuds returning as a style signal",
+      "normalizedKeywords": ["why wired earbuds are back"],
+      "normalizedContentAngles": ["nostalgia plus practicality angle"],
+      "normalizedSearchPhrases": ["why wired earbuds are back"],
+      "abstractionTerms": ["back", "earbuds", "wired", "2026"],
+      "fingerprintSeed": "trend.growth.back_earbuds_wired",
+      "searchSignalCount": 1,
+      "contentAngleCount": 1,
+      "keywordCount": 1,
+      "expansionSignal": "narrow"
+    }
+  ],
+  "topicAbstractions": [
+    {
+      "topicAbstractionId": "abstraction.fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "anchorSignalId": "sig.discovery.evergreen.mistakes.01",
+      "signalIds": ["sig.discovery.evergreen.mistakes.01", "sig.discovery.evergreen.mistakes.02"],
+      "normalizedTopicKey": "mistakes ad creative retention",
+      "fingerprintSeed": "evergreen.series.ad_mistakes_creative",
+      "abstractionTerms": ["ad", "mistakes", "creative", "retention"],
+      "normalizedKeywordPool": [
+        "ad creative mistakes",
+        "why ads lose retention",
+        "tiktok ad analysis",
+        "watch time mistakes"
+      ],
+      "normalizedSearchPhrasePool": [
+        "ad creative mistakes",
+        "watch time mistakes",
+        "why ads lose retention",
+        "ad creative analysis",
+        "how to fix weak ad structure"
+      ],
+      "normalizedContentAnglePool": [
+        "mistake diagnosis",
+        "common retention killers",
+        "fix the weak middle section"
+      ],
+      "canonicalTopicTitle": "3 ad creative mistakes that kill watch time",
+      "canonicalTopicSummary": "An evergreen education topic with strong search intent, repeatable packaging, and clear room for serialization.",
+      "titleSelectionSource": "normalized_anchor_signal",
+      "summarySelectionSource": "normalized_anchor_signal",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "search_cluster",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 5,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      }
+    },
+    {
+      "topicAbstractionId": "abstraction.fp.search.ai_ads.scroll_stop_hooks",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "anchorSignalId": "sig.discovery.search.ai_hooks.02",
+      "signalIds": ["sig.discovery.search.ai_hooks.01", "sig.discovery.search.ai_hooks.02"],
+      "normalizedTopicKey": "ad hook tiktok ads",
+      "fingerprintSeed": "search.growth.hook_ad_rewrite",
+      "abstractionTerms": ["hook", "ad", "rewrite", "tiktok"],
+      "normalizedKeywordPool": [
+        "ai video ads",
+        "tiktok ad creative",
+        "ad hook examples",
+        "hook rewrite"
+      ],
+      "normalizedSearchPhrasePool": [
+        "ai video ads",
+        "tiktok ad creative",
+        "scroll stopping hook",
+        "product ad opener",
+        "hook rewrite examples"
+      ],
+      "normalizedContentAnglePool": [
+        "before vs after hook rewrite",
+        "3 proven hook patterns",
+        "bad hook to good hook"
+      ],
+      "canonicalTopicTitle": "3 TikTok ad hooks that stop the scroll",
+      "canonicalTopicSummary": "A search-led topic focused on showing concrete hook rewrites for AI and short-form ad creators.",
+      "titleSelectionSource": "normalized_anchor_signal",
+      "summarySelectionSource": "normalized_anchor_signal",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "search_cluster",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 5,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      }
+    },
+    {
+      "topicAbstractionId": "abstraction.fp.trend.consumer.wired_earbuds_comeback",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "anchorSignalId": "sig.discovery.trend.earbuds.01",
+      "signalIds": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+      "normalizedTopicKey": "wired earbuds trend headphones",
+      "fingerprintSeed": "trend.growth.wired_earbuds_back",
+      "abstractionTerms": ["wired", "earbuds", "back", "trend"],
+      "normalizedKeywordPool": [
+        "wired earbuds",
+        "wired headphones trend",
+        "why wired earbuds are back"
+      ],
+      "normalizedSearchPhrasePool": [
+        "wired earbuds",
+        "wired headphones trend",
+        "why wired earbuds are back"
+      ],
+      "normalizedContentAnglePool": [
+        "trend reaction explainer",
+        "style signal breakdown",
+        "nostalgia plus practicality angle"
+      ],
+      "canonicalTopicTitle": "Why wired earbuds are suddenly back in 2026",
+      "canonicalTopicSummary": "A trend-reaction topic built from hot video samples and trending discussion around wired earbuds returning as a style signal.",
+      "titleSelectionSource": "normalized_anchor_signal",
+      "summarySelectionSource": "normalized_anchor_signal",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "angle_series",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 3,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      }
+    }
+  ],
+  "evidenceBundles": [
+    {
+      "bundleId": "bundle.fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicAbstractionId": "abstraction.fp.evergreen.ai_ads.watch_time_mistakes",
+      "anchorSignalId": "sig.discovery.evergreen.mistakes.01",
+      "signalIds": ["sig.discovery.evergreen.mistakes.01", "sig.discovery.evergreen.mistakes.02"],
+      "sourceSnapshotRefs": ["snap.search-insights.us.2026-04-15"],
+      "videoSampleIds": [],
+      "sourceTypes": ["evergreen_library", "search_insights_content_gap"],
+      "searchIntentTypes": ["mistake"],
+      "searchPersistenceHints": ["evergreen"],
+      "normalizedTopicKey": "mistakes ad creative retention",
+      "mergeClassification": "cross_source_cluster",
+      "searchEvidenceSummary": {
+        "queryCount": 5,
+        "seedQueryCount": 2,
+        "relatedQueryCount": 2,
+        "contentGapQueryCount": 1,
+        "supportingSignalCount": 2,
+        "coverageLabel": "dense"
+      },
+      "executionEvidenceSummary": {
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 2,
+        "requiredCapabilityCount": 3,
+        "complexityLabel": "low",
+        "packagingRisk": "cross_source",
+        "fastTurnaroundCompatible": true
+      },
+      "sourceCount": 2,
+      "searchQueryCount": 5,
+      "contentAngleCount": 3,
+      "requiredFormatCount": 3
+    },
+    {
+      "bundleId": "bundle.fp.search.ai_ads.scroll_stop_hooks",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicAbstractionId": "abstraction.fp.search.ai_ads.scroll_stop_hooks",
+      "anchorSignalId": "sig.discovery.search.ai_hooks.02",
+      "signalIds": ["sig.discovery.search.ai_hooks.01", "sig.discovery.search.ai_hooks.02"],
+      "sourceSnapshotRefs": ["snap.search-insights.us.2026-04-15"],
+      "videoSampleIds": [],
+      "sourceTypes": ["search_insights_query", "search_insights_content_gap"],
+      "searchIntentTypes": ["how_to"],
+      "searchPersistenceHints": ["weekly"],
+      "normalizedTopicKey": "ad hook tiktok ads",
+      "mergeClassification": "cross_source_cluster",
+      "searchEvidenceSummary": {
+        "queryCount": 5,
+        "seedQueryCount": 2,
+        "relatedQueryCount": 2,
+        "contentGapQueryCount": 1,
+        "supportingSignalCount": 2,
+        "coverageLabel": "dense"
+      },
+      "executionEvidenceSummary": {
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 2,
+        "requiredCapabilityCount": 3,
+        "complexityLabel": "low",
+        "packagingRisk": "cross_source",
+        "fastTurnaroundCompatible": true
+      },
+      "sourceCount": 2,
+      "searchQueryCount": 5,
+      "contentAngleCount": 3,
+      "requiredFormatCount": 3
+    },
+    {
+      "bundleId": "bundle.fp.trend.consumer.wired_earbuds_comeback",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicAbstractionId": "abstraction.fp.trend.consumer.wired_earbuds_comeback",
+      "anchorSignalId": "sig.discovery.trend.earbuds.01",
+      "signalIds": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+      "sourceSnapshotRefs": [
+        "snap.creative-center.us.2026-04-15",
+        "snap.public-video.us.2026-04-15"
+      ],
+      "videoSampleIds": ["video.discovery.trend.earbuds.01"],
+      "sourceTypes": ["creative_center_trend", "public_video_sample"],
+      "searchIntentTypes": ["trend_reaction"],
+      "searchPersistenceHints": ["daily"],
+      "normalizedTopicKey": "wired earbuds trend headphones",
+      "mergeClassification": "cross_source_cluster",
+      "searchEvidenceSummary": {
+        "queryCount": 3,
+        "seedQueryCount": 1,
+        "relatedQueryCount": 2,
+        "contentGapQueryCount": 0,
+        "supportingSignalCount": 2,
+        "coverageLabel": "moderate"
+      },
+      "executionEvidenceSummary": {
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 3,
+        "requiredCapabilityCount": 3,
+        "complexityLabel": "medium",
+        "packagingRisk": "freshness_sensitive",
+        "fastTurnaroundCompatible": false
+      },
+      "sourceCount": 2,
+      "searchQueryCount": 3,
+      "contentAngleCount": 3,
+      "requiredFormatCount": 3
+    }
+  ],
+  "mergeGroups": [
+    {
+      "mergeGroupId": "merge.fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "topicAbstractionId": "abstraction.fp.evergreen.ai_ads.watch_time_mistakes",
+      "anchorSignalId": "sig.discovery.evergreen.mistakes.01",
+      "mergedSignalIds": [
+        "sig.discovery.evergreen.mistakes.01",
+        "sig.discovery.evergreen.mistakes.02"
+      ],
+      "mergedSignalCount": 2,
+      "normalizedTopicKey": "mistakes ad creative retention",
+      "fingerprintSeed": "evergreen.series.ad_mistakes_creative",
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "mergeGuardrails": {
+        "sourceTypes": ["evergreen_library", "search_insights_content_gap"],
+        "sourceSnapshotCount": 1,
+        "freshnessWindows": ["evergreen"],
+        "recommendedModes": ["series"],
+        "searchIntentTypes": ["mistake"],
+        "dependencyRisks": ["low"]
+      },
+      "packagingReadiness": {
+        "searchCoverageLabel": "dense",
+        "executionComplexityLabel": "low",
+        "packagingRisk": "cross_source",
+        "supportsSeriesPackaging": true,
+        "hasVideoEvidence": false
+      },
+      "mergeReason": "signals share the same stable topicFingerprint and compatible packaging intent"
+    },
+    {
+      "mergeGroupId": "merge.fp.search.ai_ads.scroll_stop_hooks",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "topicAbstractionId": "abstraction.fp.search.ai_ads.scroll_stop_hooks",
+      "anchorSignalId": "sig.discovery.search.ai_hooks.02",
+      "mergedSignalIds": ["sig.discovery.search.ai_hooks.01", "sig.discovery.search.ai_hooks.02"],
+      "mergedSignalCount": 2,
+      "normalizedTopicKey": "ad hook tiktok ads",
+      "fingerprintSeed": "search.growth.hook_ad_rewrite",
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "mergeGuardrails": {
+        "sourceTypes": ["search_insights_query", "search_insights_content_gap"],
+        "sourceSnapshotCount": 1,
+        "freshnessWindows": ["weekly"],
+        "recommendedModes": ["growth"],
+        "searchIntentTypes": ["how_to"],
+        "dependencyRisks": ["low"]
+      },
+      "packagingReadiness": {
+        "searchCoverageLabel": "dense",
+        "executionComplexityLabel": "low",
+        "packagingRisk": "cross_source",
+        "supportsSeriesPackaging": true,
+        "hasVideoEvidence": false
+      },
+      "mergeReason": "signals share the same stable topicFingerprint and compatible packaging intent"
+    },
+    {
+      "mergeGroupId": "merge.fp.trend.consumer.wired_earbuds_comeback",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "topicAbstractionId": "abstraction.fp.trend.consumer.wired_earbuds_comeback",
+      "anchorSignalId": "sig.discovery.trend.earbuds.01",
+      "mergedSignalIds": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+      "mergedSignalCount": 2,
+      "normalizedTopicKey": "wired earbuds trend headphones",
+      "fingerprintSeed": "trend.growth.wired_earbuds_back",
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "mergeGuardrails": {
+        "sourceTypes": ["creative_center_trend", "public_video_sample"],
+        "sourceSnapshotCount": 2,
+        "freshnessWindows": ["daily"],
+        "recommendedModes": ["growth"],
+        "searchIntentTypes": ["trend_reaction"],
+        "dependencyRisks": ["medium"]
+      },
+      "packagingReadiness": {
+        "searchCoverageLabel": "moderate",
+        "executionComplexityLabel": "medium",
+        "packagingRisk": "freshness_sensitive",
+        "supportsSeriesPackaging": true,
+        "hasVideoEvidence": true
+      },
+      "mergeReason": "signals share the same stable topicFingerprint and compatible packaging intent"
+    }
+  ],
+  "candidates": [
+    {
+      "schemaVersion": "topic-candidate.v1",
+      "topicId": "tp_evergreen_ad_mistakes_001",
+      "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+      "topicTitle": "3 ad creative mistakes that kill watch time",
+      "topicSummary": "An evergreen education topic with strong search intent, repeatable packaging, and clear room for serialization.",
+      "topicType": "evergreen",
+      "sourceType": ["evergreen_library", "search_insights_content_gap"],
+      "sourceRef": ["sig.discovery.evergreen.mistakes.01", "sig.discovery.evergreen.mistakes.02"],
+      "keywords": [
+        "ad creative mistakes",
+        "why ads lose retention",
+        "tiktok ad analysis",
+        "watch time mistakes"
+      ],
+      "contentAngle": [
+        "mistake diagnosis",
+        "common retention killers",
+        "fix the weak middle section"
+      ],
+      "recommendedMode": "series",
+      "expandability": 0.88,
+      "freshnessWindow": "evergreen",
+      "searchEvidence": {
+        "seedQueries": ["ad creative mistakes", "why ads lose retention"],
+        "relatedQueries": ["watch time mistakes", "ad creative analysis"],
+        "contentGapQueries": ["how to fix weak ad structure"],
+        "searchIntentType": "mistake",
+        "searchPersistenceHint": "evergreen",
+        "queryCount": 5,
+        "supportingSignalCount": 2,
+        "supportingSourceTypes": ["evergreen_library", "search_insights_content_gap"],
+        "coverageLabel": "dense"
+      },
+      "executionProfile": {
+        "recommendedFormats": ["talking_head", "screen_recording", "before_after_breakdown"],
+        "requiredAssets": ["sample ad clips", "annotation overlays"],
+        "requiredCapabilities": ["creative analysis", "screen capture", "light editing"],
+        "productionComplexity": 0.24,
+        "dependencyRisk": "low",
+        "fastTurnaround": true,
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 2,
+        "requiredCapabilityCount": 3,
+        "sourceTypeCount": 2,
+        "complexityLabel": "low",
+        "packagingRisk": "cross_source"
+      },
+      "topicAbstractionId": "abstraction.fp.evergreen.ai_ads.watch_time_mistakes",
+      "normalizedTopicKey": "mistakes ad creative retention",
+      "fingerprintSeed": "evergreen.series.ad_mistakes_creative",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "search_cluster",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 5,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      },
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "executionNotes": "Strong evergreen base topic for low-budget analysis. Content gap suggests repeatable follow-up posts. Packaging summary: search coverage dense; complexity low; merge cross_source_cluster; risk cross_source."
+    },
+    {
+      "schemaVersion": "topic-candidate.v1",
+      "topicId": "tp_search_ai_ad_hooks_001",
+      "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+      "topicTitle": "3 TikTok ad hooks that stop the scroll",
+      "topicSummary": "A search-led topic focused on showing concrete hook rewrites for AI and short-form ad creators.",
+      "topicType": "search",
+      "sourceType": ["search_insights_query", "search_insights_content_gap"],
+      "sourceRef": ["sig.discovery.search.ai_hooks.01", "sig.discovery.search.ai_hooks.02"],
+      "keywords": ["ai video ads", "tiktok ad creative", "ad hook examples", "hook rewrite"],
+      "contentAngle": [
+        "before vs after hook rewrite",
+        "3 proven hook patterns",
+        "bad hook to good hook"
+      ],
+      "recommendedMode": "growth",
+      "expandability": 0.74,
+      "freshnessWindow": "weekly",
+      "searchEvidence": {
+        "seedQueries": ["ai video ads", "tiktok ad creative"],
+        "relatedQueries": ["scroll stopping hook", "product ad opener"],
+        "contentGapQueries": ["hook rewrite examples"],
+        "searchIntentType": "how_to",
+        "searchPersistenceHint": "weekly",
+        "queryCount": 5,
+        "supportingSignalCount": 2,
+        "supportingSourceTypes": ["search_insights_query", "search_insights_content_gap"],
+        "coverageLabel": "dense"
+      },
+      "executionProfile": {
+        "recommendedFormats": ["talking_head", "screen_recording", "caption_demo"],
+        "requiredAssets": ["example ad scripts", "caption overlays"],
+        "requiredCapabilities": ["script critique", "screen capture", "short-form editing"],
+        "productionComplexity": 0.32,
+        "dependencyRisk": "low",
+        "fastTurnaround": true,
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 2,
+        "requiredCapabilityCount": 3,
+        "sourceTypeCount": 2,
+        "complexityLabel": "low",
+        "packagingRisk": "cross_source"
+      },
+      "topicAbstractionId": "abstraction.fp.search.ai_ads.scroll_stop_hooks",
+      "normalizedTopicKey": "ad hook tiktok ads",
+      "fingerprintSeed": "search.growth.hook_ad_rewrite",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "search_cluster",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 5,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      },
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "executionNotes": "Search signal suggests same-day packaging. Gap signal indicates useful follow-on examples. Packaging summary: search coverage dense; complexity low; merge cross_source_cluster; risk cross_source."
+    },
+    {
+      "schemaVersion": "topic-candidate.v1",
+      "topicId": "tp_trend_wired_earbuds_001",
+      "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+      "topicTitle": "Why wired earbuds are suddenly back in 2026",
+      "topicSummary": "A trend-reaction topic built from hot video samples and trending discussion around wired earbuds returning as a style signal.",
+      "topicType": "trend",
+      "sourceType": ["creative_center_trend", "public_video_sample"],
+      "sourceRef": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+      "keywords": ["wired earbuds", "wired headphones trend", "why wired earbuds are back"],
+      "contentAngle": [
+        "trend reaction explainer",
+        "style signal breakdown",
+        "nostalgia plus practicality angle"
+      ],
+      "recommendedMode": "growth",
+      "expandability": 0.46,
+      "freshnessWindow": "daily",
+      "searchEvidence": {
+        "seedQueries": ["wired earbuds"],
+        "relatedQueries": ["wired headphones trend", "why wired earbuds are back"],
+        "contentGapQueries": [],
+        "searchIntentType": "trend_reaction",
+        "searchPersistenceHint": "daily",
+        "queryCount": 3,
+        "supportingSignalCount": 2,
+        "supportingSourceTypes": ["creative_center_trend", "public_video_sample"],
+        "coverageLabel": "moderate"
+      },
+      "executionProfile": {
+        "recommendedFormats": ["talking_head", "image_plus_voiceover", "street_broll"],
+        "requiredAssets": ["trend screenshots", "reference images", "wired earbuds product shots"],
+        "requiredCapabilities": ["trend commentary", "visual sourcing", "fast edit packaging"],
+        "productionComplexity": 0.58,
+        "dependencyRisk": "medium",
+        "fastTurnaround": false,
+        "recommendedFormatCount": 3,
+        "requiredAssetCount": 3,
+        "requiredCapabilityCount": 3,
+        "sourceTypeCount": 2,
+        "complexityLabel": "medium",
+        "packagingRisk": "freshness_sensitive"
+      },
+      "topicAbstractionId": "abstraction.fp.trend.consumer.wired_earbuds_comeback",
+      "normalizedTopicKey": "wired earbuds trend headphones",
+      "fingerprintSeed": "trend.growth.wired_earbuds_back",
+      "candidateExpansionHints": {
+        "expansionOpportunity": "angle_series",
+        "sourceTypeCount": 2,
+        "searchPhraseCount": 3,
+        "contentAngleCount": 3,
+        "supportsSeriesPackaging": true
+      },
+      "mergeClassification": "cross_source_cluster",
+      "dedupeDecision": "keep_multi_angle_cluster",
+      "executionNotes": "Trend reaction depends on fresh screenshots. Needs visual references to avoid generic commentary. Packaging summary: search coverage moderate; complexity medium; merge cross_source_cluster; risk freshness_sensitive."
+    }
+  ]
+}

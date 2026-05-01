@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "optimizer-runtime-materialization-plan.sample.v1",
+  "planSetId": "optimizer-runtime-materialization-plan.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "planCount": 4
+  },
+  "plans": [
+    {
+      "planId": "optimizer_input_manifest_plan",
+      "outputBindingId": "optimizer_input_manifest",
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "manifest_from_job_runs",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "manifest",
+      "materializationStrategy": "job_run_aggregation",
+      "upstreamJobFamilies": [
+        "topic_outcome_backfill",
+        "post_performance_signal",
+        "challenger_evaluation"
+      ],
+      "requiredArtifactKinds": ["ranking_output", "scoring_context"]
+    },
+    {
+      "planId": "optimizer_input_bundle_plan",
+      "outputBindingId": "optimizer_input_bundle",
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "bundle_from_manifest",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "bundle",
+      "materializationStrategy": "manifest_materialization",
+      "upstreamJobFamilies": [],
+      "requiredArtifactKinds": ["optimizer_input_manifest"]
+    },
+    {
+      "planId": "optimizer_offline_cycle_daily_plan",
+      "outputBindingId": "optimizer_offline_cycle_daily",
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "daily_cycle_from_manifest",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "daily",
+      "materializationStrategy": "offline_cycle_execution",
+      "upstreamJobFamilies": [],
+      "requiredArtifactKinds": ["optimizer_input_manifest"],
+      "includeWeeklyPromotion": false
+    },
+    {
+      "planId": "optimizer_offline_cycle_weekly_plan",
+      "outputBindingId": "optimizer_offline_cycle_weekly",
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "weekly_cycle_from_bundle",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "weekly",
+      "materializationStrategy": "offline_cycle_execution",
+      "upstreamJobFamilies": [],
+      "requiredArtifactKinds": ["optimizer_input_bundle"],
+      "includeWeeklyPromotion": true
+    }
+  ]
+}

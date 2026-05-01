@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "optimizer-recent-failure-summaries.sample.v1",
+  "recentFailureSummariesId": "optimizer-recent-failure-summaries.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:40:00Z",
+  "generatedFrom": {
+    "sourceMode": "mixed_error_sources",
+    "optimizerJobOrchestrationCycleIds": [
+      "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19"
+    ],
+    "standaloneOptimizerJobErrorIds": ["weekly_optimizer_job.error.autotiktok.fixture.2026-04-19"],
+    "cycleCount": 1,
+    "standaloneErrorCount": 1,
+    "failureCount": 1
+  },
+  "summary": {
+    "failureCount": 1,
+    "retryableCount": 0,
+    "nonRetryableCount": 1,
+    "errorCodeCounts": {
+      "input_resolution_failure": 1
+    },
+    "failureStageCounts": {
+      "input_resolution": 1
+    },
+    "ownerHintCounts": {
+      "input_pipeline": 1
+    },
+    "scheduleIdCounts": {
+      "weekly_optimizer_job": 1
+    }
+  },
+  "entries": [
+    {
+      "errorId": "weekly_optimizer_job.error.autotiktok.fixture.2026-04-19",
+      "generatedAt": "2026-04-19T03:36:00Z",
+      "sourceKind": "job_error_artifact",
+      "sourceId": "weekly_optimizer_job.error.autotiktok.fixture.2026-04-19",
+      "errorCode": "input_resolution_failure",
+      "failureStage": "input_resolution",
+      "retryable": false,
+      "ownerHint": "input_pipeline",
+      "failureSummary": "scheduled optimizer job could not resolve required runtime inputs",
+      "scheduleId": "weekly_optimizer_job",
+      "schedulerRolloutIntent": "real_provider_shadow_validation",
+      "rolloutClass": "real_shadow_validation",
+      "jobKind": "weekly_optimizer_job",
+      "scheduleProfile": "external_scheduler",
+      "runtimeProfileRolloutClass": "production",
+      "windowSetPurpose": null,
+      "comparisonDimension": null
+    }
+  ]
+}

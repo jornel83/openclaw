@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "optimizer-stage-matrix.v1",
+  "matrixId": "optimizer-stage-matrix.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "contextMatrixFixtureVersion": "scoring-context-matrix.fixture.v1",
+    "candidateInputSchemaVersion": "discovery-dry-run.v1",
+    "candidateSourceKind": "discovery_artifact",
+    "candidateSourceInputKind": "snapshot_materialization",
+    "candidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+    "candidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+    "discoveryPolicyVersion": "discovery-policy.v1",
+    "rankingScoringCodeVersion": "dry-run-ranking.v2",
+    "optimizerPolicyVersion": "optimizer-policy.v1",
+    "challengerSchemaVersion": "challenger-observations.sample.v1",
+    "challengerInputKind": "observations",
+    "rankingOptimizerContractId": "ranking_optimizer_handoff",
+    "rankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+    "rankingOptimizerContractValidationMode": "exact",
+    "rankingOptimizerContractValidated": true,
+    "rankingOptimizerSurfaceSource": "legacy_top_level",
+    "rankingOptimizerDeprecationPhase": "dual_write_preview",
+    "rankingOptimizerCanonicalSurface": "optimizerHandoff",
+    "rankingOptimizerDeprecatedTopLevelFields": [
+      "profileId",
+      "profileSelection",
+      "candidateSource",
+      "scores",
+      "predictionRun",
+      "rankingSummary",
+      "rerankDiagnostics"
+    ],
+    "rankingOptimizerNextHardFailContractVersion": "ranking-optimizer-contract.v2",
+    "rankingOptimizerCompatApplied": false,
+    "rankingOptimizerCompatAliasesApplied": []
+  },
+  "stages": [
+    {
+      "stageMode": "growth",
+      "profileId": "growth-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "growth-default",
+        "stageMode": "growth",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.optimizer-matrix.growth.fixture.2026-04-15"
+      },
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 1,
+        "P2": 2
+      },
+      "topicReward": 0.65,
+      "combinedReward": 0.63405,
+      "performanceWeight": 0.1,
+      "recommendationKind": "observe_challenger",
+      "shadowLeaderProfileId": "search-priority-default"
+    },
+    {
+      "stageMode": "scale",
+      "profileId": "scale-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "scale-default",
+        "stageMode": "scale",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.optimizer-matrix.scale.fixture.2026-04-15"
+      },
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 2,
+        "P2": 1
+      },
+      "topicReward": 0.65,
+      "combinedReward": 0.63405,
+      "performanceWeight": 0.1,
+      "recommendationKind": "observe_challenger",
+      "shadowLeaderProfileId": "search-priority-default"
+    },
+    {
+      "stageMode": "search_priority",
+      "profileId": "search-priority-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "search-priority-default",
+        "stageMode": "search_priority",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.optimizer-matrix.search_priority.fixture.2026-04-15"
+      },
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 2,
+        "P2": 1
+      },
+      "topicReward": 0.65,
+      "combinedReward": 0.63405,
+      "performanceWeight": 0.1,
+      "recommendationKind": "keep_champion",
+      "shadowLeaderProfileId": "scale-default"
+    }
+  ]
+}

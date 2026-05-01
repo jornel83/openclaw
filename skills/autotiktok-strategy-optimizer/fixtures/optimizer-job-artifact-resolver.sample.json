@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "optimizer-job-artifact-resolver.sample.v1",
+  "resolverId": "optimizer-job-artifact-resolver.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T03:08:00Z",
+  "generatedFrom": {
+    "entryCount": 5,
+    "laneCount": 1
+  },
+  "entries": [
+    {
+      "resolverEntryId": "ranking_real_shadow",
+      "artifactKey": "ranking",
+      "resolverLane": "real_provider_shadow",
+      "resolverStrategy": "provider_catalog_locator",
+      "providerRequestKey": "ranking.latest",
+      "sourceProviderId": "ranking_real_shadow_provider"
+    },
+    {
+      "resolverEntryId": "context_real_shadow",
+      "artifactKey": "context",
+      "resolverLane": "real_provider_shadow",
+      "resolverStrategy": "provider_catalog_locator",
+      "providerRequestKey": "context.latest",
+      "sourceProviderId": "context_real_shadow_provider"
+    },
+    {
+      "resolverEntryId": "backfills_real_shadow",
+      "artifactKey": "backfills",
+      "resolverLane": "real_provider_shadow",
+      "resolverStrategy": "provider_catalog_locator",
+      "providerRequestKey": "backfills.latest",
+      "sourceProviderId": "backfills_real_shadow_provider"
+    },
+    {
+      "resolverEntryId": "performance_real_shadow",
+      "artifactKey": "performance",
+      "resolverLane": "real_provider_shadow",
+      "resolverStrategy": "provider_catalog_locator",
+      "providerRequestKey": "performance.latest",
+      "sourceProviderId": "performance_real_shadow_provider"
+    },
+    {
+      "resolverEntryId": "challenger_real_shadow",
+      "artifactKey": "challengerInput",
+      "resolverLane": "real_provider_shadow",
+      "resolverStrategy": "provider_catalog_locator",
+      "providerRequestKey": "challengerInput.latest",
+      "sourceProviderId": "challenger_real_shadow_provider"
+    }
+  ],
+  "inputSourceProviderCatalogReference": {
+    "schemaVersion": "optimizer-source-provider-catalog.sample.v1",
+    "catalogId": "optimizer-source-provider-catalog.autotiktok.fixture.2026-04-18",
+    "path": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-source-provider-catalog.sample.json"
+  }
+}

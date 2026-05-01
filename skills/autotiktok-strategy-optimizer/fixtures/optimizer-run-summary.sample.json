@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "optimizer-run-summary.sample.v1",
+  "runSummaryId": "optimizer-run-summary.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:35:00Z",
+  "generatedFrom": {
+    "optimizerJobExecutionContextSchemaVersion": "optimizer-job-execution-context.sample.v1",
+    "optimizerJobExecutionContextId": "optimizer-job-execution-context.autotiktok.fixture.2026-04-19",
+    "optimizerJobScheduleSchemaVersion": "optimizer-job-schedule.sample.v1",
+    "optimizerJobSchedulePlanId": "optimizer-job-schedule.external.autotiktok.fixture.2026-04-18",
+    "optimizerJobOrchestrationCycleSchemaVersion": "optimizer-job-orchestration-cycle.sample.v1",
+    "optimizerJobOrchestrationCycleId": "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19",
+    "optimizerJobArtifactRetentionPolicySchemaVersion": "optimizer-job-artifact-retention-policy.sample.v1",
+    "optimizerJobArtifactRetentionPolicyId": "optimizer-job-artifact-retention-policy.autotiktok.fixture.2026-04-19",
+    "scheduleCount": 2,
+    "jobRunCount": 4,
+    "errorCount": 0,
+    "compareArtifactCount": 1,
+    "compareBatchCount": 1
+  },
+  "summary": {
+    "runStatus": "success",
+    "scheduleCount": 2,
+    "successfulScheduleCount": 2,
+    "partialFailureScheduleCount": 0,
+    "failedScheduleCount": 0,
+    "jobRunCount": 4,
+    "productionJobRunCount": 2,
+    "shadowJobRunCount": 2,
+    "compareArtifactCount": 1,
+    "compareBatchCount": 1,
+    "matchedComparisonCount": 2,
+    "mismatchedComparisonCount": 0,
+    "retentionPolicyId": "optimizer-job-artifact-retention-policy.autotiktok.fixture.2026-04-19",
+    "schedulerRolloutIntentCounts": {
+      "production": 2,
+      "raw_shadow_validation": 1,
+      "real_provider_shadow_validation": 1
+    },
+    "weeklyDecisionCounts": {
+      "promote": 1
+    },
+    "rollbackSeverityCounts": {}
+  },
+  "scheduleSummaries": [
+    {
+      "scheduleId": "daily_optimizer_job",
+      "cadenceKind": "daily",
+      "jobKind": "daily_optimizer_job",
+      "status": "success",
+      "jobRunCount": 2,
+      "productionJobRunId": "optimizer-daily-job-run.autotiktok.fixture.2026-04-18",
+      "productionSchedulerRolloutIntent": "production",
+      "productionRolloutClass": "production",
+      "shadowJobRunCount": 1,
+      "shadowSchedulerRolloutIntents": ["raw_shadow_validation"],
+      "shadowRolloutClasses": ["raw_shadow_validation"],
+      "compareCount": 1,
+      "mismatchedCompareCount": 0,
+      "productionDailyRecommendation": "observe_challenger",
+      "productionWeeklyDecision": null,
+      "productionRollbackSeverity": null,
+      "productionSelectedChallengerProfileId": null,
+      "productionShadowLeaderProfileId": "search-priority-default"
+    },
+    {
+      "scheduleId": "weekly_optimizer_job",
+      "cadenceKind": "weekly",
+      "jobKind": "weekly_optimizer_job",
+      "status": "success",
+      "jobRunCount": 2,
+      "productionJobRunId": "optimizer-weekly-job-run.autotiktok.fixture.2026-04-18",
+      "productionSchedulerRolloutIntent": "production",
+      "productionRolloutClass": "production",
+      "shadowJobRunCount": 1,
+      "shadowSchedulerRolloutIntents": ["real_provider_shadow_validation"],
+      "shadowRolloutClasses": ["real_shadow_validation"],
+      "compareCount": 1,
+      "mismatchedCompareCount": 0,
+      "productionDailyRecommendation": "observe_challenger",
+      "productionWeeklyDecision": "promote",
+      "productionRollbackSeverity": null,
+      "productionSelectedChallengerProfileId": "search-priority-default",
+      "productionShadowLeaderProfileId": "search-priority-default"
+    }
+  ],
+  "compareSummaries": [
+    {
+      "compareId": "optimizer-job-shadow-compare.autotiktok.cycle.2026-04-19",
+      "comparePlanId": "optimizer-job-shadow-compare-plan.autotiktok.cycle.2026-04-19",
+      "comparisonCount": 2,
+      "matchedComparisonCount": 2,
+      "mismatchedComparisonCount": 0,
+      "candidateSchedulerRolloutIntents": [
+        "raw_shadow_validation",
+        "real_provider_shadow_validation"
+      ],
+      "candidateRolloutClasses": ["raw_shadow_validation", "real_shadow_validation"],
+      "candidateRuntimeProfileRolloutClasses": ["production"],
+      "candidateWindowSetPurposes": [],
+      "candidateComparisonDimensions": [],
+      "candidateSourceLanes": ["real_provider_shadow", "sample_raw_shadow"]
+    }
+  ],
+  "errorSummaries": []
+}

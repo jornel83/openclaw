@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "optimizer-eval-batch-manifest.sample.v1",
+  "manifestId": "optimizer-eval-batch-manifest.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "comparisonDimension": "mode",
+  "batchWindowLabel": "2026-04-15..2026-04-15",
+  "generatedFrom": {
+    "evalRunCount": 2
+  },
+  "evalRunPaths": [
+    "skills/autotiktok-strategy-optimizer/fixtures/optimizer-eval-run-daily.sample.json",
+    "skills/autotiktok-strategy-optimizer/fixtures/optimizer-eval-run.sample.json"
+  ]
+}

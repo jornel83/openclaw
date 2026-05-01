@@ -1,0 +1,363 @@
+{
+  "schemaVersion": "weekly-promotion-decision.v1",
+  "decisionId": "weekly-promotion.autotiktok.fixture.2026-04-20",
+  "generatedAt": "2026-04-20T08:00:00Z",
+  "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+  "sourceReviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20",
+  "championProfileId": "growth-default",
+  "championProfileSelection": {
+    "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "requestedProfileId": "auto",
+    "resolvedProfileId": "growth-default",
+    "selectionSource": "context_stage_mode",
+    "stageMode": "growth"
+  },
+  "championCandidateSource": {
+    "sourceKind": "discovery_artifact",
+    "inputSchemaVersion": "discovery-dry-run.v1",
+    "topicCandidateSchemaVersion": "topic-candidate.v1",
+    "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+    "sourcePolicyVersion": "discovery-policy.v1",
+    "sourceArtifact": null,
+    "sourceInputKind": "snapshot_materialization",
+    "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+    "sourceMaterializationSource": "separate_snapshot_artifacts",
+    "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+    "sourceTopicAbstractionCount": 3,
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+  },
+  "generatedFrom": {
+    "policyVersion": "optimizer-policy.v1",
+    "weeklyReviewWindowSchemaVersion": "optimizer-weekly-review-window.sample.v1",
+    "weeklyReviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20",
+    "weeklyReviewWindowScenarioId": "promotion_default",
+    "weeklyReviewWindowEntryCount": 3,
+    "dailyReviewPolicyVersion": "optimizer-policy.v1",
+    "dailyReviewRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "dailyReviewRankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "dailyReviewRequestedProfileId": "auto",
+    "dailyReviewResolvedProfileId": "growth-default",
+    "dailyReviewProfileSelectionSource": "context_stage_mode",
+    "dailyReviewStageMode": "growth",
+    "dailyReviewCandidateSourceKind": "discovery_artifact",
+    "dailyReviewCandidateInputSchemaVersion": "discovery-dry-run.v1",
+    "dailyReviewCandidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+    "dailyReviewCandidateSourcePolicyVersion": "discovery-policy.v1",
+    "dailyReviewChallengerInputKind": "observations",
+    "dailyReviewRankingOptimizerContractId": "ranking_optimizer_handoff",
+    "dailyReviewRankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+    "dailyReviewRankingOptimizerContractValidationMode": "exact",
+    "dailyReviewRankingOptimizerContractValidated": true,
+    "dailyReviewRankingOptimizerSurfaceSource": "legacy_top_level",
+    "dailyReviewRankingOptimizerDeprecationPhase": "dual_write_preview",
+    "dailyReviewRankingOptimizerCanonicalSurface": "optimizerHandoff",
+    "dailyReviewRankingOptimizerDeprecatedTopLevelFields": [
+      "profileId",
+      "profileSelection",
+      "candidateSource",
+      "scores",
+      "predictionRun",
+      "rankingSummary",
+      "rerankDiagnostics"
+    ],
+    "dailyReviewRankingOptimizerNextHardFailContractVersion": "ranking-optimizer-contract.v2",
+    "dailyReviewRankingOptimizerCompatApplied": false,
+    "dailyReviewRankingOptimizerCompatAliasesApplied": [],
+    "weeklyStageMode": "growth",
+    "weeklyStagePolicyId": "growth_weekly_gate",
+    "weeklyStagePolicySelectionSource": "champion_profile_selection"
+  },
+  "gateSummary": {
+    "requiredDaysObserved": 7,
+    "minimumWindowEntries": 3,
+    "minimumWinningDays": 2,
+    "minimumHardGatePassDays": 3,
+    "minimumRewardDelta": 0.02,
+    "minimumAverageRewardDelta": 0.02,
+    "minimumAverageHoldoutDelta": 0.002,
+    "holdoutMustBeNonNegative": true,
+    "maximumPostCoverageRateDrop": 0.01,
+    "rollbackMinBreachDays": 2,
+    "rollbackHoldoutFloor": -0.03,
+    "rollbackCombinedRewardFloor": 0.6,
+    "rollbackCriticalHoldoutFloor": -0.04,
+    "rollbackCriticalCombinedRewardFloor": 0.58,
+    "weeklyStageMode": "growth",
+    "weeklyStagePolicyId": "growth_weekly_gate",
+    "weeklyStagePolicySelectionSource": "champion_profile_selection",
+    "rewardHorizonIds": ["t+1", "t+3", "t+7"],
+    "requiredRewardHorizonIds": ["t+1", "t+3"],
+    "optionalRewardHorizonIds": ["t+7"]
+  },
+  "championSafetyReview": {
+    "rollbackEligible": false,
+    "rollbackTriggered": false,
+    "rollbackSeverity": "none",
+    "rollbackReasonCodes": [],
+    "failedGateIds": [],
+    "gateEvaluations": [
+      {
+        "gateId": "window_level_rollback_signal",
+        "category": "rollback",
+        "passed": true,
+        "actualValue": false,
+        "thresholdValue": false,
+        "comparator": "=="
+      },
+      {
+        "gateId": "rollback_eligibility",
+        "category": "rollback",
+        "passed": true,
+        "actualValue": false,
+        "thresholdValue": false,
+        "comparator": "=="
+      },
+      {
+        "gateId": "holdout_floor_breach_days",
+        "category": "rollback",
+        "passed": true,
+        "actualValue": 0,
+        "thresholdValue": 2,
+        "comparator": "<"
+      },
+      {
+        "gateId": "combined_reward_floor_breach_days",
+        "category": "rollback",
+        "passed": true,
+        "actualValue": 0,
+        "thresholdValue": 2,
+        "comparator": "<"
+      }
+    ]
+  },
+  "promotionCandidateReviews": [
+    {
+      "profileId": "search-priority-default",
+      "avgCombinedReward": 0.653411,
+      "avgCombinedRewardDelta": 0.027467,
+      "avgHoldoutDelta": 0.006398,
+      "daysObservedMax": 7,
+      "hardGatePassDayCount": 3,
+      "eligibleForPromotion": true,
+      "failedGateIds": [],
+      "gateEvaluations": [
+        {
+          "gateId": "minimum_window_entries",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": 3,
+          "thresholdValue": 3,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_days_observed",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": 7,
+          "thresholdValue": 7,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_winning_days",
+          "category": "performance",
+          "passed": true,
+          "actualValue": 3,
+          "thresholdValue": 2,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_hard_gate_pass_days",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 3,
+          "thresholdValue": 3,
+          "comparator": ">="
+        },
+        {
+          "gateId": "required_reward_horizon_coverage",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": ["t+1", "t+3", "t+7"],
+          "thresholdValue": ["t+1", "t+3"],
+          "comparator": "contains_all"
+        },
+        {
+          "gateId": "minimum_holdout_floor",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.0029,
+          "thresholdValue": 0.0,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_average_holdout_delta",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.006398,
+          "thresholdValue": 0.002,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_average_reward_delta",
+          "category": "performance",
+          "passed": true,
+          "actualValue": 0.027467,
+          "thresholdValue": 0.02,
+          "comparator": ">="
+        },
+        {
+          "gateId": "dup_rate_budget",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.333444,
+          "thresholdValue": 0.356778,
+          "comparator": "<="
+        },
+        {
+          "gateId": "executable_rate_budget",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.662222,
+          "thresholdValue": 0.638556,
+          "comparator": ">="
+        },
+        {
+          "gateId": "type_coverage_budget",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.986667,
+          "thresholdValue": 0.93,
+          "comparator": ">="
+        },
+        {
+          "gateId": "post_coverage_budget",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.634979,
+          "thresholdValue": 0.618312,
+          "comparator": ">="
+        }
+      ]
+    },
+    {
+      "profileId": "scale-default",
+      "avgCombinedReward": 0.633028,
+      "avgCombinedRewardDelta": 0.007083,
+      "avgHoldoutDelta": -0.014602,
+      "daysObservedMax": 7,
+      "hardGatePassDayCount": 0,
+      "eligibleForPromotion": false,
+      "failedGateIds": [
+        "minimum_hard_gate_pass_days",
+        "minimum_holdout_floor",
+        "minimum_average_holdout_delta",
+        "minimum_average_reward_delta",
+        "dup_rate_budget",
+        "executable_rate_budget",
+        "type_coverage_budget"
+      ],
+      "gateEvaluations": [
+        {
+          "gateId": "minimum_window_entries",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": 3,
+          "thresholdValue": 3,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_days_observed",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": 7,
+          "thresholdValue": 7,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_winning_days",
+          "category": "performance",
+          "passed": true,
+          "actualValue": 3,
+          "thresholdValue": 2,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_hard_gate_pass_days",
+          "category": "safety",
+          "passed": false,
+          "actualValue": 0,
+          "thresholdValue": 3,
+          "comparator": ">="
+        },
+        {
+          "gateId": "required_reward_horizon_coverage",
+          "category": "coverage",
+          "passed": true,
+          "actualValue": ["t+1", "t+3", "t+7"],
+          "thresholdValue": ["t+1", "t+3"],
+          "comparator": "contains_all"
+        },
+        {
+          "gateId": "minimum_holdout_floor",
+          "category": "safety",
+          "passed": false,
+          "actualValue": -0.0171,
+          "thresholdValue": 0.0,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_average_holdout_delta",
+          "category": "safety",
+          "passed": false,
+          "actualValue": -0.014602,
+          "thresholdValue": 0.002,
+          "comparator": ">="
+        },
+        {
+          "gateId": "minimum_average_reward_delta",
+          "category": "performance",
+          "passed": false,
+          "actualValue": 0.007083,
+          "thresholdValue": 0.02,
+          "comparator": ">="
+        },
+        {
+          "gateId": "dup_rate_budget",
+          "category": "safety",
+          "passed": false,
+          "actualValue": 0.386778,
+          "thresholdValue": 0.356778,
+          "comparator": "<="
+        },
+        {
+          "gateId": "executable_rate_budget",
+          "category": "safety",
+          "passed": false,
+          "actualValue": 0.583556,
+          "thresholdValue": 0.638556,
+          "comparator": ">="
+        },
+        {
+          "gateId": "type_coverage_budget",
+          "category": "safety",
+          "passed": false,
+          "actualValue": 0.875,
+          "thresholdValue": 0.93,
+          "comparator": ">="
+        },
+        {
+          "gateId": "post_coverage_budget",
+          "category": "safety",
+          "passed": true,
+          "actualValue": 0.624979,
+          "thresholdValue": 0.618312,
+          "comparator": ">="
+        }
+      ]
+    }
+  ],
+  "selectedChallengerProfileId": "search-priority-default",
+  "decision": "promote",
+  "combinedRewardDelta": 0.027467,
+  "reason": "search-priority-default wins across the weekly review window, clears the multi-day promotion gates, and does not regress holdout safety."
+}

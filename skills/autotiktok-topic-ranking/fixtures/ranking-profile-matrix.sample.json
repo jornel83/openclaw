@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "ranking-profile-matrix.v1",
+  "matrixId": "ranking-profile-matrix.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T00:00:00Z",
+  "generatedFrom": {
+    "candidateInputSchemaVersion": "discovery-dry-run.v1",
+    "candidateSourceKind": "discovery_artifact",
+    "discoveryPolicyVersion": "discovery-policy.v1",
+    "contextMatrixFixtureVersion": "scoring-context-matrix.fixture.v1",
+    "rubricSchemaVersion": "feature-rubric.v1"
+  },
+  "stages": [
+    {
+      "stageMode": "growth",
+      "profileId": "growth-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "growth-default",
+        "stageMode": "growth",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.matrix.growth.fixture.2026-04-15"
+      },
+      "rankingSnapshotId": "snap.autotiktok.matrix.growth.fixture.2026-04-15",
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 1,
+        "P2": 2
+      },
+      "rankedTopicIds": [
+        "tp_evergreen_ad_mistakes_001",
+        "tp_search_ai_ad_hooks_001",
+        "tp_trend_wired_earbuds_001"
+      ],
+      "scores": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "scoreTotal": 3.54,
+          "priorityLevel": "P1",
+          "recommendedUse": "search_capture",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "scoreTotal": 3.25,
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_trend_wired_earbuds_001",
+          "scoreTotal": 2.26,
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "isRejected": true
+        }
+      ]
+    },
+    {
+      "stageMode": "scale",
+      "profileId": "scale-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "scale-default",
+        "stageMode": "scale",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.matrix.scale.fixture.2026-04-15"
+      },
+      "rankingSnapshotId": "snap.autotiktok.matrix.scale.fixture.2026-04-15",
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 2,
+        "P2": 1
+      },
+      "rankedTopicIds": [
+        "tp_evergreen_ad_mistakes_001",
+        "tp_search_ai_ad_hooks_001",
+        "tp_trend_wired_earbuds_001"
+      ],
+      "scores": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "scoreTotal": 3.61,
+          "priorityLevel": "P1",
+          "recommendedUse": "search_capture",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "scoreTotal": 3.21,
+          "priorityLevel": "P1",
+          "recommendedUse": "growth",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_trend_wired_earbuds_001",
+          "scoreTotal": 2.27,
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "isRejected": true
+        }
+      ]
+    },
+    {
+      "stageMode": "search_priority",
+      "profileId": "search-priority-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "search-priority-default",
+        "stageMode": "search_priority",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.matrix.search_priority.fixture.2026-04-15"
+      },
+      "rankingSnapshotId": "snap.autotiktok.matrix.search_priority.fixture.2026-04-15",
+      "topTopicId": "tp_evergreen_ad_mistakes_001",
+      "topTopicTitle": "3 ad creative mistakes that kill watch time",
+      "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+      "priorityCounts": {
+        "P0": 0,
+        "P1": 2,
+        "P2": 1
+      },
+      "rankedTopicIds": [
+        "tp_evergreen_ad_mistakes_001",
+        "tp_search_ai_ad_hooks_001",
+        "tp_trend_wired_earbuds_001"
+      ],
+      "scores": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "scoreTotal": 3.69,
+          "priorityLevel": "P1",
+          "recommendedUse": "search_capture",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "scoreTotal": 3.4,
+          "priorityLevel": "P1",
+          "recommendedUse": "growth",
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_trend_wired_earbuds_001",
+          "scoreTotal": 2.35,
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "isRejected": true
+        }
+      ]
+    }
+  ]
+}
