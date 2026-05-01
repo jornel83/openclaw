@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "optimizer-source-provider-registry.sample.v1",
+  "registryId": "optimizer-source-provider-registry.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T03:04:00Z",
+  "generatedFrom": {
+    "bindingCount": 5,
+    "laneCount": 1
+  },
+  "bindings": [
+    {
+      "providerBindingId": "ranking_real_shadow_binding",
+      "artifactKey": "ranking",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "materialized_fixture",
+      "upstreamJobKind": "ranking_output_materialization",
+      "providerBindingKind": "catalog_service_binding",
+      "providerOwner": "autotiktok-upstream-job",
+      "bindingLocatorKind": "artifact_locator_reference",
+      "resolutionMode": "artifact_catalog_entry",
+      "artifactCatalogEntryId": "ranking_real_shadow_artifact"
+    },
+    {
+      "providerBindingId": "context_real_shadow_binding",
+      "artifactKey": "context",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "materialized_fixture",
+      "upstreamJobKind": "scoring_context_materialization",
+      "providerBindingKind": "catalog_service_binding",
+      "providerOwner": "autotiktok-upstream-job",
+      "bindingLocatorKind": "artifact_locator_reference",
+      "resolutionMode": "artifact_catalog_entry",
+      "artifactCatalogEntryId": "context_real_shadow_artifact"
+    },
+    {
+      "providerBindingId": "backfills_real_shadow_binding",
+      "artifactKey": "backfills",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "topic_outcome_backfill",
+      "providerBindingKind": "catalog_service_binding",
+      "providerOwner": "autotiktok-upstream-job",
+      "bindingLocatorKind": "artifact_locator_reference",
+      "resolutionMode": "artifact_catalog_entry",
+      "artifactCatalogEntryId": "backfills_real_shadow_artifact"
+    },
+    {
+      "providerBindingId": "performance_real_shadow_binding",
+      "artifactKey": "performance",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "post_performance_signal",
+      "providerBindingKind": "catalog_service_binding",
+      "providerOwner": "autotiktok-upstream-job",
+      "bindingLocatorKind": "artifact_locator_reference",
+      "resolutionMode": "artifact_catalog_entry",
+      "artifactCatalogEntryId": "performance_real_shadow_artifact"
+    },
+    {
+      "providerBindingId": "challenger_real_shadow_binding",
+      "artifactKey": "challengerInput",
+      "providerLane": "real_provider_shadow",
+      "providerKind": "raw_job_envelope",
+      "upstreamJobKind": "challenger_evaluation",
+      "providerBindingKind": "catalog_service_binding",
+      "providerOwner": "autotiktok-upstream-job",
+      "bindingLocatorKind": "artifact_locator_reference",
+      "resolutionMode": "artifact_catalog_entry",
+      "artifactCatalogEntryId": "challenger_real_shadow_artifact"
+    }
+  ],
+  "inputSourceArtifactCatalogReference": {
+    "schemaVersion": "optimizer-source-artifact-catalog.sample.v1",
+    "catalogId": "optimizer-source-artifact-catalog.autotiktok.fixture.2026-04-18",
+    "path": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-source-artifact-catalog.sample.json"
+  }
+}

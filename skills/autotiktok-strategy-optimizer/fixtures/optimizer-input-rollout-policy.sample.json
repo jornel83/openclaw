@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "optimizer-input-rollout-policy.sample.v1",
+  "policyId": "optimizer-input-rollout-policy.autotiktok.fixture.2026-04-18",
+  "policyFamily": "autotiktok-optimizer-input-rollout",
+  "policyVersion": "2026-04-18",
+  "generatedAt": "2026-04-18T03:15:00Z",
+  "generatedFrom": {
+    "optimizerInputSourceRegistrySchemaVersion": "optimizer-input-source-registry.sample.v1",
+    "optimizerInputSourceRegistryId": "optimizer-input-source-registry.autotiktok.fixture.2026-04-18",
+    "optimizerInputSourceRegistryPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-source-registry.sample.json",
+    "rolloutClassCount": 3,
+    "rolloutIntentCount": 3,
+    "schedulePolicyCount": 2,
+    "rolloutSelectionPrecedenceCount": 4
+  },
+  "defaultRolloutIntent": "production_run",
+  "defaultRolloutClass": "production",
+  "rolloutStrategy": "shadow_lane_progression",
+  "rolloutSelectionPrecedence": [
+    "explicit_rollout_class",
+    "explicit_rollout_intent",
+    "schedule_rollout_intent_default",
+    "global_rollout_intent_default"
+  ],
+  "inputSourceRegistryReference": {
+    "schemaVersion": "optimizer-input-source-registry.sample.v1",
+    "registryId": "optimizer-input-source-registry.autotiktok.fixture.2026-04-18",
+    "path": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-source-registry.sample.json"
+  },
+  "rolloutClasses": [
+    {
+      "rolloutClass": "production",
+      "sourceLane": "sample_canonical"
+    },
+    {
+      "rolloutClass": "raw_shadow_validation",
+      "sourceLane": "sample_raw_shadow"
+    },
+    {
+      "rolloutClass": "real_shadow_validation",
+      "sourceLane": "real_provider_shadow"
+    }
+  ],
+  "rolloutIntents": [
+    {
+      "rolloutIntent": "production_run",
+      "rolloutClass": "production"
+    },
+    {
+      "rolloutIntent": "raw_shadow_validation",
+      "rolloutClass": "raw_shadow_validation"
+    },
+    {
+      "rolloutIntent": "real_provider_shadow_validation",
+      "rolloutClass": "real_shadow_validation"
+    }
+  ],
+  "schedulePolicies": [
+    {
+      "scheduleId": "daily_optimizer_job",
+      "defaultRolloutIntent": "production_run",
+      "allowedRolloutIntents": [
+        "production_run",
+        "raw_shadow_validation",
+        "real_provider_shadow_validation"
+      ],
+      "defaultRolloutClass": "production",
+      "allowedRolloutClasses": ["production", "raw_shadow_validation", "real_shadow_validation"]
+    },
+    {
+      "scheduleId": "weekly_optimizer_job",
+      "defaultRolloutIntent": "production_run",
+      "allowedRolloutIntents": [
+        "production_run",
+        "raw_shadow_validation",
+        "real_provider_shadow_validation"
+      ],
+      "defaultRolloutClass": "production",
+      "allowedRolloutClasses": ["production", "raw_shadow_validation", "real_shadow_validation"]
+    }
+  ]
+}

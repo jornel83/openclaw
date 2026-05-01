@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "optimizer-input-manifest.sample.v1",
+  "manifestId": "optimizer-input-manifest.raw-shadow.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T03:05:00Z",
+  "generatedFrom": {
+    "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "rankingProfileId": "growth-default",
+    "sourceLane": "sample_raw_shadow",
+    "optimizerInputSourceRegistrySchemaVersion": "optimizer-input-source-registry.sample.v1",
+    "optimizerInputSourceRegistryId": "optimizer-input-source-registry.autotiktok.fixture.2026-04-18"
+  },
+  "artifactBindings": {
+    "ranking": "ranking_raw_shadow",
+    "context": "context_raw_shadow",
+    "backfills": "backfills_raw_shadow",
+    "performance": "performance_raw_shadow",
+    "challengerInput": "challenger_raw_shadow"
+  },
+  "inputSourceRegistryReference": {
+    "schemaVersion": "optimizer-input-source-registry.sample.v1",
+    "registryId": "optimizer-input-source-registry.autotiktok.fixture.2026-04-18",
+    "path": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-source-registry.sample.json"
+  }
+}

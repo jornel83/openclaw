@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "optimizer-eval-window-set.sample.v1",
+  "windowSetId": "optimizer-eval-window-set.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "comparisonDimension": "historyBatchLabel",
+  "batchWindowLabel": "2026-04-12..2026-04-15",
+  "windowSetPurpose": "production_replay",
+  "windowSetBatchType": "standard_replay",
+  "generatedFrom": {
+    "windowCount": 4,
+    "modeCounts": {
+      "daily_review_only": 2,
+      "daily_with_weekly_promotion": 2
+    },
+    "windowSetPurpose": "production_replay",
+    "windowSetBatchType": "standard_replay",
+    "windowSetBatchTypeSelectionSource": "fallback_default",
+    "comparisonDimensionSelectionSource": "fallback_default",
+    "runtimeSourceCount": 4,
+    "runtimeProfileRolloutPolicyId": "optimizer-runtime-profile-rollout-policy.autotiktok.fixture.2026-04-15",
+    "runtimeProfileRolloutPolicyFamily": "autotiktok-runtime-profile-rollout",
+    "runtimeProfileRolloutPolicyVersion": "2026-04-15",
+    "runtimeProfileFamilyRegistryId": "optimizer-runtime-profile-family-registry.autotiktok.fixture.2026-04-15",
+    "runtimeProfileFamilyId": "autotiktok-runtime-profiles",
+    "runtimeProfileCatalogLane": "current",
+    "runtimeProfileCatalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+    "runtimeProfileCatalogFamily": "autotiktok-runtime-profiles",
+    "runtimeProfileCatalogVersion": "2026-04-15",
+    "runtimeProfileCatalogSchemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+    "runtimeProfileLaneSelectionSource": "policy_default",
+    "runtimeProfileRolloutClass": "production",
+    "runtimeProfileActiveLane": "current",
+    "runtimeProfileDefaultLane": "current",
+    "runtimeProfileRolloutStrategy": "manual_gated_preview"
+  },
+  "windows": [
+    {
+      "windowId": "recent-daily",
+      "historyBatchLabel": "2026-04-15",
+      "historyWindowLabel": "recent_batch",
+      "scenarioLabel": "current_daily",
+      "mode": "daily_review_only",
+      "generatedAt": "2026-04-15T06:00:00Z",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-15.daily",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-15.daily",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-15.daily",
+      "includeWeeklyPromotion": false,
+      "runtimeSourceId": "recent-daily-manifest"
+    },
+    {
+      "windowId": "recent-weekly",
+      "historyBatchLabel": "2026-04-15",
+      "historyWindowLabel": "recent_batch",
+      "scenarioLabel": "current_weekly",
+      "mode": "daily_with_weekly_promotion",
+      "generatedAt": "2026-04-15T06:00:00Z",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-15",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-15",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "includeWeeklyPromotion": true,
+      "runtimeSourceId": "recent-weekly-bundle"
+    },
+    {
+      "windowId": "historical-daily",
+      "historyBatchLabel": "2026-04-12",
+      "historyWindowLabel": "historical_batch",
+      "scenarioLabel": "historical_daily",
+      "mode": "daily_review_only",
+      "generatedAt": "2026-04-12T06:00:00Z",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-12.daily",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-12.daily",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-12.daily",
+      "includeWeeklyPromotion": false,
+      "runtimeSourceId": "historical-daily-cycle",
+      "summaryOverrides": {
+        "topicReward": 0.59,
+        "performanceReward": 0.432,
+        "combinedReward": 0.5742,
+        "postCoverageRate": 0.5,
+        "rejectedCount": 2,
+        "shadowLeaderProfileId": "scale-default"
+      }
+    },
+    {
+      "windowId": "historical-weekly",
+      "historyBatchLabel": "2026-04-12",
+      "historyWindowLabel": "historical_batch",
+      "scenarioLabel": "historical_weekly",
+      "mode": "daily_with_weekly_promotion",
+      "generatedAt": "2026-04-12T06:00:00Z",
+      "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-12",
+      "evalRunId": "optimizer-eval-run.autotiktok.fixture.2026-04-12",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-12",
+      "includeWeeklyPromotion": true,
+      "runtimeSourceId": "historical-weekly-cycle",
+      "summaryOverrides": {
+        "topicReward": 0.59,
+        "performanceReward": 0.432,
+        "combinedReward": 0.5742,
+        "postCoverageRate": 0.5,
+        "rejectedCount": 2,
+        "shadowLeaderProfileId": "scale-default",
+        "weeklyDecision": "keep_champion",
+        "selectedChallengerProfileId": null
+      }
+    }
+  ],
+  "runtimeSources": [
+    {
+      "runtimeSourceId": "recent-daily-manifest",
+      "includeWeeklyPromotion": false,
+      "sourceDescriptor": {
+        "descriptorKind": "planner_runtime_binding",
+        "profileId": "optimizer_input_manifest_profile"
+      },
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact",
+      "runtimeSourceKind": "input_manifest"
+    },
+    {
+      "runtimeSourceId": "recent-weekly-bundle",
+      "includeWeeklyPromotion": true,
+      "sourceDescriptor": {
+        "descriptorKind": "planner_runtime_binding",
+        "profileId": "optimizer_input_bundle_profile"
+      },
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact",
+      "runtimeSourceKind": "input_bundle"
+    },
+    {
+      "runtimeSourceId": "historical-daily-cycle",
+      "includeWeeklyPromotion": false,
+      "sourceDescriptor": {
+        "descriptorKind": "planner_runtime_binding",
+        "profileId": "optimizer_offline_cycle_daily_profile"
+      },
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact",
+      "runtimeSourceKind": "offline_cycle"
+    },
+    {
+      "runtimeSourceId": "historical-weekly-cycle",
+      "includeWeeklyPromotion": true,
+      "sourceDescriptor": {
+        "descriptorKind": "planner_runtime_binding",
+        "profileId": "optimizer_offline_cycle_weekly_profile"
+      },
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact",
+      "runtimeSourceKind": "offline_cycle"
+    }
+  ],
+  "runtimeProfileRolloutPolicyReference": {
+    "policyId": "optimizer-runtime-profile-rollout-policy.autotiktok.fixture.2026-04-15",
+    "schemaVersion": "optimizer-runtime-profile-rollout-policy.sample.v1",
+    "policyFamily": "autotiktok-runtime-profile-rollout",
+    "policyVersion": "2026-04-15",
+    "familyId": "autotiktok-runtime-profiles"
+  },
+  "runtimeProfileFamilyRegistryReference": {
+    "registryId": "optimizer-runtime-profile-family-registry.autotiktok.fixture.2026-04-15",
+    "schemaVersion": "optimizer-runtime-profile-family-registry.sample.v1",
+    "familyId": "autotiktok-runtime-profiles",
+    "lane": "current"
+  },
+  "runtimeProfileCatalogReference": {
+    "catalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+    "schemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+    "catalogFamily": "autotiktok-runtime-profiles",
+    "catalogVersion": "2026-04-15"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "optimizer-openclaw-cron-contract.sample.v1",
+  "contractId": "optimizer-openclaw-cron-contract.autotiktok.fixture.2026-04-21",
+  "generatedAt": "2026-04-21T12:00:00Z",
+  "summary": {
+    "jobCount": 2,
+    "defaultSessionTarget": "isolated",
+    "defaultDeliveryMode": "none"
+  },
+  "managementPolicy": {
+    "requiresExplicitApproval": true,
+    "listFirst": true,
+    "exactNameMatch": true,
+    "createMissingWith": "openclaw cron add",
+    "updateExistingWith": "openclaw cron edit"
+  },
+  "jobs": [
+    {
+      "jobId": "daily_optimizer_openclaw_cron",
+      "jobName": "autotiktok:daily-optimizer",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * *",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "deliveryMode": "none",
+      "lightContext": true,
+      "toolsAllow": ["exec", "read", "write"],
+      "entryScriptPath": "skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_daily_optimizer.py",
+      "cronPrompt": "Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_daily_optimizer.py and summarize the result, key decision, and output artifact path.",
+      "management": {
+        "listFirst": true,
+        "matchMode": "exact_name",
+        "createCommand": "openclaw cron add",
+        "updateCommand": "openclaw cron edit"
+      },
+      "cliTemplates": {
+        "add": "openclaw cron add --name autotiktok:daily-optimizer --cron '0 4 * * *' --tz UTC --session isolated --message 'Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_daily_optimizer.py and summarize the result, key decision, and output artifact path.' --tools exec,read,write --light-context --no-deliver",
+        "edit": "openclaw cron edit '<job-id>' --cron '0 4 * * *' --tz UTC --session isolated --message 'Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_daily_optimizer.py and summarize the result, key decision, and output artifact path.' --tools exec,read,write --light-context --no-deliver"
+      }
+    },
+    {
+      "jobId": "weekly_optimizer_openclaw_cron",
+      "jobName": "autotiktok:weekly-optimizer",
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 4 * * 0",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "deliveryMode": "none",
+      "lightContext": true,
+      "toolsAllow": ["exec", "read", "write"],
+      "entryScriptPath": "skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_weekly_optimizer.py",
+      "cronPrompt": "Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_weekly_optimizer.py and summarize the weekly decision and output artifact path.",
+      "management": {
+        "listFirst": true,
+        "matchMode": "exact_name",
+        "createCommand": "openclaw cron add",
+        "updateCommand": "openclaw cron edit"
+      },
+      "cliTemplates": {
+        "add": "openclaw cron add --name autotiktok:weekly-optimizer --cron '15 4 * * 0' --tz UTC --session isolated --message 'Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_weekly_optimizer.py and summarize the weekly decision and output artifact path.' --tools exec,read,write --light-context --no-deliver",
+        "edit": "openclaw cron edit '<job-id>' --cron '15 4 * * 0' --tz UTC --session isolated --message 'Run python3 skills/autotiktok-strategy-optimizer/scripts/run_openclaw_cron_weekly_optimizer.py and summarize the weekly decision and output artifact path.' --tools exec,read,write --light-context --no-deliver"
+      }
+    }
+  ]
+}

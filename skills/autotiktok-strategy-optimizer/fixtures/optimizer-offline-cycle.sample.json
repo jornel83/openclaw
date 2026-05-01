@@ -1,0 +1,837 @@
+{
+  "schemaVersion": "optimizer-offline-cycle.v1",
+  "cycleId": "optimizer-offline-cycle.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "mode": "daily_with_weekly_promotion",
+  "summary": {
+    "profileId": "growth-default",
+    "dailyRecommendation": "observe_challenger",
+    "shadowLeaderProfileId": "search-priority-default",
+    "challengerInputKind": "observations",
+    "weeklyDecision": "promote",
+    "selectedChallengerProfileId": "search-priority-default"
+  },
+  "generatedFrom": {
+    "policyVersion": "optimizer-policy.v1",
+    "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "rankingProfileId": "growth-default",
+    "challengerSchemaVersion": "challenger-observations.sample.v1",
+    "challengerInputKind": "observations",
+    "optimizerInputBundleSchemaVersion": "optimizer-input-bundle.sample.v1",
+    "optimizerInputBundleId": "optimizer-input-bundle.autotiktok.fixture.2026-04-15",
+    "optimizerInputManifestSchemaVersion": "optimizer-input-manifest.sample.v1",
+    "optimizerInputManifestId": "optimizer-input-manifest.autotiktok.fixture.2026-04-15",
+    "optimizerInputSourceRegistrySchemaVersion": null,
+    "optimizerInputSourceRegistryId": null,
+    "optimizerInputArtifactResolverSchemaVersion": null,
+    "optimizerInputArtifactResolverId": null,
+    "optimizerInputSourceProviderCatalogSchemaVersion": null,
+    "optimizerInputSourceProviderCatalogId": null,
+    "optimizerInputSourceProviderRegistrySchemaVersion": null,
+    "optimizerInputSourceProviderRegistryId": null,
+    "optimizerInputSourceArtifactCatalogSchemaVersion": null,
+    "optimizerInputSourceArtifactCatalogId": null,
+    "optimizerInputSourceLane": null,
+    "optimizerInputSourceProviderLane": null,
+    "optimizerInputSourceProviderKind": null,
+    "optimizerInputSourceProviderClass": null,
+    "optimizerInputSourceProviderHandle": null,
+    "optimizerInputSourceProviderLocatorKind": null,
+    "optimizerInputSourceProviderOwner": null,
+    "optimizerInputArtifactLocatorKind": null,
+    "optimizerInputRolloutPolicySchemaVersion": null,
+    "optimizerInputRolloutPolicyId": null,
+    "optimizerInputRolloutClass": null,
+    "optimizerInputLaneSelectionSource": null,
+    "optimizerInputRolloutStrategy": null,
+    "optimizerInputSources": {
+      "backfills": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+        "artifactSchemaVersion": "topic-outcome-backfills.sample.v1",
+        "jobRunSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+        "jobRunId": "job.topic-outcome-backfill.autotiktok.fixture.2026-04-16",
+        "jobKind": "topic_outcome_backfill",
+        "jobGeneratedAt": "2026-04-16T00:05:00Z",
+        "jobGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "rankingSnapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+          "evaluationWindow": "t_plus_1"
+        }
+      },
+      "performance": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "post-performance-signal-run.sample.v1",
+        "artifactSchemaVersion": "post-performance-signals.sample.v1",
+        "jobRunSchemaVersion": "post-performance-signal-run.sample.v1",
+        "jobRunId": "job.post-performance-signal.autotiktok.fixture.2026-04-18",
+        "jobKind": "post_performance_signal",
+        "jobGeneratedAt": "2026-04-18T00:10:00Z",
+        "jobGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "accountId": "acct_autotiktok_lab_us_001",
+          "measuredWindow": "publish_plus_3d"
+        }
+      },
+      "challengerInput": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "challenger-evaluation-run.sample.v1",
+        "artifactSchemaVersion": "challenger-observations.sample.v1",
+        "jobRunSchemaVersion": "challenger-evaluation-run.sample.v1",
+        "jobRunId": "job.challenger-evaluation.autotiktok.fixture.2026-04-16",
+        "jobKind": "challenger_evaluation",
+        "jobGeneratedAt": "2026-04-16T02:05:00Z",
+        "jobGeneratedFrom": {
+          "championProfileId": "growth-default",
+          "evaluationWindow": "t_plus_3",
+          "observationWindow": "2026-04-09..2026-04-15"
+        }
+      }
+    },
+    "rankingOptimizerContractId": "ranking_optimizer_handoff",
+    "rankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+    "rankingOptimizerContractValidationMode": "exact",
+    "weeklyReviewWindowSchemaVersion": "optimizer-weekly-review-window.sample.v1",
+    "weeklyReviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20"
+  },
+  "artifacts": {
+    "dailyReview": {
+      "schemaVersion": "daily-review-report.v1",
+      "reportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "generatedAt": "2026-04-15T06:00:00Z",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "profileId": "growth-default",
+      "policyVersion": "optimizer-policy.v1",
+      "rankingContext": {
+        "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "growth-default",
+        "selectionSource": "context_stage_mode",
+        "stageMode": "growth"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+      },
+      "generatedFrom": {
+        "rankingSchemaVersion": "ranking-output.v1",
+        "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+        "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+        "rankingProfileId": "growth-default",
+        "rankingRequestedProfileId": "auto",
+        "rankingResolvedProfileId": "growth-default",
+        "rankingProfileSelectionSource": "context_stage_mode",
+        "rankingStageMode": "growth",
+        "rankingScoringCodeVersion": "dry-run-ranking.v2",
+        "rankingCandidateSourceKind": "discovery_artifact",
+        "rankingCandidateInputSchemaVersion": "discovery-dry-run.v1",
+        "rankingCandidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "rankingCandidateSourcePolicyVersion": "discovery-policy.v1",
+        "rankingCandidateSourceInputKind": "snapshot_materialization",
+        "rankingCandidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "rankingCandidateSourceMaterializationSource": "separate_snapshot_artifacts",
+        "rankingCandidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "rankingCandidateSourceTopicAbstractionCount": 3,
+        "rankingOptimizerContractId": "ranking_optimizer_handoff",
+        "rankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+        "rankingOptimizerContractValidationMode": "exact",
+        "rankingOptimizerContractValidated": true,
+        "rankingOptimizerSurfaceSource": "legacy_top_level",
+        "rankingOptimizerCompatApplied": false,
+        "rankingOptimizerCompatAliasesApplied": [],
+        "rankingOptimizerDeprecationPhase": "dual_write_preview",
+        "rankingOptimizerCanonicalSurface": "optimizerHandoff",
+        "rankingOptimizerDeprecatedTopLevelFields": [
+          "profileId",
+          "profileSelection",
+          "candidateSource",
+          "scores",
+          "predictionRun",
+          "rankingSummary",
+          "rerankDiagnostics"
+        ],
+        "rankingOptimizerNextHardFailContractVersion": "ranking-optimizer-contract.v2",
+        "backfillsSchemaVersion": "topic-outcome-backfills.sample.v1",
+        "performanceSchemaVersion": "post-performance-signals.sample.v1",
+        "challengerSchemaVersion": "challenger-observations.sample.v1",
+        "challengerInputKind": "observations",
+        "optimizerInputBundleSchemaVersion": "optimizer-input-bundle.sample.v1",
+        "optimizerInputBundleId": "optimizer-input-bundle.autotiktok.fixture.2026-04-15",
+        "optimizerInputBundleGeneratedAt": "2026-04-15T06:00:00Z",
+        "optimizerInputBundleGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+          "rankingProfileId": "growth-default",
+          "candidateSourceKind": "discovery_artifact",
+          "candidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+          "candidateSourceInputKind": "snapshot_materialization",
+          "candidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+          "candidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+          "inputSources": {
+            "backfills": {
+              "sourceKind": "job_run_envelope",
+              "sourceSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+              "artifactSchemaVersion": "topic-outcome-backfills.sample.v1",
+              "jobRunSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+              "jobRunId": "job.topic-outcome-backfill.autotiktok.fixture.2026-04-16",
+              "jobKind": "topic_outcome_backfill",
+              "jobGeneratedAt": "2026-04-16T00:05:00Z",
+              "jobGeneratedFrom": {
+                "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+                "rankingSnapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+                "evaluationWindow": "t_plus_1"
+              }
+            },
+            "performance": {
+              "sourceKind": "job_run_envelope",
+              "sourceSchemaVersion": "post-performance-signal-run.sample.v1",
+              "artifactSchemaVersion": "post-performance-signals.sample.v1",
+              "jobRunSchemaVersion": "post-performance-signal-run.sample.v1",
+              "jobRunId": "job.post-performance-signal.autotiktok.fixture.2026-04-18",
+              "jobKind": "post_performance_signal",
+              "jobGeneratedAt": "2026-04-18T00:10:00Z",
+              "jobGeneratedFrom": {
+                "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+                "accountId": "acct_autotiktok_lab_us_001",
+                "measuredWindow": "publish_plus_3d"
+              }
+            },
+            "challengerInput": {
+              "sourceKind": "job_run_envelope",
+              "sourceSchemaVersion": "challenger-evaluation-run.sample.v1",
+              "artifactSchemaVersion": "challenger-observations.sample.v1",
+              "jobRunSchemaVersion": "challenger-evaluation-run.sample.v1",
+              "jobRunId": "job.challenger-evaluation.autotiktok.fixture.2026-04-16",
+              "jobKind": "challenger_evaluation",
+              "jobGeneratedAt": "2026-04-16T02:05:00Z",
+              "jobGeneratedFrom": {
+                "championProfileId": "growth-default",
+                "evaluationWindow": "t_plus_3",
+                "observationWindow": "2026-04-09..2026-04-15"
+              }
+            }
+          },
+          "optimizerInputManifestSchemaVersion": "optimizer-input-manifest.sample.v1",
+          "optimizerInputManifestId": "optimizer-input-manifest.autotiktok.fixture.2026-04-15",
+          "optimizerInputManifestGeneratedAt": "2026-04-15T06:00:00Z",
+          "optimizerInputManifestGeneratedFrom": {
+            "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+            "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+            "rankingProfileId": "growth-default"
+          },
+          "optimizerInputSourceRegistrySchemaVersion": null,
+          "optimizerInputSourceRegistryId": null,
+          "optimizerInputArtifactResolverSchemaVersion": null,
+          "optimizerInputArtifactResolverId": null,
+          "optimizerInputSourceProviderCatalogSchemaVersion": null,
+          "optimizerInputSourceProviderCatalogId": null,
+          "optimizerInputSourceProviderRegistrySchemaVersion": null,
+          "optimizerInputSourceProviderRegistryId": null,
+          "optimizerInputSourceArtifactCatalogSchemaVersion": null,
+          "optimizerInputSourceArtifactCatalogId": null
+        },
+        "optimizerInputManifestSchemaVersion": "optimizer-input-manifest.sample.v1",
+        "optimizerInputManifestId": "optimizer-input-manifest.autotiktok.fixture.2026-04-15",
+        "optimizerInputManifestGeneratedAt": "2026-04-15T06:00:00Z",
+        "optimizerInputManifestGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+          "rankingProfileId": "growth-default"
+        },
+        "optimizerInputSourceRegistrySchemaVersion": null,
+        "optimizerInputSourceRegistryId": null,
+        "optimizerInputArtifactResolverSchemaVersion": null,
+        "optimizerInputArtifactResolverId": null,
+        "optimizerInputSourceProviderCatalogSchemaVersion": null,
+        "optimizerInputSourceProviderCatalogId": null,
+        "optimizerInputSourceProviderRegistrySchemaVersion": null,
+        "optimizerInputSourceProviderRegistryId": null,
+        "optimizerInputSourceArtifactCatalogSchemaVersion": null,
+        "optimizerInputSourceArtifactCatalogId": null,
+        "optimizerInputSourceProviderLane": null,
+        "optimizerInputSourceProviderKind": null,
+        "optimizerInputSourceProviderClass": null,
+        "optimizerInputSourceProviderHandle": null,
+        "optimizerInputSourceProviderLocatorKind": null,
+        "optimizerInputSourceProviderOwner": null,
+        "optimizerInputArtifactLocatorKind": null,
+        "optimizerInputSources": {
+          "backfills": {
+            "sourceKind": "job_run_envelope",
+            "sourceSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+            "artifactSchemaVersion": "topic-outcome-backfills.sample.v1",
+            "jobRunSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+            "jobRunId": "job.topic-outcome-backfill.autotiktok.fixture.2026-04-16",
+            "jobKind": "topic_outcome_backfill",
+            "jobGeneratedAt": "2026-04-16T00:05:00Z",
+            "jobGeneratedFrom": {
+              "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+              "rankingSnapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+              "evaluationWindow": "t_plus_1"
+            }
+          },
+          "performance": {
+            "sourceKind": "job_run_envelope",
+            "sourceSchemaVersion": "post-performance-signal-run.sample.v1",
+            "artifactSchemaVersion": "post-performance-signals.sample.v1",
+            "jobRunSchemaVersion": "post-performance-signal-run.sample.v1",
+            "jobRunId": "job.post-performance-signal.autotiktok.fixture.2026-04-18",
+            "jobKind": "post_performance_signal",
+            "jobGeneratedAt": "2026-04-18T00:10:00Z",
+            "jobGeneratedFrom": {
+              "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+              "accountId": "acct_autotiktok_lab_us_001",
+              "measuredWindow": "publish_plus_3d"
+            }
+          },
+          "challengerInput": {
+            "sourceKind": "job_run_envelope",
+            "sourceSchemaVersion": "challenger-evaluation-run.sample.v1",
+            "artifactSchemaVersion": "challenger-observations.sample.v1",
+            "jobRunSchemaVersion": "challenger-evaluation-run.sample.v1",
+            "jobRunId": "job.challenger-evaluation.autotiktok.fixture.2026-04-16",
+            "jobKind": "challenger_evaluation",
+            "jobGeneratedAt": "2026-04-16T02:05:00Z",
+            "jobGeneratedFrom": {
+              "championProfileId": "growth-default",
+              "evaluationWindow": "t_plus_3",
+              "observationWindow": "2026-04-09..2026-04-15"
+            }
+          }
+        }
+      },
+      "evaluationWindow": "t_plus_1",
+      "topicRewardBreakdown": {
+        "schemaVersion": "topic-reward-breakdown.v1",
+        "rewardId": "topic-reward.autotiktok.daily-review.fixture",
+        "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+        "evaluationWindow": "t_plus_1",
+        "hitAt3": 0.666667,
+        "hitAt10": 0.666667,
+        "ndcgAt10": 1.0,
+        "dupRate": 0.333333,
+        "typeCoverage": 1.0,
+        "novelty": 0.333333,
+        "executableRate": 0.666667,
+        "topicReward": 0.65
+      },
+      "combinedRewardBreakdown": {
+        "schemaVersion": "combined-reward-breakdown.v1",
+        "rewardId": "combined-reward.autotiktok.daily-review.fixture",
+        "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+        "evaluationWindow": "t_plus_1",
+        "topicReward": 0.65,
+        "performanceReward": 0.4905,
+        "performanceWeight": 0.1,
+        "postCoverageRate": 0.666667,
+        "combinedReward": 0.63405
+      },
+      "rankingReview": {
+        "rejectedTopicIds": ["tp_trend_wired_earbuds_001"],
+        "rejectedCount": 1,
+        "reasonCounts": {
+          "duplicate_recommended_use": 1,
+          "low_feasibility": 1,
+          "below_reject_threshold": 1
+        },
+        "topSuppressed": [
+          {
+            "topicId": "tp_trend_wired_earbuds_001",
+            "topicTitle": "Why wired earbuds are suddenly back in 2026",
+            "suppressionDelta": 1.16,
+            "reasons": ["duplicate_recommended_use", "low_feasibility", "below_reject_threshold"],
+            "isRejected": true
+          },
+          {
+            "topicId": "tp_evergreen_ad_mistakes_001",
+            "topicTitle": "3 ad creative mistakes that kill watch time",
+            "suppressionDelta": 0.0,
+            "reasons": [],
+            "isRejected": false
+          },
+          {
+            "topicId": "tp_search_ai_ad_hooks_001",
+            "topicTitle": "3 TikTok ad hooks that stop the scroll",
+            "suppressionDelta": 0.0,
+            "reasons": [],
+            "isRejected": false
+          }
+        ],
+        "topRisk": "tp_trend_wired_earbuds_001 fell below the ranking reject threshold and should stay out of champion consideration.",
+        "attentionItems": [
+          "review rejected topics before promotion analysis: tp_trend_wired_earbuds_001",
+          "watch repeated recommended-use pressure in the top ranked set",
+          "low-feasibility topics are being actively pushed down by rerank"
+        ]
+      },
+      "challengerReview": {
+        "inputKind": "observations",
+        "championProfileId": "growth-default",
+        "observationWindow": "2026-04-09..2026-04-15",
+        "evaluationWindow": "t_plus_3",
+        "candidateCount": 2,
+        "hardGatePassCount": 1,
+        "comparedProfileIds": ["search-priority-default", "scale-default"],
+        "leaderProfileId": "search-priority-default"
+      },
+      "realizedOutcomes": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+          "realizedStrength": 0.77,
+          "priorityLevel": "P1"
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+          "realizedStrength": 0.69,
+          "priorityLevel": "P2"
+        },
+        {
+          "topicId": "tp_trend_wired_earbuds_001",
+          "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+          "realizedStrength": 0.3865,
+          "priorityLevel": "P2"
+        }
+      ],
+      "postPerformanceRows": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "postId": "post.autotiktok.20260415.01",
+          "performanceReward": 0.5165,
+          "viewLift": 0.63
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "postId": "post.autotiktok.20260415.02",
+          "performanceReward": 0.4645,
+          "viewLift": 0.57
+        }
+      ],
+      "diagnostics": {
+        "topRisk": "tp_trend_wired_earbuds_001 fell below the ranking reject threshold and should stay out of champion consideration.",
+        "topStrength": "search-led and evergreen candidates convert into stronger demand plus execution scores.",
+        "needsAttention": [
+          "review rejected topics before promotion analysis: tp_trend_wired_earbuds_001",
+          "watch repeated recommended-use pressure in the top ranked set",
+          "low-feasibility topics are being actively pushed down by rerank",
+          "keep post coverage high enough for performance-weighted comparisons"
+        ]
+      },
+      "shadowLeaderboard": [
+        {
+          "profileId": "search-priority-default",
+          "topicReward": 0.680667,
+          "performanceReward": 0.5045,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.66305,
+          "dupRate": 0.333333,
+          "typeCoverage": 1.0,
+          "executableRate": 0.666667,
+          "holdoutDelta": 0.012,
+          "combinedRewardDelta": 0.029,
+          "postCoverageRate": 0.666667,
+          "daysObserved": 7,
+          "sourceInputKind": "observations",
+          "hardGatePass": true,
+          "notes": "Observed stronger search capture on replay while feasibility stayed stable."
+        },
+        {
+          "profileId": "scale-default",
+          "topicReward": 0.659167,
+          "performanceReward": 0.4965,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.6429,
+          "dupRate": 0.383333,
+          "typeCoverage": 0.88,
+          "executableRate": 0.586667,
+          "holdoutDelta": -0.01,
+          "combinedRewardDelta": 0.00885,
+          "postCoverageRate": 0.666667,
+          "daysObserved": 7,
+          "sourceInputKind": "observations",
+          "hardGatePass": false,
+          "notes": "Observed stronger hit metrics, but diversity and execution safety regressed."
+        }
+      ],
+      "recommendation": {
+        "kind": "observe_challenger",
+        "reason": "search-priority-default is the current shadow leader but remains offline-only until weekly promotion."
+      }
+    },
+    "weeklyPromotion": {
+      "schemaVersion": "weekly-promotion-decision.v1",
+      "decisionId": "weekly-promotion.autotiktok.fixture.2026-04-20",
+      "generatedAt": "2026-04-20T08:00:00Z",
+      "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "sourceReviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20",
+      "championProfileId": "growth-default",
+      "championProfileSelection": {
+        "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "growth-default",
+        "selectionSource": "context_stage_mode",
+        "stageMode": "growth"
+      },
+      "championCandidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+      },
+      "generatedFrom": {
+        "policyVersion": "optimizer-policy.v1",
+        "weeklyReviewWindowSchemaVersion": "optimizer-weekly-review-window.sample.v1",
+        "weeklyReviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20",
+        "weeklyReviewWindowScenarioId": "promotion_default",
+        "weeklyReviewWindowEntryCount": 3,
+        "dailyReviewPolicyVersion": "optimizer-policy.v1",
+        "dailyReviewRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+        "dailyReviewRankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+        "dailyReviewRequestedProfileId": "auto",
+        "dailyReviewResolvedProfileId": "growth-default",
+        "dailyReviewProfileSelectionSource": "context_stage_mode",
+        "dailyReviewStageMode": "growth",
+        "dailyReviewCandidateSourceKind": "discovery_artifact",
+        "dailyReviewCandidateInputSchemaVersion": "discovery-dry-run.v1",
+        "dailyReviewCandidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "dailyReviewCandidateSourcePolicyVersion": "discovery-policy.v1",
+        "dailyReviewChallengerInputKind": "observations",
+        "dailyReviewRankingOptimizerContractId": "ranking_optimizer_handoff",
+        "dailyReviewRankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+        "dailyReviewRankingOptimizerContractValidationMode": "exact",
+        "dailyReviewRankingOptimizerContractValidated": true,
+        "dailyReviewRankingOptimizerSurfaceSource": "legacy_top_level",
+        "dailyReviewRankingOptimizerDeprecationPhase": "dual_write_preview",
+        "dailyReviewRankingOptimizerCanonicalSurface": "optimizerHandoff",
+        "dailyReviewRankingOptimizerDeprecatedTopLevelFields": [
+          "profileId",
+          "profileSelection",
+          "candidateSource",
+          "scores",
+          "predictionRun",
+          "rankingSummary",
+          "rerankDiagnostics"
+        ],
+        "dailyReviewRankingOptimizerNextHardFailContractVersion": "ranking-optimizer-contract.v2",
+        "dailyReviewRankingOptimizerCompatApplied": false,
+        "dailyReviewRankingOptimizerCompatAliasesApplied": [],
+        "weeklyStageMode": "growth",
+        "weeklyStagePolicyId": "growth_weekly_gate",
+        "weeklyStagePolicySelectionSource": "champion_profile_selection"
+      },
+      "gateSummary": {
+        "requiredDaysObserved": 7,
+        "minimumWindowEntries": 3,
+        "minimumWinningDays": 2,
+        "minimumHardGatePassDays": 3,
+        "minimumRewardDelta": 0.02,
+        "minimumAverageRewardDelta": 0.02,
+        "minimumAverageHoldoutDelta": 0.002,
+        "holdoutMustBeNonNegative": true,
+        "maximumPostCoverageRateDrop": 0.01,
+        "rollbackMinBreachDays": 2,
+        "rollbackHoldoutFloor": -0.03,
+        "rollbackCombinedRewardFloor": 0.6,
+        "rollbackCriticalHoldoutFloor": -0.04,
+        "rollbackCriticalCombinedRewardFloor": 0.58,
+        "weeklyStageMode": "growth",
+        "weeklyStagePolicyId": "growth_weekly_gate",
+        "weeklyStagePolicySelectionSource": "champion_profile_selection",
+        "rewardHorizonIds": ["t+1", "t+3", "t+7"],
+        "requiredRewardHorizonIds": ["t+1", "t+3"],
+        "optionalRewardHorizonIds": ["t+7"]
+      },
+      "championSafetyReview": {
+        "rollbackEligible": false,
+        "rollbackTriggered": false,
+        "rollbackSeverity": "none",
+        "rollbackReasonCodes": [],
+        "failedGateIds": [],
+        "gateEvaluations": [
+          {
+            "gateId": "window_level_rollback_signal",
+            "category": "rollback",
+            "passed": true,
+            "actualValue": false,
+            "thresholdValue": false,
+            "comparator": "=="
+          },
+          {
+            "gateId": "rollback_eligibility",
+            "category": "rollback",
+            "passed": true,
+            "actualValue": false,
+            "thresholdValue": false,
+            "comparator": "=="
+          },
+          {
+            "gateId": "holdout_floor_breach_days",
+            "category": "rollback",
+            "passed": true,
+            "actualValue": 0,
+            "thresholdValue": 2,
+            "comparator": "<"
+          },
+          {
+            "gateId": "combined_reward_floor_breach_days",
+            "category": "rollback",
+            "passed": true,
+            "actualValue": 0,
+            "thresholdValue": 2,
+            "comparator": "<"
+          }
+        ]
+      },
+      "promotionCandidateReviews": [
+        {
+          "profileId": "search-priority-default",
+          "avgCombinedReward": 0.653411,
+          "avgCombinedRewardDelta": 0.027467,
+          "avgHoldoutDelta": 0.006398,
+          "daysObservedMax": 7,
+          "hardGatePassDayCount": 3,
+          "eligibleForPromotion": true,
+          "failedGateIds": [],
+          "gateEvaluations": [
+            {
+              "gateId": "minimum_window_entries",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": 3,
+              "thresholdValue": 3,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_days_observed",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": 7,
+              "thresholdValue": 7,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_winning_days",
+              "category": "performance",
+              "passed": true,
+              "actualValue": 3,
+              "thresholdValue": 2,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_hard_gate_pass_days",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 3,
+              "thresholdValue": 3,
+              "comparator": ">="
+            },
+            {
+              "gateId": "required_reward_horizon_coverage",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": ["t+1", "t+3", "t+7"],
+              "thresholdValue": ["t+1", "t+3"],
+              "comparator": "contains_all"
+            },
+            {
+              "gateId": "minimum_holdout_floor",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.0029,
+              "thresholdValue": 0.0,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_average_holdout_delta",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.006398,
+              "thresholdValue": 0.002,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_average_reward_delta",
+              "category": "performance",
+              "passed": true,
+              "actualValue": 0.027467,
+              "thresholdValue": 0.02,
+              "comparator": ">="
+            },
+            {
+              "gateId": "dup_rate_budget",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.333444,
+              "thresholdValue": 0.356778,
+              "comparator": "<="
+            },
+            {
+              "gateId": "executable_rate_budget",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.662222,
+              "thresholdValue": 0.638556,
+              "comparator": ">="
+            },
+            {
+              "gateId": "type_coverage_budget",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.986667,
+              "thresholdValue": 0.93,
+              "comparator": ">="
+            },
+            {
+              "gateId": "post_coverage_budget",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.634979,
+              "thresholdValue": 0.618312,
+              "comparator": ">="
+            }
+          ]
+        },
+        {
+          "profileId": "scale-default",
+          "avgCombinedReward": 0.633028,
+          "avgCombinedRewardDelta": 0.007083,
+          "avgHoldoutDelta": -0.014602,
+          "daysObservedMax": 7,
+          "hardGatePassDayCount": 0,
+          "eligibleForPromotion": false,
+          "failedGateIds": [
+            "minimum_hard_gate_pass_days",
+            "minimum_holdout_floor",
+            "minimum_average_holdout_delta",
+            "minimum_average_reward_delta",
+            "dup_rate_budget",
+            "executable_rate_budget",
+            "type_coverage_budget"
+          ],
+          "gateEvaluations": [
+            {
+              "gateId": "minimum_window_entries",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": 3,
+              "thresholdValue": 3,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_days_observed",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": 7,
+              "thresholdValue": 7,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_winning_days",
+              "category": "performance",
+              "passed": true,
+              "actualValue": 3,
+              "thresholdValue": 2,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_hard_gate_pass_days",
+              "category": "safety",
+              "passed": false,
+              "actualValue": 0,
+              "thresholdValue": 3,
+              "comparator": ">="
+            },
+            {
+              "gateId": "required_reward_horizon_coverage",
+              "category": "coverage",
+              "passed": true,
+              "actualValue": ["t+1", "t+3", "t+7"],
+              "thresholdValue": ["t+1", "t+3"],
+              "comparator": "contains_all"
+            },
+            {
+              "gateId": "minimum_holdout_floor",
+              "category": "safety",
+              "passed": false,
+              "actualValue": -0.0171,
+              "thresholdValue": 0.0,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_average_holdout_delta",
+              "category": "safety",
+              "passed": false,
+              "actualValue": -0.014602,
+              "thresholdValue": 0.002,
+              "comparator": ">="
+            },
+            {
+              "gateId": "minimum_average_reward_delta",
+              "category": "performance",
+              "passed": false,
+              "actualValue": 0.007083,
+              "thresholdValue": 0.02,
+              "comparator": ">="
+            },
+            {
+              "gateId": "dup_rate_budget",
+              "category": "safety",
+              "passed": false,
+              "actualValue": 0.386778,
+              "thresholdValue": 0.356778,
+              "comparator": "<="
+            },
+            {
+              "gateId": "executable_rate_budget",
+              "category": "safety",
+              "passed": false,
+              "actualValue": 0.583556,
+              "thresholdValue": 0.638556,
+              "comparator": ">="
+            },
+            {
+              "gateId": "type_coverage_budget",
+              "category": "safety",
+              "passed": false,
+              "actualValue": 0.875,
+              "thresholdValue": 0.93,
+              "comparator": ">="
+            },
+            {
+              "gateId": "post_coverage_budget",
+              "category": "safety",
+              "passed": true,
+              "actualValue": 0.624979,
+              "thresholdValue": 0.618312,
+              "comparator": ">="
+            }
+          ]
+        }
+      ],
+      "selectedChallengerProfileId": "search-priority-default",
+      "decision": "promote",
+      "combinedRewardDelta": 0.027467,
+      "reason": "search-priority-default wins across the weekly review window, clears the multi-day promotion gates, and does not regress holdout safety."
+    }
+  }
+}

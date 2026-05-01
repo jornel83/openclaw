@@ -67,6 +67,23 @@ metadata: |
 
         self.assertTrue(valid, message)
 
+    def test_allows_supported_invocation_flags(self):
+        skill_dir = self.temp_dir / "invocation-skill"
+        skill_dir.mkdir(parents=True, exist_ok=True)
+        content = """---
+name: invocation-skill
+description: ok
+user-invocable: false
+disable-model-invocation: true
+---
+# Skill
+"""
+        (skill_dir / "SKILL.md").write_text(content, encoding="utf-8")
+
+        valid, message = quick_validate.validate_skill(skill_dir)
+
+        self.assertTrue(valid, message)
+
 
 if __name__ == "__main__":
     main()

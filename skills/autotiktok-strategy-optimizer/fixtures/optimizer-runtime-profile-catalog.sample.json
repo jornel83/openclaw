@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+  "catalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+  "catalogFamily": "autotiktok-runtime-profiles",
+  "catalogVersion": "2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "profileCount": 4
+  },
+  "profiles": [
+    {
+      "profileId": "optimizer_input_manifest_profile",
+      "bindingId": "optimizer_input_manifest",
+      "runtimeSourceKind": "input_manifest",
+      "includeWeeklyPromotion": false,
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "manifest_from_job_runs",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "manifest",
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact"
+    },
+    {
+      "profileId": "optimizer_input_bundle_profile",
+      "bindingId": "optimizer_input_bundle",
+      "runtimeSourceKind": "input_bundle",
+      "includeWeeklyPromotion": true,
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "bundle_from_manifest",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "bundle",
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact"
+    },
+    {
+      "profileId": "optimizer_offline_cycle_daily_profile",
+      "bindingId": "optimizer_offline_cycle_daily",
+      "runtimeSourceKind": "offline_cycle",
+      "includeWeeklyPromotion": false,
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "daily_cycle_from_manifest",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "daily",
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact"
+    },
+    {
+      "profileId": "optimizer_offline_cycle_weekly_profile",
+      "bindingId": "optimizer_offline_cycle_weekly",
+      "runtimeSourceKind": "offline_cycle",
+      "includeWeeklyPromotion": true,
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "weekly_cycle_from_bundle",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "weekly",
+      "rankingContractVersion": "ranking-optimizer-contract.v1",
+      "rankingContractValidationMode": "exact"
+    }
+  ]
+}

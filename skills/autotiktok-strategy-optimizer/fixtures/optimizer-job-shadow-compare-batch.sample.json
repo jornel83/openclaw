@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "optimizer-job-shadow-compare-batch.sample.v1",
+  "batchId": "optimizer-job-shadow-compare-batch.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T06:15:00Z",
+  "generatedFrom": {
+    "sourceMode": "compare_manifest",
+    "sourceDescriptor": {
+      "batchManifestSchemaVersion": "optimizer-job-shadow-compare-batch-manifest.sample.v1",
+      "batchManifestId": "optimizer-job-shadow-compare-batch-manifest.autotiktok.fixture.2026-04-18",
+      "comparisonDimension": "candidateSchedulerRolloutIntent",
+      "batchWindowLabel": "2026-04-18.daily-weekly",
+      "compareArtifactCount": 2
+    },
+    "compareArtifactCount": 2
+  },
+  "summary": {
+    "compareArtifactCount": 2,
+    "comparisonCount": 4,
+    "matchedComparisonCount": 4,
+    "mismatchedComparisonCount": 0,
+    "comparisonDimension": "candidateSchedulerRolloutIntent",
+    "batchWindowLabel": "2026-04-18.daily-weekly",
+    "comparedCompareIds": [
+      "optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18",
+      "optimizer-job-shadow-compare.weekly.autotiktok.fixture.2026-04-18"
+    ],
+    "comparedPlanIds": [
+      "optimizer-job-shadow-compare-plan.daily.autotiktok.fixture.2026-04-18",
+      "optimizer-job-shadow-compare-plan.weekly.autotiktok.fixture.2026-04-18"
+    ],
+    "comparedScheduleIds": ["daily_optimizer_job", "weekly_optimizer_job"],
+    "comparedCandidateSchedulerRolloutIntents": [
+      "preview_validation",
+      "profile_compare_validation",
+      "raw_shadow_validation",
+      "real_provider_shadow_validation"
+    ],
+    "comparedCandidateRolloutClasses": [
+      "production",
+      "raw_shadow_validation",
+      "real_shadow_validation"
+    ],
+    "comparedCandidateRuntimeProfileRolloutClasses": ["preview_canary", "production"],
+    "comparedCandidateWindowSetPurposes": ["preview_validation", "profile_compare_validation"],
+    "comparedCandidateComparisonDimensions": ["historyBatchLabel", "rankingProfileId"],
+    "comparedCandidateSourceLanes": [
+      "real_provider_shadow",
+      "sample_canonical",
+      "sample_raw_shadow"
+    ],
+    "groupCount": 4
+  },
+  "groupSummaries": [
+    {
+      "groupValue": "preview_validation",
+      "comparisonCount": 1,
+      "matchedComparisonCount": 1,
+      "mismatchedComparisonCount": 0,
+      "comparedCompareIds": ["optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18"],
+      "candidateRolloutClasses": ["production"],
+      "candidateSchedulerRolloutIntents": ["preview_validation"],
+      "candidateSourceLanes": ["sample_canonical"],
+      "candidateRuntimeProfileRolloutClasses": ["preview_canary"],
+      "candidateWindowSetPurposes": ["preview_validation"],
+      "candidateComparisonDimensions": ["historyBatchLabel"]
+    },
+    {
+      "groupValue": "profile_compare_validation",
+      "comparisonCount": 1,
+      "matchedComparisonCount": 1,
+      "mismatchedComparisonCount": 0,
+      "comparedCompareIds": ["optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18"],
+      "candidateRolloutClasses": ["production"],
+      "candidateSchedulerRolloutIntents": ["profile_compare_validation"],
+      "candidateSourceLanes": ["sample_canonical"],
+      "candidateRuntimeProfileRolloutClasses": ["preview_canary"],
+      "candidateWindowSetPurposes": ["profile_compare_validation"],
+      "candidateComparisonDimensions": ["rankingProfileId"]
+    },
+    {
+      "groupValue": "raw_shadow_validation",
+      "comparisonCount": 1,
+      "matchedComparisonCount": 1,
+      "mismatchedComparisonCount": 0,
+      "comparedCompareIds": ["optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18"],
+      "candidateRolloutClasses": ["raw_shadow_validation"],
+      "candidateSchedulerRolloutIntents": ["raw_shadow_validation"],
+      "candidateSourceLanes": ["sample_raw_shadow"],
+      "candidateRuntimeProfileRolloutClasses": ["production"],
+      "candidateWindowSetPurposes": [],
+      "candidateComparisonDimensions": []
+    },
+    {
+      "groupValue": "real_provider_shadow_validation",
+      "comparisonCount": 1,
+      "matchedComparisonCount": 1,
+      "mismatchedComparisonCount": 0,
+      "comparedCompareIds": ["optimizer-job-shadow-compare.weekly.autotiktok.fixture.2026-04-18"],
+      "candidateRolloutClasses": ["real_shadow_validation"],
+      "candidateSchedulerRolloutIntents": ["real_provider_shadow_validation"],
+      "candidateSourceLanes": ["real_provider_shadow"],
+      "candidateRuntimeProfileRolloutClasses": ["production"],
+      "candidateWindowSetPurposes": [],
+      "candidateComparisonDimensions": []
+    }
+  ],
+  "items": [
+    {
+      "compareId": "optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18",
+      "compareSchemaVersion": "optimizer-job-shadow-compare.sample.v1",
+      "comparePlanId": "optimizer-job-shadow-compare-plan.daily.autotiktok.fixture.2026-04-18",
+      "comparisonId": "daily_raw_shadow_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "cadenceKind": "daily",
+      "jobKind": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "raw_shadow_validation",
+      "candidateRolloutClass": "raw_shadow_validation",
+      "candidateRuntimeProfileRolloutClass": "production",
+      "candidateWindowSetPurpose": null,
+      "candidateComparisonDimension": null,
+      "baselineSourceLane": "sample_canonical",
+      "candidateSourceLane": "sample_raw_shadow",
+      "semanticMatch": true,
+      "semanticDiffKeys": []
+    },
+    {
+      "compareId": "optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18",
+      "compareSchemaVersion": "optimizer-job-shadow-compare.sample.v1",
+      "comparePlanId": "optimizer-job-shadow-compare-plan.daily.autotiktok.fixture.2026-04-18",
+      "comparisonId": "daily_preview_validation_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "cadenceKind": "daily",
+      "jobKind": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "preview_validation",
+      "candidateRolloutClass": "production",
+      "candidateRuntimeProfileRolloutClass": "preview_canary",
+      "candidateWindowSetPurpose": "preview_validation",
+      "candidateComparisonDimension": "historyBatchLabel",
+      "baselineSourceLane": "sample_canonical",
+      "candidateSourceLane": "sample_canonical",
+      "semanticMatch": true,
+      "semanticDiffKeys": []
+    },
+    {
+      "compareId": "optimizer-job-shadow-compare.daily.autotiktok.fixture.2026-04-18",
+      "compareSchemaVersion": "optimizer-job-shadow-compare.sample.v1",
+      "comparePlanId": "optimizer-job-shadow-compare-plan.daily.autotiktok.fixture.2026-04-18",
+      "comparisonId": "daily_profile_compare_validation_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "cadenceKind": "daily",
+      "jobKind": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "profile_compare_validation",
+      "candidateRolloutClass": "production",
+      "candidateRuntimeProfileRolloutClass": "preview_canary",
+      "candidateWindowSetPurpose": "profile_compare_validation",
+      "candidateComparisonDimension": "rankingProfileId",
+      "baselineSourceLane": "sample_canonical",
+      "candidateSourceLane": "sample_canonical",
+      "semanticMatch": true,
+      "semanticDiffKeys": []
+    },
+    {
+      "compareId": "optimizer-job-shadow-compare.weekly.autotiktok.fixture.2026-04-18",
+      "compareSchemaVersion": "optimizer-job-shadow-compare.sample.v1",
+      "comparePlanId": "optimizer-job-shadow-compare-plan.weekly.autotiktok.fixture.2026-04-18",
+      "comparisonId": "weekly_real_shadow_vs_production",
+      "scheduleId": "weekly_optimizer_job",
+      "cadenceKind": "weekly",
+      "jobKind": "weekly_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "real_provider_shadow_validation",
+      "candidateRolloutClass": "real_shadow_validation",
+      "candidateRuntimeProfileRolloutClass": "production",
+      "candidateWindowSetPurpose": null,
+      "candidateComparisonDimension": null,
+      "baselineSourceLane": "sample_canonical",
+      "candidateSourceLane": "real_provider_shadow",
+      "semanticMatch": true,
+      "semanticDiffKeys": []
+    }
+  ]
+}

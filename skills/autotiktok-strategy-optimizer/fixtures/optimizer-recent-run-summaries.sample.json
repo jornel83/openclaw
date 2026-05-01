@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "optimizer-recent-run-summaries.sample.v1",
+  "recentRunSummariesId": "optimizer-recent-run-summaries.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:37:00Z",
+  "generatedFrom": {
+    "sourceMode": "orchestration_cycle_artifacts",
+    "optimizerJobOrchestrationCycleIds": [
+      "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19"
+    ],
+    "optimizerRunSummaryIds": ["optimizer-run-summary.autotiktok.fixture.2026-04-19"],
+    "optimizerRunSummarySchemaVersions": ["optimizer-run-summary.sample.v1"],
+    "cycleCount": 1,
+    "runSummaryCount": 1
+  },
+  "summary": {
+    "runSummaryCount": 1,
+    "runStatusCounts": {
+      "success": 1
+    },
+    "scheduleCount": 2,
+    "jobRunCount": 4,
+    "productionJobRunCount": 2,
+    "shadowJobRunCount": 2,
+    "compareArtifactCount": 1,
+    "compareBatchCount": 1,
+    "errorCount": 0,
+    "schedulerRolloutIntentCounts": {
+      "production": 2,
+      "raw_shadow_validation": 1,
+      "real_provider_shadow_validation": 1
+    },
+    "weeklyDecisionCounts": {
+      "promote": 1
+    },
+    "rollbackSeverityCounts": {}
+  },
+  "entries": [
+    {
+      "runSummaryId": "optimizer-run-summary.autotiktok.fixture.2026-04-19",
+      "generatedAt": "2026-04-19T03:35:00Z",
+      "orchestrationCycleId": "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19",
+      "runStatus": "success",
+      "scheduleCount": 2,
+      "jobRunCount": 4,
+      "productionJobRunCount": 2,
+      "shadowJobRunCount": 2,
+      "compareArtifactCount": 1,
+      "compareBatchCount": 1,
+      "errorCount": 0,
+      "retentionPolicyId": "optimizer-job-artifact-retention-policy.autotiktok.fixture.2026-04-19",
+      "scheduleIds": ["daily_optimizer_job", "weekly_optimizer_job"],
+      "schedulerRolloutIntentCounts": {
+        "production": 2,
+        "raw_shadow_validation": 1,
+        "real_provider_shadow_validation": 1
+      },
+      "weeklyDecisionCounts": {
+        "promote": 1
+      },
+      "rollbackSeverityCounts": {}
+    }
+  ]
+}

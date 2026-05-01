@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "optimizer-policy.v1",
+  "topicRewardWeights": {
+    "Hit@3": 0.3,
+    "NDCG@10": 0.2,
+    "Hit@10": 0.15,
+    "Novelty": 0.1,
+    "TypeCoverage": 0.1,
+    "ExecutableRate": 0.1,
+    "DupRatePenalty": 0.15
+  },
+  "performanceRewardWeights": {
+    "ViewLift": 0.5,
+    "RetentionProxy": 0.2,
+    "ShareSaveProxy": 0.15,
+    "FollowConversionProxy": 0.15
+  },
+  "performanceWeighting": {
+    "maxWeight": 0.15,
+    "coverageMultiplier": 0.15
+  },
+  "realizedStrength": {
+    "SearchLift": 0.45,
+    "FutureVideoDensity": 0.35,
+    "ContentGapPersistence": 0.2,
+    "hitThreshold": 0.62
+  },
+  "topicMetrics": {
+    "topK": 3,
+    "executableFeasibilityThreshold": 3.5
+  },
+  "rankingReview": {
+    "topSuppressedLimit": 3
+  },
+  "dailyGates": {
+    "maxExecutableRateDrop": 0.05,
+    "maxDupRateIncrease": 0.05,
+    "maxTypeCoverageDrop": 0.1,
+    "holdoutFloor": -0.02
+  },
+  "weeklyPromotion": {
+    "minDaysObserved": 7,
+    "minWindowEntries": 3,
+    "minWinningDays": 2,
+    "minHardGatePassDays": 3,
+    "minRewardDelta": 0.02,
+    "minAvgRewardDelta": 0.02,
+    "holdoutFloor": 0.0,
+    "minAvgHoldoutDelta": 0.002,
+    "maxDupRateIncrease": 0.02,
+    "maxExecutableRateDrop": 0.02,
+    "maxTypeCoverageDrop": 0.05,
+    "maxPostCoverageRateDrop": 0.01,
+    "rollbackMinBreachDays": 2,
+    "rollbackHoldoutFloor": -0.03,
+    "rollbackCombinedRewardFloor": 0.6,
+    "rollbackCriticalHoldoutFloor": -0.04,
+    "rollbackCriticalCombinedRewardFloor": 0.58,
+    "stagePolicies": {
+      "growth": {
+        "policyId": "growth_weekly_gate",
+        "stageMode": "growth",
+        "overrides": {
+          "minAvgRewardDelta": 0.02,
+          "minAvgHoldoutDelta": 0.002,
+          "maxPostCoverageRateDrop": 0.01
+        }
+      },
+      "scale": {
+        "policyId": "scale_weekly_gate",
+        "stageMode": "scale",
+        "overrides": {
+          "minWinningDays": 3,
+          "minHardGatePassDays": 3,
+          "minAvgRewardDelta": 0.03,
+          "minAvgHoldoutDelta": 0.007,
+          "maxDupRateIncrease": 0.015,
+          "maxPostCoverageRateDrop": 0.008
+        }
+      },
+      "search_priority": {
+        "policyId": "search_priority_weekly_gate",
+        "stageMode": "search_priority",
+        "overrides": {
+          "minWinningDays": 3,
+          "minHardGatePassDays": 3,
+          "minAvgRewardDelta": 0.032,
+          "minAvgHoldoutDelta": 0.008,
+          "maxDupRateIncrease": 0.012,
+          "maxPostCoverageRateDrop": 0.006
+        }
+      }
+    },
+    "rewardHorizons": [
+      {
+        "horizonId": "t+1",
+        "windowDays": 1,
+        "weight": 0.5,
+        "required": true
+      },
+      {
+        "horizonId": "t+3",
+        "windowDays": 3,
+        "weight": 0.35,
+        "required": true
+      },
+      {
+        "horizonId": "t+7",
+        "windowDays": 7,
+        "weight": 0.15,
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "optimizer-recent-weekly-decisions.sample.v1",
+  "recentWeeklyDecisionsId": "optimizer-recent-weekly-decisions.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:39:00Z",
+  "generatedFrom": {
+    "sourceMode": "orchestration_cycle_artifacts",
+    "optimizerJobOrchestrationCycleIds": [
+      "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19"
+    ],
+    "optimizerJobRunIds": ["optimizer-weekly-job-run.autotiktok.fixture.2026-04-18"],
+    "cycleCount": 1,
+    "weeklyDecisionCount": 2
+  },
+  "summary": {
+    "weeklyDecisionCount": 2,
+    "schedulerRolloutIntentCounts": {
+      "production": 1,
+      "real_provider_shadow_validation": 1
+    },
+    "decisionCounts": {
+      "promote": 2
+    },
+    "rollbackSeverityCounts": {
+      "none": 2
+    },
+    "stageModeCounts": {
+      "growth": 2
+    },
+    "selectedChallengerProfileIds": ["search-priority-default"]
+  },
+  "entries": [
+    {
+      "weeklyDecisionEntryId": "weekly_optimizer_job:real_provider_shadow_validation:optimizer-weekly-job-run.autotiktok.fixture.2026-04-18",
+      "jobRunId": "optimizer-weekly-job-run.autotiktok.fixture.2026-04-18",
+      "generatedAt": "2026-04-18T04:15:00Z",
+      "orchestrationCycleId": "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19",
+      "scheduleId": "weekly_optimizer_job",
+      "schedulerRolloutIntent": "real_provider_shadow_validation",
+      "rolloutClass": "real_shadow_validation",
+      "jobKind": "weekly_optimizer_job",
+      "rankingProfileId": "growth-default",
+      "evaluationWindow": "t_plus_1",
+      "dailyRecommendation": "observe_challenger",
+      "weeklyDecision": "promote",
+      "rollbackSeverity": "none",
+      "selectedChallengerProfileId": "search-priority-default",
+      "shadowLeaderProfileId": "search-priority-default",
+      "weeklyStageMode": "growth",
+      "weeklyStagePolicyId": "growth_weekly_gate",
+      "weeklyStagePolicySelectionSource": "champion_profile_selection",
+      "minimumAverageRewardDelta": 0.02,
+      "minimumAverageHoldoutDelta": 0.002
+    },
+    {
+      "weeklyDecisionEntryId": "weekly_optimizer_job:production:optimizer-weekly-job-run.autotiktok.fixture.2026-04-18",
+      "jobRunId": "optimizer-weekly-job-run.autotiktok.fixture.2026-04-18",
+      "generatedAt": "2026-04-18T04:15:00Z",
+      "orchestrationCycleId": "optimizer-job-orchestration-cycle.autotiktok.fixture.2026-04-19",
+      "scheduleId": "weekly_optimizer_job",
+      "schedulerRolloutIntent": "production",
+      "rolloutClass": "production",
+      "jobKind": "weekly_optimizer_job",
+      "rankingProfileId": "growth-default",
+      "evaluationWindow": "t_plus_1",
+      "dailyRecommendation": "observe_challenger",
+      "weeklyDecision": "promote",
+      "rollbackSeverity": "none",
+      "selectedChallengerProfileId": "search-priority-default",
+      "shadowLeaderProfileId": "search-priority-default",
+      "weeklyStageMode": "growth",
+      "weeklyStagePolicyId": "growth_weekly_gate",
+      "weeklyStagePolicySelectionSource": "champion_profile_selection",
+      "minimumAverageRewardDelta": 0.02,
+      "minimumAverageHoldoutDelta": 0.002
+    }
+  ]
+}

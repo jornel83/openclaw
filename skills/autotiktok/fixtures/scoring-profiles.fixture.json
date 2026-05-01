@@ -1,0 +1,57 @@
+{
+  "fixtureSetVersion": "scoring-profiles.fixture.v1",
+  "normalizationNote": "The growth-default and search-priority-default weights are normalized from technical-plan values because the documented weights sum above 1.0.",
+  "profiles": [
+    {
+      "schemaVersion": "scoring-profile.v1",
+      "profileId": "growth-default",
+      "weights": {
+        "demand": 0.2264,
+        "fit": 0.1698,
+        "rewrite": 0.1321,
+        "series": 0.0755,
+        "searchCapture": 0.1321,
+        "longform": 0.0566,
+        "feasibility": 0.1132,
+        "competition": 0.0943
+      },
+      "p0Threshold": 4.1,
+      "p1Threshold": 3.3,
+      "rejectBelow": 2.4
+    },
+    {
+      "schemaVersion": "scoring-profile.v1",
+      "profileId": "scale-default",
+      "weights": {
+        "demand": 0.16,
+        "fit": 0.18,
+        "rewrite": 0.1,
+        "series": 0.16,
+        "searchCapture": 0.1,
+        "longform": 0.14,
+        "feasibility": 0.08,
+        "competition": 0.08
+      },
+      "p0Threshold": 4.0,
+      "p1Threshold": 3.2,
+      "rejectBelow": 2.4
+    },
+    {
+      "schemaVersion": "scoring-profile.v1",
+      "profileId": "search-priority-default",
+      "weights": {
+        "demand": 0.2115,
+        "fit": 0.1538,
+        "rewrite": 0.0962,
+        "series": 0.0769,
+        "searchCapture": 0.2115,
+        "longform": 0.0577,
+        "feasibility": 0.1154,
+        "competition": 0.077
+      },
+      "p0Threshold": 4.0,
+      "p1Threshold": 3.25,
+      "rejectBelow": 2.5
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "optimizer-runtime-profile-family-registry.sample.v1",
+  "registryId": "optimizer-runtime-profile-family-registry.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "familyCount": 1
+  },
+  "families": [
+    {
+      "familyId": "autotiktok-runtime-profiles",
+      "defaultLane": "current",
+      "supportedLanes": ["current", "preview"],
+      "lanes": [
+        {
+          "lane": "current",
+          "catalog": {
+            "catalogId": "optimizer-runtime-profile-catalog.autotiktok.fixture.2026-04-15",
+            "schemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+            "catalogFamily": "autotiktok-runtime-profiles",
+            "catalogVersion": "2026-04-15"
+          }
+        },
+        {
+          "lane": "preview",
+          "catalog": {
+            "catalogId": "optimizer-runtime-profile-catalog.autotiktok.preview.2026-04-16",
+            "schemaVersion": "optimizer-runtime-profile-catalog.sample.v1",
+            "catalogFamily": "autotiktok-runtime-profiles-preview",
+            "catalogVersion": "2026-04-16-preview"
+          }
+        }
+      ]
+    }
+  ]
+}

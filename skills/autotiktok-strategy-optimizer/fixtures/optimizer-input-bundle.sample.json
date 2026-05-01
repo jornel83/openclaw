@@ -1,0 +1,1017 @@
+{
+  "schemaVersion": "optimizer-input-bundle.sample.v1",
+  "bundleId": "optimizer-input-bundle.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "rankingProfileId": "growth-default",
+    "candidateSourceKind": "discovery_artifact",
+    "candidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+    "candidateSourceInputKind": "snapshot_materialization",
+    "candidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+    "candidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+    "inputSources": {
+      "backfills": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+        "artifactSchemaVersion": "topic-outcome-backfills.sample.v1",
+        "jobRunSchemaVersion": "topic-outcome-backfill-run.sample.v1",
+        "jobRunId": "job.topic-outcome-backfill.autotiktok.fixture.2026-04-16",
+        "jobKind": "topic_outcome_backfill",
+        "jobGeneratedAt": "2026-04-16T00:05:00Z",
+        "jobGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "rankingSnapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+          "evaluationWindow": "t_plus_1"
+        }
+      },
+      "performance": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "post-performance-signal-run.sample.v1",
+        "artifactSchemaVersion": "post-performance-signals.sample.v1",
+        "jobRunSchemaVersion": "post-performance-signal-run.sample.v1",
+        "jobRunId": "job.post-performance-signal.autotiktok.fixture.2026-04-18",
+        "jobKind": "post_performance_signal",
+        "jobGeneratedAt": "2026-04-18T00:10:00Z",
+        "jobGeneratedFrom": {
+          "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "accountId": "acct_autotiktok_lab_us_001",
+          "measuredWindow": "publish_plus_3d"
+        }
+      },
+      "challengerInput": {
+        "sourceKind": "job_run_envelope",
+        "sourceSchemaVersion": "challenger-evaluation-run.sample.v1",
+        "artifactSchemaVersion": "challenger-observations.sample.v1",
+        "jobRunSchemaVersion": "challenger-evaluation-run.sample.v1",
+        "jobRunId": "job.challenger-evaluation.autotiktok.fixture.2026-04-16",
+        "jobKind": "challenger_evaluation",
+        "jobGeneratedAt": "2026-04-16T02:05:00Z",
+        "jobGeneratedFrom": {
+          "championProfileId": "growth-default",
+          "evaluationWindow": "t_plus_3",
+          "observationWindow": "2026-04-09..2026-04-15"
+        }
+      }
+    },
+    "optimizerInputManifestSchemaVersion": "optimizer-input-manifest.sample.v1",
+    "optimizerInputManifestId": "optimizer-input-manifest.autotiktok.fixture.2026-04-15",
+    "optimizerInputManifestGeneratedAt": "2026-04-15T06:00:00Z",
+    "optimizerInputManifestGeneratedFrom": {
+      "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+      "rankingProfileId": "growth-default"
+    },
+    "optimizerInputSourceRegistrySchemaVersion": null,
+    "optimizerInputSourceRegistryId": null,
+    "optimizerInputArtifactResolverSchemaVersion": null,
+    "optimizerInputArtifactResolverId": null,
+    "optimizerInputSourceProviderCatalogSchemaVersion": null,
+    "optimizerInputSourceProviderCatalogId": null,
+    "optimizerInputSourceProviderRegistrySchemaVersion": null,
+    "optimizerInputSourceProviderRegistryId": null,
+    "optimizerInputSourceArtifactCatalogSchemaVersion": null,
+    "optimizerInputSourceArtifactCatalogId": null
+  },
+  "artifacts": {
+    "ranking": {
+      "schemaVersion": "ranking-output.v1",
+      "profileId": "growth-default",
+      "profileSelection": {
+        "requestedProfileId": "auto",
+        "resolvedProfileId": "growth-default",
+        "stageMode": "growth",
+        "selectionSource": "context_stage_mode"
+      },
+      "candidateSource": {
+        "sourceKind": "discovery_artifact",
+        "inputSchemaVersion": "discovery-dry-run.v1",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "sourcePolicyVersion": "discovery-policy.v1",
+        "sourceArtifact": null,
+        "sourceInputKind": "snapshot_materialization",
+        "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "sourceMaterializationSource": "separate_snapshot_artifacts",
+        "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "sourceTopicAbstractionCount": 3,
+        "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+      },
+      "scores": [
+        {
+          "schemaVersion": "topic-score.v1",
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+          "profileId": "growth-default",
+          "topicType": "evergreen",
+          "recommendedMode": "series",
+          "freshnessWindow": "evergreen",
+          "scoreTotal": 3.54,
+          "scoreBreakdown": {
+            "demand": 4.45,
+            "competition": 2.45,
+            "fit": 3.6,
+            "rewrite": 4.0,
+            "series": 4.5,
+            "searchCapture": 4.45,
+            "longform": 3.83,
+            "feasibility": 4.27
+          },
+          "priorityLevel": "P1",
+          "recommendedUse": "search_capture",
+          "scoreReason": "3 ad creative mistakes that kill watch time is rated P1 because demand, fit, and feasibility outweigh competition, with searchCapture=4.45 and series=4.5.",
+          "riskFlags": [],
+          "nextAction": "hold_as_backup",
+          "isRejected": false,
+          "rejectionReason": null,
+          "primaryContentAngle": "mistake diagnosis",
+          "featureVector": {
+            "schemaVersion": "feature-vector.v1",
+            "demand": {
+              "score": 4.45,
+              "confidence": 0.78,
+              "evidenceRefs": [
+                "sig.discovery.evergreen.mistakes.01",
+                "sig.discovery.evergreen.mistakes.02"
+              ],
+              "reason": "5 search signals and 2 supporting sources indicate sustained demand."
+            },
+            "competition": {
+              "score": 2.45,
+              "confidence": 0.68,
+              "evidenceRefs": [
+                "sig.discovery.evergreen.mistakes.01",
+                "sig.discovery.evergreen.mistakes.02"
+              ],
+              "reason": "Practical or evergreen framing reduces crowding pressure compared with trend reactions."
+            },
+            "fit": {
+              "score": 3.6,
+              "confidence": 0.72,
+              "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+              "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+            },
+            "rewrite": {
+              "score": 4.0,
+              "confidence": 0.66,
+              "evidenceRefs": [
+                "sig.discovery.evergreen.mistakes.01",
+                "sig.discovery.evergreen.mistakes.02"
+              ],
+              "reason": "3 distinct angles create room for original packaging."
+            },
+            "series": {
+              "score": 4.5,
+              "confidence": 0.74,
+              "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+              "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+            },
+            "searchCapture": {
+              "score": 4.45,
+              "confidence": 0.8,
+              "evidenceRefs": [
+                "ad creative mistakes",
+                "why ads lose retention",
+                "watch time mistakes"
+              ],
+              "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+            },
+            "longform": {
+              "score": 3.83,
+              "confidence": 0.62,
+              "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+              "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+            },
+            "feasibility": {
+              "score": 4.27,
+              "confidence": 0.82,
+              "evidenceRefs": ["talking_head", "screen_recording", "sample ad clips"],
+              "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+            }
+          },
+          "rerankAdjustedScore": 3.54,
+          "rerankReasons": []
+        },
+        {
+          "schemaVersion": "topic-score.v1",
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+          "profileId": "growth-default",
+          "topicType": "search",
+          "recommendedMode": "growth",
+          "freshnessWindow": "weekly",
+          "scoreTotal": 3.25,
+          "scoreBreakdown": {
+            "demand": 4.35,
+            "competition": 2.75,
+            "fit": 3.6,
+            "rewrite": 3.5,
+            "series": 3.45,
+            "searchCapture": 4.15,
+            "longform": 3.13,
+            "feasibility": 4.14
+          },
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "scoreReason": "3 TikTok ad hooks that stop the scroll is rated P2 because demand, fit, and feasibility outweigh competition, with searchCapture=4.15 and series=3.45.",
+          "riskFlags": [],
+          "nextAction": "not_recommended",
+          "isRejected": false,
+          "rejectionReason": null,
+          "primaryContentAngle": "before vs after hook rewrite",
+          "featureVector": {
+            "schemaVersion": "feature-vector.v1",
+            "demand": {
+              "score": 4.35,
+              "confidence": 0.78,
+              "evidenceRefs": [
+                "sig.discovery.search.ai_hooks.01",
+                "sig.discovery.search.ai_hooks.02"
+              ],
+              "reason": "5 search signals and 2 supporting sources indicate sustained demand."
+            },
+            "competition": {
+              "score": 2.75,
+              "confidence": 0.68,
+              "evidenceRefs": [
+                "sig.discovery.search.ai_hooks.01",
+                "sig.discovery.search.ai_hooks.02"
+              ],
+              "reason": "Practical or evergreen framing reduces crowding pressure compared with trend reactions."
+            },
+            "fit": {
+              "score": 3.6,
+              "confidence": 0.72,
+              "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+              "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+            },
+            "rewrite": {
+              "score": 3.5,
+              "confidence": 0.66,
+              "evidenceRefs": [
+                "sig.discovery.search.ai_hooks.01",
+                "sig.discovery.search.ai_hooks.02"
+              ],
+              "reason": "3 distinct angles create room for original packaging."
+            },
+            "series": {
+              "score": 3.45,
+              "confidence": 0.74,
+              "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+              "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+            },
+            "searchCapture": {
+              "score": 4.15,
+              "confidence": 0.8,
+              "evidenceRefs": ["ai video ads", "tiktok ad creative", "scroll stopping hook"],
+              "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+            },
+            "longform": {
+              "score": 3.13,
+              "confidence": 0.62,
+              "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+              "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+            },
+            "feasibility": {
+              "score": 4.14,
+              "confidence": 0.82,
+              "evidenceRefs": ["talking_head", "screen_recording", "example ad scripts"],
+              "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+            }
+          },
+          "rerankAdjustedScore": 3.25,
+          "rerankReasons": []
+        },
+        {
+          "schemaVersion": "topic-score.v1",
+          "topicId": "tp_trend_wired_earbuds_001",
+          "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+          "profileId": "growth-default",
+          "topicType": "trend",
+          "recommendedMode": "growth",
+          "freshnessWindow": "daily",
+          "scoreTotal": 2.26,
+          "scoreBreakdown": {
+            "demand": 3.55,
+            "competition": 3.8,
+            "fit": 1.9,
+            "rewrite": 3.5,
+            "series": 2.87,
+            "searchCapture": 2.85,
+            "longform": 2.63,
+            "feasibility": 2.51
+          },
+          "priorityLevel": "P2",
+          "recommendedUse": "growth",
+          "scoreReason": "Why wired earbuds are suddenly back in 2026 is rated P2 because demand, fit, and feasibility outweigh competition, with searchCapture=2.85 and series=2.87.",
+          "riskFlags": ["high_competition_density", "execution_risk", "short_freshness_window"],
+          "nextAction": "not_recommended",
+          "isRejected": true,
+          "rejectionReason": "scoreTotal 2.26 is below rejectBelow 2.4",
+          "primaryContentAngle": "trend reaction explainer",
+          "featureVector": {
+            "schemaVersion": "feature-vector.v1",
+            "demand": {
+              "score": 3.55,
+              "confidence": 0.78,
+              "evidenceRefs": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+              "reason": "3 search signals and 2 supporting sources indicate sustained demand."
+            },
+            "competition": {
+              "score": 3.8,
+              "confidence": 0.68,
+              "evidenceRefs": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+              "reason": "Fresh trend density and broad source support imply higher crowding pressure."
+            },
+            "fit": {
+              "score": 1.9,
+              "confidence": 0.72,
+              "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+              "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+            },
+            "rewrite": {
+              "score": 3.5,
+              "confidence": 0.66,
+              "evidenceRefs": ["sig.discovery.trend.earbuds.01", "sig.discovery.trend.earbuds.02"],
+              "reason": "3 distinct angles create room for original packaging."
+            },
+            "series": {
+              "score": 2.87,
+              "confidence": 0.74,
+              "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+              "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+            },
+            "searchCapture": {
+              "score": 2.85,
+              "confidence": 0.8,
+              "evidenceRefs": ["wired earbuds", "wired headphones trend"],
+              "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+            },
+            "longform": {
+              "score": 2.63,
+              "confidence": 0.62,
+              "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+              "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+            },
+            "feasibility": {
+              "score": 2.51,
+              "confidence": 0.82,
+              "evidenceRefs": ["talking_head", "image_plus_voiceover", "trend screenshots"],
+              "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+            }
+          },
+          "rerankAdjustedScore": 1.1,
+          "rerankReasons": [
+            "duplicate_recommended_use",
+            "low_feasibility",
+            "below_reject_threshold"
+          ]
+        }
+      ],
+      "predictionRun": {
+        "schemaVersion": "prediction-run.v1",
+        "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+        "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+        "accountId": "acct_autotiktok_lab_us_001",
+        "profileId": "growth-default",
+        "profileSelectionSource": "context_stage_mode",
+        "topicCandidateSchemaVersion": "topic-candidate.v1",
+        "candidateInputSchemaVersion": "discovery-dry-run.v1",
+        "candidateSourceKind": "discovery_artifact",
+        "candidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+        "candidateSourcePolicyVersion": "discovery-policy.v1",
+        "candidateSourceInputKind": "snapshot_materialization",
+        "candidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+        "candidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+        "scoringContextSchemaVersion": "scoring-context.v1",
+        "scoringCodeVersion": "dry-run-ranking.v2",
+        "createdAt": "2026-04-15T00:00:00Z",
+        "candidateCount": 3,
+        "rankedTopicIds": [
+          "tp_evergreen_ad_mistakes_001",
+          "tp_search_ai_ad_hooks_001",
+          "tp_trend_wired_earbuds_001"
+        ]
+      },
+      "rankingSummary": {
+        "topTopicId": "tp_evergreen_ad_mistakes_001",
+        "topTopicTitle": "3 ad creative mistakes that kill watch time",
+        "priorityCounts": {
+          "P0": 0,
+          "P1": 1,
+          "P2": 2
+        },
+        "rejectedTopicIds": ["tp_trend_wired_earbuds_001"]
+      },
+      "rerankDiagnostics": [
+        {
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "scoreTotal": 3.54,
+          "rerankAdjustedScore": 3.54,
+          "reasons": [],
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "scoreTotal": 3.25,
+          "rerankAdjustedScore": 3.25,
+          "reasons": [],
+          "isRejected": false
+        },
+        {
+          "topicId": "tp_trend_wired_earbuds_001",
+          "scoreTotal": 2.26,
+          "rerankAdjustedScore": 1.1,
+          "reasons": ["duplicate_recommended_use", "low_feasibility", "below_reject_threshold"],
+          "isRejected": true
+        }
+      ],
+      "optimizerHandoff": {
+        "schemaVersion": "ranking-optimizer-handoff.v2-preview",
+        "deprecatedTopLevelFields": [
+          "profileId",
+          "profileSelection",
+          "candidateSource",
+          "scores",
+          "predictionRun",
+          "rankingSummary",
+          "rerankDiagnostics"
+        ],
+        "deprecationPolicy": {
+          "schemaVersion": "ranking-optimizer-deprecation-policy.v1",
+          "phase": "dual_write_preview",
+          "canonicalSurface": "optimizerHandoff",
+          "deprecatedTopLevelFields": [
+            "profileId",
+            "profileSelection",
+            "candidateSource",
+            "scores",
+            "predictionRun",
+            "rankingSummary",
+            "rerankDiagnostics"
+          ],
+          "exactPreviewRequiresTopLevelMirror": true,
+          "compatPreviewUsesLegacyFallback": true,
+          "nextHardFailContractVersion": "ranking-optimizer-contract.v2"
+        },
+        "profileId": "growth-default",
+        "profileSelection": {
+          "requestedProfileId": "auto",
+          "resolvedProfileId": "growth-default",
+          "stageMode": "growth",
+          "selectionSource": "context_stage_mode"
+        },
+        "candidateSource": {
+          "sourceKind": "discovery_artifact",
+          "inputSchemaVersion": "discovery-dry-run.v1",
+          "topicCandidateSchemaVersion": "topic-candidate.v1",
+          "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+          "sourcePolicyVersion": "discovery-policy.v1",
+          "sourceArtifact": null,
+          "sourceInputKind": "snapshot_materialization",
+          "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+          "sourceMaterializationSource": "separate_snapshot_artifacts",
+          "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+          "sourceTopicAbstractionCount": 3,
+          "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+        },
+        "scores": [
+          {
+            "schemaVersion": "topic-score.v1",
+            "topicId": "tp_evergreen_ad_mistakes_001",
+            "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+            "profileId": "growth-default",
+            "topicType": "evergreen",
+            "recommendedMode": "series",
+            "freshnessWindow": "evergreen",
+            "scoreTotal": 3.54,
+            "scoreBreakdown": {
+              "demand": 4.45,
+              "competition": 2.45,
+              "fit": 3.6,
+              "rewrite": 4.0,
+              "series": 4.5,
+              "searchCapture": 4.45,
+              "longform": 3.83,
+              "feasibility": 4.27
+            },
+            "priorityLevel": "P1",
+            "recommendedUse": "search_capture",
+            "scoreReason": "3 ad creative mistakes that kill watch time is rated P1 because demand, fit, and feasibility outweigh competition, with searchCapture=4.45 and series=4.5.",
+            "riskFlags": [],
+            "nextAction": "hold_as_backup",
+            "isRejected": false,
+            "rejectionReason": null,
+            "primaryContentAngle": "mistake diagnosis",
+            "featureVector": {
+              "schemaVersion": "feature-vector.v1",
+              "demand": {
+                "score": 4.45,
+                "confidence": 0.78,
+                "evidenceRefs": [
+                  "sig.discovery.evergreen.mistakes.01",
+                  "sig.discovery.evergreen.mistakes.02"
+                ],
+                "reason": "5 search signals and 2 supporting sources indicate sustained demand."
+              },
+              "competition": {
+                "score": 2.45,
+                "confidence": 0.68,
+                "evidenceRefs": [
+                  "sig.discovery.evergreen.mistakes.01",
+                  "sig.discovery.evergreen.mistakes.02"
+                ],
+                "reason": "Practical or evergreen framing reduces crowding pressure compared with trend reactions."
+              },
+              "fit": {
+                "score": 3.6,
+                "confidence": 0.72,
+                "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+                "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+              },
+              "rewrite": {
+                "score": 4.0,
+                "confidence": 0.66,
+                "evidenceRefs": [
+                  "sig.discovery.evergreen.mistakes.01",
+                  "sig.discovery.evergreen.mistakes.02"
+                ],
+                "reason": "3 distinct angles create room for original packaging."
+              },
+              "series": {
+                "score": 4.5,
+                "confidence": 0.74,
+                "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+                "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+              },
+              "searchCapture": {
+                "score": 4.45,
+                "confidence": 0.8,
+                "evidenceRefs": [
+                  "ad creative mistakes",
+                  "why ads lose retention",
+                  "watch time mistakes"
+                ],
+                "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+              },
+              "longform": {
+                "score": 3.83,
+                "confidence": 0.62,
+                "evidenceRefs": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+                "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+              },
+              "feasibility": {
+                "score": 4.27,
+                "confidence": 0.82,
+                "evidenceRefs": ["talking_head", "screen_recording", "sample ad clips"],
+                "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+              }
+            },
+            "rerankAdjustedScore": 3.54,
+            "rerankReasons": []
+          },
+          {
+            "schemaVersion": "topic-score.v1",
+            "topicId": "tp_search_ai_ad_hooks_001",
+            "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+            "profileId": "growth-default",
+            "topicType": "search",
+            "recommendedMode": "growth",
+            "freshnessWindow": "weekly",
+            "scoreTotal": 3.25,
+            "scoreBreakdown": {
+              "demand": 4.35,
+              "competition": 2.75,
+              "fit": 3.6,
+              "rewrite": 3.5,
+              "series": 3.45,
+              "searchCapture": 4.15,
+              "longform": 3.13,
+              "feasibility": 4.14
+            },
+            "priorityLevel": "P2",
+            "recommendedUse": "growth",
+            "scoreReason": "3 TikTok ad hooks that stop the scroll is rated P2 because demand, fit, and feasibility outweigh competition, with searchCapture=4.15 and series=3.45.",
+            "riskFlags": [],
+            "nextAction": "not_recommended",
+            "isRejected": false,
+            "rejectionReason": null,
+            "primaryContentAngle": "before vs after hook rewrite",
+            "featureVector": {
+              "schemaVersion": "feature-vector.v1",
+              "demand": {
+                "score": 4.35,
+                "confidence": 0.78,
+                "evidenceRefs": [
+                  "sig.discovery.search.ai_hooks.01",
+                  "sig.discovery.search.ai_hooks.02"
+                ],
+                "reason": "5 search signals and 2 supporting sources indicate sustained demand."
+              },
+              "competition": {
+                "score": 2.75,
+                "confidence": 0.68,
+                "evidenceRefs": [
+                  "sig.discovery.search.ai_hooks.01",
+                  "sig.discovery.search.ai_hooks.02"
+                ],
+                "reason": "Practical or evergreen framing reduces crowding pressure compared with trend reactions."
+              },
+              "fit": {
+                "score": 3.6,
+                "confidence": 0.72,
+                "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+                "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+              },
+              "rewrite": {
+                "score": 3.5,
+                "confidence": 0.66,
+                "evidenceRefs": [
+                  "sig.discovery.search.ai_hooks.01",
+                  "sig.discovery.search.ai_hooks.02"
+                ],
+                "reason": "3 distinct angles create room for original packaging."
+              },
+              "series": {
+                "score": 3.45,
+                "confidence": 0.74,
+                "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+                "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+              },
+              "searchCapture": {
+                "score": 4.15,
+                "confidence": 0.8,
+                "evidenceRefs": ["ai video ads", "tiktok ad creative", "scroll stopping hook"],
+                "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+              },
+              "longform": {
+                "score": 3.13,
+                "confidence": 0.62,
+                "evidenceRefs": ["fp.search.ai_ads.scroll_stop_hooks"],
+                "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+              },
+              "feasibility": {
+                "score": 4.14,
+                "confidence": 0.82,
+                "evidenceRefs": ["talking_head", "screen_recording", "example ad scripts"],
+                "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+              }
+            },
+            "rerankAdjustedScore": 3.25,
+            "rerankReasons": []
+          },
+          {
+            "schemaVersion": "topic-score.v1",
+            "topicId": "tp_trend_wired_earbuds_001",
+            "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+            "profileId": "growth-default",
+            "topicType": "trend",
+            "recommendedMode": "growth",
+            "freshnessWindow": "daily",
+            "scoreTotal": 2.26,
+            "scoreBreakdown": {
+              "demand": 3.55,
+              "competition": 3.8,
+              "fit": 1.9,
+              "rewrite": 3.5,
+              "series": 2.87,
+              "searchCapture": 2.85,
+              "longform": 2.63,
+              "feasibility": 2.51
+            },
+            "priorityLevel": "P2",
+            "recommendedUse": "growth",
+            "scoreReason": "Why wired earbuds are suddenly back in 2026 is rated P2 because demand, fit, and feasibility outweigh competition, with searchCapture=2.85 and series=2.87.",
+            "riskFlags": ["high_competition_density", "execution_risk", "short_freshness_window"],
+            "nextAction": "not_recommended",
+            "isRejected": true,
+            "rejectionReason": "scoreTotal 2.26 is below rejectBelow 2.4",
+            "primaryContentAngle": "trend reaction explainer",
+            "featureVector": {
+              "schemaVersion": "feature-vector.v1",
+              "demand": {
+                "score": 3.55,
+                "confidence": 0.78,
+                "evidenceRefs": [
+                  "sig.discovery.trend.earbuds.01",
+                  "sig.discovery.trend.earbuds.02"
+                ],
+                "reason": "3 search signals and 2 supporting sources indicate sustained demand."
+              },
+              "competition": {
+                "score": 3.8,
+                "confidence": 0.68,
+                "evidenceRefs": [
+                  "sig.discovery.trend.earbuds.01",
+                  "sig.discovery.trend.earbuds.02"
+                ],
+                "reason": "Fresh trend density and broad source support imply higher crowding pressure."
+              },
+              "fit": {
+                "score": 1.9,
+                "confidence": 0.72,
+                "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+                "reason": "Niche match, accepted format overlap, and historical account behavior determine fit."
+              },
+              "rewrite": {
+                "score": 3.5,
+                "confidence": 0.66,
+                "evidenceRefs": [
+                  "sig.discovery.trend.earbuds.01",
+                  "sig.discovery.trend.earbuds.02"
+                ],
+                "reason": "3 distinct angles create room for original packaging."
+              },
+              "series": {
+                "score": 2.87,
+                "confidence": 0.74,
+                "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+                "reason": "Expandability and mode intent drive whether the topic can support a repeatable series."
+              },
+              "searchCapture": {
+                "score": 2.85,
+                "confidence": 0.8,
+                "evidenceRefs": ["wired earbuds", "wired headphones trend"],
+                "reason": "Query richness, persistence, and content-gap support determine search capture strength."
+              },
+              "longform": {
+                "score": 2.63,
+                "confidence": 0.62,
+                "evidenceRefs": ["fp.trend.consumer.wired_earbuds_comeback"],
+                "reason": "Expandability plus evergreen or analytical framing drives longform potential."
+              },
+              "feasibility": {
+                "score": 2.51,
+                "confidence": 0.82,
+                "evidenceRefs": ["talking_head", "image_plus_voiceover", "trend screenshots"],
+                "reason": "Complexity, turnaround speed, format overlap, and dependency risk determine feasibility."
+              }
+            },
+            "rerankAdjustedScore": 1.1,
+            "rerankReasons": [
+              "duplicate_recommended_use",
+              "low_feasibility",
+              "below_reject_threshold"
+            ]
+          }
+        ],
+        "predictionRun": {
+          "schemaVersion": "prediction-run.v1",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+          "accountId": "acct_autotiktok_lab_us_001",
+          "profileId": "growth-default",
+          "profileSelectionSource": "context_stage_mode",
+          "topicCandidateSchemaVersion": "topic-candidate.v1",
+          "candidateInputSchemaVersion": "discovery-dry-run.v1",
+          "candidateSourceKind": "discovery_artifact",
+          "candidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+          "candidateSourcePolicyVersion": "discovery-policy.v1",
+          "candidateSourceInputKind": "snapshot_materialization",
+          "candidateSourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+          "candidateSourceNormalizationRuleVersion": "discovery-normalization.v1",
+          "scoringContextSchemaVersion": "scoring-context.v1",
+          "scoringCodeVersion": "dry-run-ranking.v2",
+          "createdAt": "2026-04-15T00:00:00Z",
+          "candidateCount": 3,
+          "rankedTopicIds": [
+            "tp_evergreen_ad_mistakes_001",
+            "tp_search_ai_ad_hooks_001",
+            "tp_trend_wired_earbuds_001"
+          ]
+        },
+        "rankingSummary": {
+          "topTopicId": "tp_evergreen_ad_mistakes_001",
+          "topTopicTitle": "3 ad creative mistakes that kill watch time",
+          "priorityCounts": {
+            "P0": 0,
+            "P1": 1,
+            "P2": 2
+          },
+          "rejectedTopicIds": ["tp_trend_wired_earbuds_001"]
+        },
+        "rerankDiagnostics": [
+          {
+            "topicId": "tp_evergreen_ad_mistakes_001",
+            "scoreTotal": 3.54,
+            "rerankAdjustedScore": 3.54,
+            "reasons": [],
+            "isRejected": false
+          },
+          {
+            "topicId": "tp_search_ai_ad_hooks_001",
+            "scoreTotal": 3.25,
+            "rerankAdjustedScore": 3.25,
+            "reasons": [],
+            "isRejected": false
+          },
+          {
+            "topicId": "tp_trend_wired_earbuds_001",
+            "scoreTotal": 2.26,
+            "rerankAdjustedScore": 1.1,
+            "reasons": ["duplicate_recommended_use", "low_feasibility", "below_reject_threshold"],
+            "isRejected": true
+          }
+        ]
+      }
+    },
+    "context": {
+      "schemaVersion": "scoring-context.v1",
+      "accountId": "acct_autotiktok_lab_us_001",
+      "market": "US",
+      "language": "en",
+      "niche": "AI content creation",
+      "stageMode": "growth",
+      "acceptedFormats": [
+        "talking_head",
+        "screen_recording",
+        "before_after_breakdown",
+        "caption_demo"
+      ],
+      "availableAssetTypes": [
+        "screen_recordings",
+        "stock_images",
+        "ai_generated_images",
+        "captions",
+        "reference_ads"
+      ],
+      "productionBudgetLevel": "low",
+      "turnaroundSpeed": "same_day",
+      "canDoTalkingHead": true,
+      "canDoScreenRecording": true,
+      "canDoAiGen": true,
+      "activeContentBuckets": ["15-25s-hook-breakdown", "20-35s-screen-tutorial"],
+      "historicalPerformanceSummary": {
+        "topPerformingTopicFingerprints": [
+          "fp.evergreen.ai_ads.watch_time_mistakes",
+          "fp.search.ai_ads.scroll_stop_hooks"
+        ],
+        "topPerformingFormats": ["screen_recording", "before_after_breakdown"],
+        "weakTopicFingerprints": ["fp.trend.consumer.wired_earbuds_comeback"]
+      }
+    },
+    "backfills": {
+      "schemaVersion": "topic-outcome-backfills.sample.v1",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "snapshotId": "snap.autotiktok.workflow.fixture.2026-04-15",
+      "evaluationWindow": "t_plus_1",
+      "evaluatedAt": "2026-04-16T00:00:00Z",
+      "items": [
+        {
+          "schemaVersion": "topic-outcome-backfill.v1",
+          "backfillId": "backfill.tp_evergreen_ad_mistakes_001.t1",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+          "backfillWindow": "t_plus_1",
+          "evaluatedAt": "2026-04-16T00:00:00Z",
+          "matchedBy": "topic_fingerprint",
+          "coverageWindowDays": 1,
+          "searchLift": 0.82,
+          "futureVideoDensity": 0.74,
+          "contentGapPersistence": 0.71,
+          "matchedFutureTopicFingerprints": ["fp.evergreen.ai_ads.watch_time_mistakes"],
+          "evidenceRefs": [
+            "future.search.us.ad_creative_mistakes",
+            "future.video.us.ad_breakdown_cluster"
+          ],
+          "outcomeConfidence": 0.84
+        },
+        {
+          "schemaVersion": "topic-outcome-backfill.v1",
+          "backfillId": "backfill.tp_search_ai_ad_hooks_001.t1",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+          "backfillWindow": "t_plus_1",
+          "evaluatedAt": "2026-04-16T00:00:00Z",
+          "matchedBy": "topic_fingerprint",
+          "coverageWindowDays": 1,
+          "searchLift": 0.74,
+          "futureVideoDensity": 0.66,
+          "contentGapPersistence": 0.63,
+          "matchedFutureTopicFingerprints": ["fp.search.ai_ads.scroll_stop_hooks"],
+          "evidenceRefs": ["future.search.us.ai_video_ads", "future.video.us.ad_hooks_cluster"],
+          "outcomeConfidence": 0.79
+        },
+        {
+          "schemaVersion": "topic-outcome-backfill.v1",
+          "backfillId": "backfill.tp_trend_wired_earbuds_001.t1",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "topicId": "tp_trend_wired_earbuds_001",
+          "topicFingerprint": "fp.trend.consumer.wired_earbuds_comeback",
+          "backfillWindow": "t_plus_1",
+          "evaluatedAt": "2026-04-16T00:00:00Z",
+          "matchedBy": "weak_semantic_match",
+          "coverageWindowDays": 1,
+          "searchLift": 0.38,
+          "futureVideoDensity": 0.49,
+          "contentGapPersistence": 0.22,
+          "matchedFutureTopicFingerprints": [],
+          "evidenceRefs": ["future.search.us.wired_earbuds_trend"],
+          "outcomeConfidence": 0.63
+        }
+      ]
+    },
+    "performance": {
+      "schemaVersion": "post-performance-signals.sample.v1",
+      "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+      "accountId": "acct_autotiktok_lab_us_001",
+      "measuredWindow": "publish_plus_3d",
+      "items": [
+        {
+          "schemaVersion": "post-performance-signal.v1",
+          "signalId": "perf.tp_evergreen_ad_mistakes_001.post_01",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "topicId": "tp_evergreen_ad_mistakes_001",
+          "topicFingerprint": "fp.evergreen.ai_ads.watch_time_mistakes",
+          "postId": "post.autotiktok.20260415.01",
+          "accountId": "acct_autotiktok_lab_us_001",
+          "publishedAt": "2026-04-15T10:00:00Z",
+          "contentBucketId": "15-25s-hook-breakdown",
+          "format": "before_after_breakdown",
+          "measuredWindow": "publish_plus_3d",
+          "measuredAt": "2026-04-18T00:00:00Z",
+          "rawViews": 16400,
+          "baselineViews": 10100,
+          "viewLift": 0.63,
+          "retentionProxy": 0.49,
+          "shareSaveProxy": 0.41,
+          "followConversionProxy": 0.28
+        },
+        {
+          "schemaVersion": "post-performance-signal.v1",
+          "signalId": "perf.tp_search_ai_ad_hooks_001.post_01",
+          "runId": "run.autotiktok.ranking.fixture.2026-04-15",
+          "topicId": "tp_search_ai_ad_hooks_001",
+          "topicFingerprint": "fp.search.ai_ads.scroll_stop_hooks",
+          "postId": "post.autotiktok.20260415.02",
+          "accountId": "acct_autotiktok_lab_us_001",
+          "publishedAt": "2026-04-15T13:00:00Z",
+          "contentBucketId": "20-35s-screen-tutorial",
+          "format": "screen_recording",
+          "measuredWindow": "publish_plus_3d",
+          "measuredAt": "2026-04-18T00:00:00Z",
+          "rawViews": 14950,
+          "baselineViews": 9500,
+          "viewLift": 0.57,
+          "retentionProxy": 0.44,
+          "shareSaveProxy": 0.37,
+          "followConversionProxy": 0.24
+        }
+      ]
+    },
+    "challengerInput": {
+      "schemaVersion": "challenger-observations.sample.v1",
+      "championProfileId": "growth-default",
+      "observationWindow": "2026-04-09..2026-04-15",
+      "evaluationWindow": "t_plus_3",
+      "generatedAt": "2026-04-16T02:00:00Z",
+      "challengers": [
+        {
+          "schemaVersion": "challenger-observation.v1",
+          "profileId": "search-priority-default",
+          "topicMetrics": {
+            "Hit@3": 0.72,
+            "Hit@10": 0.7,
+            "NDCG@10": 1.0,
+            "DupRate": 0.333333,
+            "TypeCoverage": 1.0,
+            "Novelty": 0.43,
+            "ExecutableRate": 0.666667
+          },
+          "performanceSummary": {
+            "performanceReward": 0.5045,
+            "performanceWeight": 0.1,
+            "postCoverageRate": 0.666667
+          },
+          "holdoutDelta": 0.012,
+          "daysObserved": 7,
+          "notes": "Observed stronger search capture on replay while feasibility stayed stable."
+        },
+        {
+          "schemaVersion": "challenger-observation.v1",
+          "profileId": "scale-default",
+          "topicMetrics": {
+            "Hit@3": 0.74,
+            "Hit@10": 0.72,
+            "NDCG@10": 1.0,
+            "DupRate": 0.383333,
+            "TypeCoverage": 0.88,
+            "Novelty": 0.4,
+            "ExecutableRate": 0.586667
+          },
+          "performanceSummary": {
+            "performanceReward": 0.4965,
+            "performanceWeight": 0.1,
+            "postCoverageRate": 0.666667
+          },
+          "holdoutDelta": -0.01,
+          "daysObserved": 7,
+          "notes": "Observed stronger hit metrics, but diversity and execution safety regressed."
+        }
+      ]
+    }
+  }
+}

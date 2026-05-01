@@ -1,0 +1,54 @@
+{
+  "schema_version": "kitchman-sow-output-manifest.v1",
+  "sow_id": "sow-709-riversdale-road-camberwell-demo",
+  "package": "output/709-riversdale-road-camberwell-sow.zip",
+  "generated_at": "2026-04-30T08:51:21.496920+00:00",
+  "files": [
+    {
+      "key": "sow_extraction_json",
+      "path": "sow-extraction.json",
+      "description": "Structured SOW data",
+      "size_bytes": 13116,
+      "sha256": "c56e8dbdc72a86a9c17259efb1f1cfd5277baa58b96af188214c600c505fc6c0"
+    },
+    {
+      "key": "proposal_md",
+      "path": "proposal.md",
+      "description": "Markdown proposal",
+      "size_bytes": 4357,
+      "sha256": "43fe20cc13d4e3ca7352ec5aacb409ecd3c411f113be9cdf2f6f6db4abf8ef69"
+    },
+    {
+      "key": "proposal_docx",
+      "path": "proposal.docx",
+      "description": "Word proposal",
+      "size_bytes": 17591,
+      "sha256": "c2e1cb9576f640bd70c96ca7723359d83097ee24860b5612d8c9f5f8459d4267"
+    },
+    {
+      "key": "open_questions_md",
+      "path": "open-questions.md",
+      "description": "Open questions",
+      "size_bytes": 1183,
+      "sha256": "f51fa41fb06d6baf7ed49eefb8fa1533ba6871d1ef08dfd317e36b1919dfe648"
+    },
+    {
+      "key": "feishu_summary_md",
+      "path": "feishu-summary.md",
+      "description": "Feishu summary",
+      "size_bytes": 866,
+      "sha256": "537c4685ba21517076305194c4fbac8bd7cb2d9bf911626242ecdc4f79e06f92"
+    }
+  ],
+  "source_documents": [
+    {
+      "id": "doc-001",
+      "file_name": "709 Riversdale Road, Camberwell_JD_客户橱柜图纸.pdf",
+      "type": "joinery_drawing",
+      "source_type": "uploaded_attachment",
+      "confidence": "high",
+      "notes": ["Demo drawing material supplied by the user."]
+    }
+  ],
+  "workspace_output_dir": "output"
+}

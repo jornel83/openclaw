@@ -1,0 +1,719 @@
+{
+  "schemaVersion": "optimizer-weekly-review-window.sample.v1",
+  "reviewWindowId": "optimizer-weekly-review-window.autotiktok.fixture.2026-04-20",
+  "generatedAt": "2026-04-20T07:30:00Z",
+  "profileId": "growth-default",
+  "championProfileSelection": {
+    "snapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "requestedProfileId": "auto",
+    "resolvedProfileId": "growth-default",
+    "selectionSource": "context_stage_mode",
+    "stageMode": "growth"
+  },
+  "championCandidateSource": {
+    "sourceKind": "discovery_artifact",
+    "inputSchemaVersion": "discovery-dry-run.v1",
+    "topicCandidateSchemaVersion": "topic-candidate.v1",
+    "sourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+    "sourcePolicyVersion": "discovery-policy.v1",
+    "sourceArtifact": null,
+    "sourceInputKind": "snapshot_materialization",
+    "sourceMaterializationId": "discovery-materialization.autotiktok.fixture.2026-04-15",
+    "sourceMaterializationSource": "separate_snapshot_artifacts",
+    "sourceNormalizationRuleVersion": "discovery-normalization.v1",
+    "sourceTopicAbstractionCount": 3,
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15"
+  },
+  "generatedFrom": {
+    "policyVersion": "optimizer-policy.v1",
+    "sourceReportSchemaVersion": "daily-review-report.v1",
+    "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+    "sourceReportCount": 3,
+    "scenarioId": "promotion_default",
+    "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "requestedProfileId": "auto",
+    "resolvedProfileId": "growth-default",
+    "profileSelectionSource": "context_stage_mode",
+    "stageMode": "growth",
+    "candidateSourceKind": "discovery_artifact",
+    "candidateInputSchemaVersion": "discovery-dry-run.v1",
+    "candidateSourceSnapshotId": "snap.discovery.fixture.2026-04-15",
+    "candidateSourcePolicyVersion": "discovery-policy.v1",
+    "challengerInputKind": "observations",
+    "rankingOptimizerContractId": "ranking_optimizer_handoff",
+    "rankingOptimizerContractVersion": "ranking-optimizer-contract.v1",
+    "rankingOptimizerContractValidationMode": "exact",
+    "rankingOptimizerContractValidated": true,
+    "rankingOptimizerSurfaceSource": "legacy_top_level",
+    "rankingOptimizerDeprecationPhase": "dual_write_preview",
+    "rankingOptimizerCanonicalSurface": "optimizerHandoff",
+    "rankingOptimizerDeprecatedTopLevelFields": [
+      "profileId",
+      "profileSelection",
+      "candidateSource",
+      "scores",
+      "predictionRun",
+      "rankingSummary",
+      "rerankDiagnostics"
+    ],
+    "rankingOptimizerNextHardFailContractVersion": "ranking-optimizer-contract.v2",
+    "rankingOptimizerCompatApplied": false,
+    "rankingOptimizerCompatAliasesApplied": []
+  },
+  "rewardHorizonPolicy": {
+    "aggregationMethod": "weighted_horizon_average",
+    "horizons": [
+      {
+        "horizonId": "t+1",
+        "windowDays": 1,
+        "configuredWeight": 0.5,
+        "required": true
+      },
+      {
+        "horizonId": "t+3",
+        "windowDays": 3,
+        "configuredWeight": 0.35,
+        "required": true
+      },
+      {
+        "horizonId": "t+7",
+        "windowDays": 7,
+        "configuredWeight": 0.15,
+        "required": false
+      }
+    ]
+  },
+  "windows": [
+    {
+      "windowId": "2026-04-13",
+      "observedAt": "2026-04-13T08:00:00Z",
+      "daysSinceWindowStart": 7,
+      "availableRewardHorizonIds": ["t+1", "t+3", "t+7"],
+      "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "championObservation": {
+        "topicReward": 0.63735,
+        "performanceReward": 0.4739,
+        "performanceWeight": 0.1,
+        "combinedReward": 0.621005,
+        "dupRate": 0.34,
+        "typeCoverage": 0.96,
+        "executableRate": 0.65,
+        "holdoutDelta": 0.0009,
+        "postCoverageRate": 0.6018,
+        "rewardHorizonBreakdown": [
+          {
+            "horizonId": "t+1",
+            "windowDays": 1,
+            "configuredWeight": 0.5,
+            "effectiveWeight": 0.5,
+            "required": true,
+            "topicReward": 0.633,
+            "performanceReward": 0.471,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.6168,
+            "holdoutDelta": -0.002,
+            "postCoverageRate": 0.59
+          },
+          {
+            "horizonId": "t+3",
+            "windowDays": 3,
+            "configuredWeight": 0.35,
+            "effectiveWeight": 0.35,
+            "required": true,
+            "topicReward": 0.639,
+            "performanceReward": 0.475,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.6226,
+            "holdoutDelta": 0.002,
+            "postCoverageRate": 0.61
+          },
+          {
+            "horizonId": "t+7",
+            "windowDays": 7,
+            "configuredWeight": 0.15,
+            "effectiveWeight": 0.15,
+            "required": false,
+            "topicReward": 0.648,
+            "performanceReward": 0.481,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.6313,
+            "holdoutDelta": 0.008,
+            "postCoverageRate": 0.622
+          }
+        ]
+      },
+      "challengerObservations": [
+        {
+          "profileId": "search-priority-default",
+          "topicReward": 0.66535,
+          "performanceReward": 0.4809,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.646905,
+          "dupRate": 0.334,
+          "typeCoverage": 0.97,
+          "executableRate": 0.656,
+          "holdoutDelta": 0.0029,
+          "postCoverageRate": 0.6118,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.5,
+              "required": true,
+              "topicReward": 0.661,
+              "performanceReward": 0.478,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6427,
+              "holdoutDelta": 0.0,
+              "postCoverageRate": 0.6
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.35,
+              "required": true,
+              "topicReward": 0.667,
+              "performanceReward": 0.482,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6485,
+              "holdoutDelta": 0.004,
+              "postCoverageRate": 0.62
+            },
+            {
+              "horizonId": "t+7",
+              "windowDays": 7,
+              "configuredWeight": 0.15,
+              "effectiveWeight": 0.15,
+              "required": false,
+              "topicReward": 0.676,
+              "performanceReward": 0.488,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6572,
+              "holdoutDelta": 0.01,
+              "postCoverageRate": 0.632
+            }
+          ],
+          "combinedRewardDelta": 0.0259,
+          "daysObserved": 5,
+          "hardGatePass": true,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger search capture on replay while feasibility stayed stable."
+        },
+        {
+          "profileId": "scale-default",
+          "topicReward": 0.64435,
+          "performanceReward": 0.4769,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.627605,
+          "dupRate": 0.39,
+          "typeCoverage": 0.87,
+          "executableRate": 0.58,
+          "holdoutDelta": -0.0171,
+          "postCoverageRate": 0.6018,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.5,
+              "required": true,
+              "topicReward": 0.64,
+              "performanceReward": 0.474,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6234,
+              "holdoutDelta": -0.02,
+              "postCoverageRate": 0.59
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.35,
+              "required": true,
+              "topicReward": 0.646,
+              "performanceReward": 0.478,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6292,
+              "holdoutDelta": -0.016,
+              "postCoverageRate": 0.61
+            },
+            {
+              "horizonId": "t+7",
+              "windowDays": 7,
+              "configuredWeight": 0.15,
+              "effectiveWeight": 0.15,
+              "required": false,
+              "topicReward": 0.655,
+              "performanceReward": 0.484,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6379,
+              "holdoutDelta": -0.01,
+              "postCoverageRate": 0.622
+            }
+          ],
+          "combinedRewardDelta": 0.0066,
+          "daysObserved": 5,
+          "hardGatePass": false,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger hit metrics, but diversity and execution safety regressed."
+        }
+      ]
+    },
+    {
+      "windowId": "2026-04-14",
+      "observedAt": "2026-04-14T08:00:00Z",
+      "daysSinceWindowStart": 6,
+      "availableRewardHorizonIds": ["t+1", "t+3"],
+      "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "championObservation": {
+        "topicReward": 0.642471,
+        "performanceReward": 0.479647,
+        "performanceWeight": 0.1,
+        "combinedReward": 0.626189,
+        "dupRate": 0.337,
+        "typeCoverage": 0.98,
+        "executableRate": 0.659,
+        "holdoutDelta": 0.001647,
+        "postCoverageRate": 0.628235,
+        "rewardHorizonBreakdown": [
+          {
+            "horizonId": "t+1",
+            "windowDays": 1,
+            "configuredWeight": 0.5,
+            "effectiveWeight": 0.588235,
+            "required": true,
+            "topicReward": 0.64,
+            "performanceReward": 0.478,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.6238,
+            "holdoutDelta": 0.0,
+            "postCoverageRate": 0.62
+          },
+          {
+            "horizonId": "t+3",
+            "windowDays": 3,
+            "configuredWeight": 0.35,
+            "effectiveWeight": 0.411765,
+            "required": true,
+            "topicReward": 0.646,
+            "performanceReward": 0.482,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.6296,
+            "holdoutDelta": 0.004,
+            "postCoverageRate": 0.64
+          }
+        ]
+      },
+      "challengerObservations": [
+        {
+          "profileId": "search-priority-default",
+          "topicReward": 0.671471,
+          "performanceReward": 0.493647,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.653689,
+          "dupRate": 0.333,
+          "typeCoverage": 0.99,
+          "executableRate": 0.664,
+          "holdoutDelta": 0.006647,
+          "postCoverageRate": 0.638235,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.588235,
+              "required": true,
+              "topicReward": 0.669,
+              "performanceReward": 0.492,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6513,
+              "holdoutDelta": 0.005,
+              "postCoverageRate": 0.63
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.411765,
+              "required": true,
+              "topicReward": 0.675,
+              "performanceReward": 0.496,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6571,
+              "holdoutDelta": 0.009,
+              "postCoverageRate": 0.65
+            }
+          ],
+          "combinedRewardDelta": 0.0275,
+          "daysObserved": 6,
+          "hardGatePass": true,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger search capture on replay while feasibility stayed stable."
+        },
+        {
+          "profileId": "scale-default",
+          "topicReward": 0.648471,
+          "performanceReward": 0.483647,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.631989,
+          "dupRate": 0.387,
+          "typeCoverage": 0.875,
+          "executableRate": 0.584,
+          "holdoutDelta": -0.014353,
+          "postCoverageRate": 0.618235,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.588235,
+              "required": true,
+              "topicReward": 0.646,
+              "performanceReward": 0.482,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6296,
+              "holdoutDelta": -0.016,
+              "postCoverageRate": 0.61
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.411765,
+              "required": true,
+              "topicReward": 0.652,
+              "performanceReward": 0.486,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6354,
+              "holdoutDelta": -0.012,
+              "postCoverageRate": 0.63
+            }
+          ],
+          "combinedRewardDelta": 0.0058,
+          "daysObserved": 6,
+          "hardGatePass": false,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger hit metrics, but diversity and execution safety regressed."
+        }
+      ]
+    },
+    {
+      "windowId": "2026-04-15",
+      "observedAt": "2026-04-15T08:00:00Z",
+      "daysSinceWindowStart": 5,
+      "availableRewardHorizonIds": ["t+1", "t+3"],
+      "sourceReportId": "daily-review.autotiktok.fixture.2026-04-15",
+      "championObservation": {
+        "topicReward": 0.646471,
+        "performanceReward": 0.488147,
+        "performanceWeight": 0.1,
+        "combinedReward": 0.630639,
+        "dupRate": 0.333333,
+        "typeCoverage": 1.0,
+        "executableRate": 0.666667,
+        "holdoutDelta": 0.003647,
+        "postCoverageRate": 0.654902,
+        "rewardHorizonBreakdown": [
+          {
+            "horizonId": "t+1",
+            "windowDays": 1,
+            "configuredWeight": 0.5,
+            "effectiveWeight": 0.588235,
+            "required": true,
+            "topicReward": 0.644,
+            "performanceReward": 0.4865,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.62825,
+            "holdoutDelta": 0.002,
+            "postCoverageRate": 0.646667
+          },
+          {
+            "horizonId": "t+3",
+            "windowDays": 3,
+            "configuredWeight": 0.35,
+            "effectiveWeight": 0.411765,
+            "required": true,
+            "topicReward": 0.65,
+            "performanceReward": 0.4905,
+            "performanceWeight": 0.1,
+            "combinedReward": 0.63405,
+            "holdoutDelta": 0.006,
+            "postCoverageRate": 0.666667
+          }
+        ]
+      },
+      "challengerObservations": [
+        {
+          "profileId": "search-priority-default",
+          "topicReward": 0.677138,
+          "performanceReward": 0.502147,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.659639,
+          "dupRate": 0.333333,
+          "typeCoverage": 1.0,
+          "executableRate": 0.666667,
+          "holdoutDelta": 0.009647,
+          "postCoverageRate": 0.654902,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.588235,
+              "required": true,
+              "topicReward": 0.674667,
+              "performanceReward": 0.5005,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.65725,
+              "holdoutDelta": 0.008,
+              "postCoverageRate": 0.646667
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.411765,
+              "required": true,
+              "topicReward": 0.680667,
+              "performanceReward": 0.5045,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.66305,
+              "holdoutDelta": 0.012,
+              "postCoverageRate": 0.666667
+            }
+          ],
+          "combinedRewardDelta": 0.029,
+          "daysObserved": 7,
+          "hardGatePass": true,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger search capture on replay while feasibility stayed stable."
+        },
+        {
+          "profileId": "scale-default",
+          "topicReward": 0.655638,
+          "performanceReward": 0.494147,
+          "performanceWeight": 0.1,
+          "combinedReward": 0.639489,
+          "dupRate": 0.383333,
+          "typeCoverage": 0.88,
+          "executableRate": 0.586667,
+          "holdoutDelta": -0.012353,
+          "postCoverageRate": 0.654902,
+          "rewardHorizonBreakdown": [
+            {
+              "horizonId": "t+1",
+              "windowDays": 1,
+              "configuredWeight": 0.5,
+              "effectiveWeight": 0.588235,
+              "required": true,
+              "topicReward": 0.653167,
+              "performanceReward": 0.4925,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6371,
+              "holdoutDelta": -0.014,
+              "postCoverageRate": 0.646667
+            },
+            {
+              "horizonId": "t+3",
+              "windowDays": 3,
+              "configuredWeight": 0.35,
+              "effectiveWeight": 0.411765,
+              "required": true,
+              "topicReward": 0.659167,
+              "performanceReward": 0.4965,
+              "performanceWeight": 0.1,
+              "combinedReward": 0.6429,
+              "holdoutDelta": -0.01,
+              "postCoverageRate": 0.666667
+            }
+          ],
+          "combinedRewardDelta": 0.00885,
+          "daysObserved": 7,
+          "hardGatePass": false,
+          "sourceInputKind": "observations",
+          "notes": "Observed stronger hit metrics, but diversity and execution safety regressed."
+        }
+      ]
+    }
+  ],
+  "aggregatedChampion": {
+    "windowCount": 3,
+    "avgCombinedReward": 0.625944,
+    "minCombinedReward": 0.621005,
+    "avgHoldoutDelta": 0.002065,
+    "minHoldoutDelta": 0.0009,
+    "avgDupRate": 0.336778,
+    "avgTypeCoverage": 0.98,
+    "avgExecutableRate": 0.658556,
+    "avgPostCoverageRate": 0.628312,
+    "holdoutFloorBreachCount": 0,
+    "combinedRewardFloorBreachCount": 0,
+    "maxConsecutiveHoldoutFloorBreachDays": 0,
+    "maxConsecutiveCombinedRewardFloorBreachDays": 0,
+    "rewardHorizonSummaries": [
+      {
+        "horizonId": "t+1",
+        "windowDays": 1,
+        "configuredWeight": 0.5,
+        "required": true,
+        "availableWindowCount": 3,
+        "avgCombinedReward": 0.62295,
+        "minCombinedReward": 0.6168,
+        "avgHoldoutDelta": 0.0,
+        "minHoldoutDelta": -0.002,
+        "avgPostCoverageRate": 0.618889
+      },
+      {
+        "horizonId": "t+3",
+        "windowDays": 3,
+        "configuredWeight": 0.35,
+        "required": true,
+        "availableWindowCount": 3,
+        "avgCombinedReward": 0.62875,
+        "minCombinedReward": 0.6226,
+        "avgHoldoutDelta": 0.004,
+        "minHoldoutDelta": 0.002,
+        "avgPostCoverageRate": 0.638889
+      },
+      {
+        "horizonId": "t+7",
+        "windowDays": 7,
+        "configuredWeight": 0.15,
+        "required": false,
+        "availableWindowCount": 1,
+        "avgCombinedReward": 0.6313,
+        "minCombinedReward": 0.6313,
+        "avgHoldoutDelta": 0.008,
+        "minHoldoutDelta": 0.008,
+        "avgPostCoverageRate": 0.622
+      }
+    ]
+  },
+  "challengerSummaries": [
+    {
+      "profileId": "search-priority-default",
+      "windowCount": 3,
+      "avgCombinedReward": 0.653411,
+      "avgCombinedRewardDelta": 0.027467,
+      "minHoldoutDelta": 0.0029,
+      "avgHoldoutDelta": 0.006398,
+      "avgDupRate": 0.333444,
+      "avgTypeCoverage": 0.986667,
+      "avgExecutableRate": 0.662222,
+      "avgPostCoverageRate": 0.634979,
+      "daysObservedMax": 7,
+      "winningDayCount": 3,
+      "hardGatePassDayCount": 3,
+      "rewardHorizonSummaries": [
+        {
+          "horizonId": "t+1",
+          "windowDays": 1,
+          "configuredWeight": 0.5,
+          "required": true,
+          "availableWindowCount": 3,
+          "avgCombinedReward": 0.650417,
+          "avgCombinedRewardDelta": 0.027467,
+          "minHoldoutDelta": 0.0,
+          "avgHoldoutDelta": 0.004333,
+          "avgPostCoverageRate": 0.625556
+        },
+        {
+          "horizonId": "t+3",
+          "windowDays": 3,
+          "configuredWeight": 0.35,
+          "required": true,
+          "availableWindowCount": 3,
+          "avgCombinedReward": 0.656217,
+          "avgCombinedRewardDelta": 0.027467,
+          "minHoldoutDelta": 0.004,
+          "avgHoldoutDelta": 0.008333,
+          "avgPostCoverageRate": 0.645556
+        },
+        {
+          "horizonId": "t+7",
+          "windowDays": 7,
+          "configuredWeight": 0.15,
+          "required": false,
+          "availableWindowCount": 1,
+          "avgCombinedReward": 0.6572,
+          "avgCombinedRewardDelta": 0.0259,
+          "minHoldoutDelta": 0.01,
+          "avgHoldoutDelta": 0.01,
+          "avgPostCoverageRate": 0.632
+        }
+      ]
+    },
+    {
+      "profileId": "scale-default",
+      "windowCount": 3,
+      "avgCombinedReward": 0.633028,
+      "avgCombinedRewardDelta": 0.007083,
+      "minHoldoutDelta": -0.0171,
+      "avgHoldoutDelta": -0.014602,
+      "avgDupRate": 0.386778,
+      "avgTypeCoverage": 0.875,
+      "avgExecutableRate": 0.583556,
+      "avgPostCoverageRate": 0.624979,
+      "daysObservedMax": 7,
+      "winningDayCount": 3,
+      "hardGatePassDayCount": 0,
+      "rewardHorizonSummaries": [
+        {
+          "horizonId": "t+1",
+          "windowDays": 1,
+          "configuredWeight": 0.5,
+          "required": true,
+          "availableWindowCount": 3,
+          "avgCombinedReward": 0.630033,
+          "avgCombinedRewardDelta": 0.007083,
+          "minHoldoutDelta": -0.02,
+          "avgHoldoutDelta": -0.016667,
+          "avgPostCoverageRate": 0.615556
+        },
+        {
+          "horizonId": "t+3",
+          "windowDays": 3,
+          "configuredWeight": 0.35,
+          "required": true,
+          "availableWindowCount": 3,
+          "avgCombinedReward": 0.635833,
+          "avgCombinedRewardDelta": 0.007083,
+          "minHoldoutDelta": -0.016,
+          "avgHoldoutDelta": -0.012667,
+          "avgPostCoverageRate": 0.635556
+        },
+        {
+          "horizonId": "t+7",
+          "windowDays": 7,
+          "configuredWeight": 0.15,
+          "required": false,
+          "availableWindowCount": 1,
+          "avgCombinedReward": 0.6379,
+          "avgCombinedRewardDelta": 0.0066,
+          "minHoldoutDelta": -0.01,
+          "avgHoldoutDelta": -0.01,
+          "avgPostCoverageRate": 0.622
+        }
+      ]
+    }
+  ],
+  "rollbackSignals": {
+    "rollbackHoldoutFloor": -0.03,
+    "rollbackCombinedRewardFloor": 0.6,
+    "rollbackMinBreachDays": 2,
+    "rollbackCriticalHoldoutFloor": -0.04,
+    "rollbackCriticalCombinedRewardFloor": 0.58,
+    "rollbackEligible": false,
+    "rollbackSeverity": "none",
+    "rollbackReasonCodes": [],
+    "holdoutFloorBreachCount": 0,
+    "combinedRewardFloorBreachCount": 0,
+    "maxConsecutiveHoldoutFloorBreachDays": 0,
+    "maxConsecutiveCombinedRewardFloorBreachDays": 0,
+    "rollbackTriggered": false
+  },
+  "bestChallengerProfileId": "search-priority-default"
+}

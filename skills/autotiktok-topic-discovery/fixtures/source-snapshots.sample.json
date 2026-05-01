@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "discovery-source-snapshots.sample.v1",
+  "snapshotId": "snap.discovery.fixture.2026-04-15",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-04-15T05:00:00Z",
+  "sourceSnapshots": [
+    {
+      "sourceSnapshotId": "snap.search-insights.us.2026-04-15",
+      "source": "creator_search_insights",
+      "sourceSubtype": "search_and_gap",
+      "capturedAt": "2026-04-15T05:00:00Z"
+    },
+    {
+      "sourceSnapshotId": "snap.creative-center.us.2026-04-15",
+      "source": "creative_center",
+      "sourceSubtype": "trend",
+      "capturedAt": "2026-04-15T05:10:00Z"
+    },
+    {
+      "sourceSnapshotId": "snap.public-video.us.2026-04-15",
+      "source": "public_tiktok",
+      "sourceSubtype": "video_sample",
+      "capturedAt": "2026-04-15T05:12:00Z"
+    }
+  ]
+}

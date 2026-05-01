@@ -1,0 +1,128 @@
+{
+  "fixtureSetVersion": "scoring-context-matrix.fixture.v1",
+  "description": "Stage-specific scoring contexts for ranking profile-matrix replays.",
+  "stages": [
+    {
+      "stageMode": "growth",
+      "context": {
+        "schemaVersion": "scoring-context.v1",
+        "accountId": "acct_autotiktok_lab_us_001",
+        "market": "US",
+        "language": "en",
+        "niche": "AI content creation",
+        "stageMode": "growth",
+        "acceptedFormats": [
+          "talking_head",
+          "screen_recording",
+          "before_after_breakdown",
+          "caption_demo"
+        ],
+        "availableAssetTypes": [
+          "screen_recordings",
+          "stock_images",
+          "ai_generated_images",
+          "captions",
+          "reference_ads"
+        ],
+        "productionBudgetLevel": "low",
+        "turnaroundSpeed": "same_day",
+        "canDoTalkingHead": true,
+        "canDoScreenRecording": true,
+        "canDoAiGen": true,
+        "activeContentBuckets": ["15-25s-hook-breakdown", "20-35s-screen-tutorial"],
+        "historicalPerformanceSummary": {
+          "topPerformingTopicFingerprints": [
+            "fp.evergreen.ai_ads.watch_time_mistakes",
+            "fp.search.ai_ads.scroll_stop_hooks"
+          ],
+          "topPerformingFormats": ["screen_recording", "before_after_breakdown"],
+          "weakTopicFingerprints": ["fp.trend.consumer.wired_earbuds_comeback"]
+        }
+      }
+    },
+    {
+      "stageMode": "scale",
+      "context": {
+        "schemaVersion": "scoring-context.v1",
+        "accountId": "acct_autotiktok_lab_us_001",
+        "market": "US",
+        "language": "en",
+        "niche": "AI content creation",
+        "stageMode": "scale",
+        "acceptedFormats": [
+          "talking_head",
+          "screen_recording",
+          "before_after_breakdown",
+          "caption_demo"
+        ],
+        "availableAssetTypes": [
+          "screen_recordings",
+          "stock_images",
+          "ai_generated_images",
+          "captions",
+          "reference_ads"
+        ],
+        "productionBudgetLevel": "low",
+        "turnaroundSpeed": "same_day",
+        "canDoTalkingHead": true,
+        "canDoScreenRecording": true,
+        "canDoAiGen": true,
+        "activeContentBuckets": [
+          "15-25s-hook-breakdown",
+          "20-35s-screen-tutorial",
+          "30-60s-series-breakdown"
+        ],
+        "historicalPerformanceSummary": {
+          "topPerformingTopicFingerprints": [
+            "fp.evergreen.ai_ads.watch_time_mistakes",
+            "fp.search.ai_ads.scroll_stop_hooks"
+          ],
+          "topPerformingFormats": ["screen_recording", "before_after_breakdown"],
+          "weakTopicFingerprints": ["fp.trend.consumer.wired_earbuds_comeback"]
+        }
+      }
+    },
+    {
+      "stageMode": "search_priority",
+      "context": {
+        "schemaVersion": "scoring-context.v1",
+        "accountId": "acct_autotiktok_lab_us_001",
+        "market": "US",
+        "language": "en",
+        "niche": "AI content creation",
+        "stageMode": "search_priority",
+        "acceptedFormats": [
+          "talking_head",
+          "screen_recording",
+          "before_after_breakdown",
+          "caption_demo"
+        ],
+        "availableAssetTypes": [
+          "screen_recordings",
+          "stock_images",
+          "ai_generated_images",
+          "captions",
+          "reference_ads"
+        ],
+        "productionBudgetLevel": "low",
+        "turnaroundSpeed": "same_day",
+        "canDoTalkingHead": true,
+        "canDoScreenRecording": true,
+        "canDoAiGen": true,
+        "activeContentBuckets": [
+          "15-25s-hook-breakdown",
+          "20-35s-screen-tutorial",
+          "search-led-problem-solution"
+        ],
+        "historicalPerformanceSummary": {
+          "topPerformingTopicFingerprints": [
+            "fp.evergreen.ai_ads.watch_time_mistakes",
+            "fp.search.ai_ads.scroll_stop_hooks"
+          ],
+          "topPerformingFormats": ["screen_recording", "before_after_breakdown"],
+          "weakTopicFingerprints": ["fp.trend.consumer.wired_earbuds_comeback"]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "optimizer-input-manifest.sample.v1",
+  "manifestId": "optimizer-input-manifest.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "rankingRunId": "run.autotiktok.ranking.fixture.2026-04-15",
+    "rankingSnapshotId": "snap.autotiktok.fixture.2026-04-15",
+    "rankingProfileId": "growth-default"
+  },
+  "artifactPaths": {
+    "ranking": "skills/autotiktok-topic-ranking/fixtures/ranking-dry-run.sample.json",
+    "context": "skills/autotiktok/fixtures/scoring-context.fixture.json",
+    "backfills": "skills/autotiktok-strategy-optimizer/fixtures/topic-outcome-backfill-run.sample.json",
+    "performance": "skills/autotiktok-strategy-optimizer/fixtures/post-performance-signal-run.sample.json",
+    "challengerInput": "skills/autotiktok-strategy-optimizer/fixtures/challenger-evaluation-run.sample.json"
+  }
+}

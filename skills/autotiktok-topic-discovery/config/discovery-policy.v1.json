@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "discovery-policy.v1",
+  "bundleIdPrefix": "bundle",
+  "mergeGroupIdPrefix": "merge",
+  "mergeReasonTemplate": "signals share the same stable topicFingerprint and compatible packaging intent",
+  "sourceTypePriority": [
+    "evergreen_library",
+    "search_insights_content_gap",
+    "search_insights_query",
+    "creative_center_trend",
+    "public_video_sample"
+  ],
+  "freshnessPriority": ["evergreen", "weekly", "daily"],
+  "searchPersistencePriority": ["evergreen", "weekly", "daily"],
+  "dependencyRiskPriority": ["low", "medium", "high"],
+  "contentAngleCap": 6,
+  "keywordCap": 8,
+  "searchQueryCap": 8,
+  "recommendedFormatCap": 5,
+  "requiredAssetCap": 6,
+  "requiredCapabilityCap": 6,
+  "expandabilityPrecision": 2,
+  "productionComplexityPrecision": 2
+}

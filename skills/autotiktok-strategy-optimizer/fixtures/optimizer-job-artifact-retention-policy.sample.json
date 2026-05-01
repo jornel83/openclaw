@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "optimizer-job-artifact-retention-policy.sample.v1",
+  "policyId": "optimizer-job-artifact-retention-policy.autotiktok.fixture.2026-04-19",
+  "generatedAt": "2026-04-19T03:18:00Z",
+  "generatedFrom": {
+    "artifactPolicyCount": 11
+  },
+  "artifactPolicies": [
+    {
+      "artifactKind": "input_manifest",
+      "retentionTier": "ephemeral",
+      "keepLatestCount": 3,
+      "keepFailureArtifacts": false,
+      "partitionDimensions": ["scheduleId", "schedulerRolloutIntent"]
+    },
+    {
+      "artifactKind": "input_bundle",
+      "retentionTier": "ephemeral",
+      "keepLatestCount": 3,
+      "keepFailureArtifacts": false,
+      "partitionDimensions": ["scheduleId", "schedulerRolloutIntent"]
+    },
+    {
+      "artifactKind": "job_run",
+      "retentionTier": "operational",
+      "keepLatestCount": 20,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["scheduleId", "schedulerRolloutIntent"]
+    },
+    {
+      "artifactKind": "shadow_compare",
+      "retentionTier": "operational",
+      "keepLatestCount": 20,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["scheduleId", "candidateSchedulerRolloutIntent"]
+    },
+    {
+      "artifactKind": "shadow_compare_batch",
+      "retentionTier": "operational",
+      "keepLatestCount": 10,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["comparisonDimension"]
+    },
+    {
+      "artifactKind": "recent_run_summaries",
+      "retentionTier": "operational",
+      "keepLatestCount": 30,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["generatedDate"]
+    },
+    {
+      "artifactKind": "recent_compare_summaries",
+      "retentionTier": "operational",
+      "keepLatestCount": 30,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["generatedDate"]
+    },
+    {
+      "artifactKind": "recent_weekly_decisions",
+      "retentionTier": "operational",
+      "keepLatestCount": 30,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["generatedDate"]
+    },
+    {
+      "artifactKind": "recent_failure_summaries",
+      "retentionTier": "failure_audit",
+      "keepLatestCount": 30,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["generatedDate", "ownerHint"]
+    },
+    {
+      "artifactKind": "orchestration_cycle",
+      "retentionTier": "audit",
+      "keepLatestCount": 30,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["generatedDate"]
+    },
+    {
+      "artifactKind": "job_error",
+      "retentionTier": "failure_audit",
+      "keepLatestCount": 50,
+      "keepFailureArtifacts": true,
+      "partitionDimensions": ["errorCode", "scheduleId"]
+    }
+  ]
+}

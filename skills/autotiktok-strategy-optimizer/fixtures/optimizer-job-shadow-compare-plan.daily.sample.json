@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "optimizer-job-shadow-compare-plan.sample.v1",
+  "comparePlanId": "optimizer-job-shadow-compare-plan.daily.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T05:41:00Z",
+  "generatedFrom": {
+    "optimizerJobScheduleSchemaVersion": "optimizer-job-schedule.sample.v1",
+    "optimizerJobSchedulePlanId": "optimizer-job-schedule.autotiktok.fixture.2026-04-18",
+    "optimizerInputRolloutPolicySchemaVersion": "optimizer-input-rollout-policy.sample.v1",
+    "optimizerInputRolloutPolicyId": "optimizer-input-rollout-policy.autotiktok.fixture.2026-04-18",
+    "comparisonCount": 3
+  },
+  "comparisons": [
+    {
+      "comparisonId": "daily_raw_shadow_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "raw_shadow_validation",
+      "candidateRolloutClass": "raw_shadow_validation",
+      "candidateRuntimeProfileRolloutClass": "production",
+      "candidateWindowSetPurpose": null,
+      "candidateComparisonDimension": null
+    },
+    {
+      "comparisonId": "daily_preview_validation_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "preview_validation",
+      "candidateRolloutClass": "production",
+      "candidateRuntimeProfileRolloutClass": "preview_canary",
+      "candidateWindowSetPurpose": "preview_validation",
+      "candidateComparisonDimension": "historyBatchLabel"
+    },
+    {
+      "comparisonId": "daily_profile_compare_validation_vs_production",
+      "scheduleId": "daily_optimizer_job",
+      "baselineSchedulerRolloutIntent": "production",
+      "baselineRolloutClass": "production",
+      "baselineRuntimeProfileRolloutClass": "production",
+      "baselineWindowSetPurpose": null,
+      "baselineComparisonDimension": null,
+      "candidateSchedulerRolloutIntent": "profile_compare_validation",
+      "candidateRolloutClass": "production",
+      "candidateRuntimeProfileRolloutClass": "preview_canary",
+      "candidateWindowSetPurpose": "profile_compare_validation",
+      "candidateComparisonDimension": "rankingProfileId"
+    }
+  ]
+}

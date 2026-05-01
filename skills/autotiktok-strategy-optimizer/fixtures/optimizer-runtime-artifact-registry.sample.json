@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "optimizer-runtime-artifact-registry.sample.v1",
+  "registryId": "optimizer-runtime-artifact-registry.autotiktok.fixture.2026-04-15",
+  "generatedAt": "2026-04-15T06:00:00Z",
+  "generatedFrom": {
+    "bindingCount": 4
+  },
+  "bindings": [
+    {
+      "bindingId": "optimizer_input_manifest",
+      "artifactField": "inputManifestPath",
+      "artifactPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-manifest.sample.json",
+      "runtimeSourceKind": "input_manifest",
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "manifest_from_job_runs",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "manifest",
+      "materializationPlanId": "optimizer_input_manifest_plan"
+    },
+    {
+      "bindingId": "optimizer_input_bundle",
+      "artifactField": "inputBundlePath",
+      "artifactPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-input-bundle.sample.json",
+      "runtimeSourceKind": "input_bundle",
+      "jobFamilyGroup": "optimizer_input_jobs",
+      "materializationProfile": "bundle_from_manifest",
+      "sourceClass": "optimizer_input",
+      "sourceVariant": "bundle",
+      "materializationPlanId": "optimizer_input_bundle_plan"
+    },
+    {
+      "bindingId": "optimizer_offline_cycle_daily",
+      "artifactField": "inputOfflineCyclePath",
+      "artifactPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-offline-cycle-daily.sample.json",
+      "runtimeSourceKind": "offline_cycle",
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "daily_cycle_from_manifest",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "daily",
+      "materializationPlanId": "optimizer_offline_cycle_daily_plan"
+    },
+    {
+      "bindingId": "optimizer_offline_cycle_weekly",
+      "artifactField": "inputOfflineCyclePath",
+      "artifactPath": "skills/autotiktok-strategy-optimizer/fixtures/optimizer-offline-cycle.sample.json",
+      "runtimeSourceKind": "offline_cycle",
+      "jobFamilyGroup": "optimizer_offline_cycle_jobs",
+      "materializationProfile": "weekly_cycle_from_bundle",
+      "sourceClass": "optimizer_offline_cycle",
+      "sourceVariant": "weekly",
+      "materializationPlanId": "optimizer_offline_cycle_weekly_plan"
+    }
+  ]
+}

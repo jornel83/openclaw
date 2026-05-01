@@ -1,0 +1,35 @@
+{
+  "schema_version": "kitchman-sow-state.v1",
+  "sow_id": "709-demo",
+  "sow_status": "awaiting_review",
+  "created_at": "2026-04-28T00:00:00+00:00",
+  "updated_at": "2026-04-28T00:00:00+00:00",
+  "runtime_ref": {
+    "channel": "feishu",
+    "conversation_id": "fixture",
+    "requested_by": "fixture",
+    "message_id": null,
+    "run_id": null
+  },
+  "project": {
+    "project_name": "709 Riversdale Road"
+  },
+  "workspace": {
+    "root": "skills/kitchman-sow/fixtures/709-demo",
+    "input": "skills/kitchman-sow/fixtures/709-demo/input",
+    "intermediate": "skills/kitchman-sow/fixtures/709-demo/intermediate",
+    "output": "skills/kitchman-sow/fixtures/709-demo/output"
+  },
+  "source_messages": [],
+  "source_documents": [],
+  "outputs": {
+    "sow_extraction": "output/sow-extraction.json",
+    "proposal": "output/proposal.md",
+    "proposal_docx": "output/proposal.docx",
+    "open_questions": "output/open-questions.md",
+    "feishu_summary": "output/feishu-summary.md",
+    "drawing_index": "intermediate/drawing-index.json"
+  },
+  "current_output_version": 0,
+  "revision_history": []
+}

@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "feature-rubric.v1",
+  "dimensions": {
+    "demand": {
+      "base": 2.1,
+      "searchSignalWeight": 0.3,
+      "searchSignalCap": 6,
+      "sourceWeight": 0.15,
+      "sourceCap": 4,
+      "topicTypeBonus": {
+        "trend": 0.25,
+        "search": 0.45,
+        "evergreen": 0.35
+      },
+      "freshnessBonus": {
+        "daily": 0.0,
+        "weekly": 0.0,
+        "evergreen": 0.2
+      },
+      "richSignalConfidence": 0.78,
+      "sparseSignalConfidence": 0.64
+    },
+    "competition": {
+      "base": 2.1,
+      "topicTypeBonus": {
+        "trend": 1.25,
+        "search": 0.65,
+        "evergreen": 0.35
+      },
+      "freshnessBonus": {
+        "daily": 0.45,
+        "weekly": 0.0,
+        "evergreen": 0.0
+      },
+      "sourceDensityThreshold": 3,
+      "sourceDensityBonus": 0.2,
+      "confidence": 0.68
+    },
+    "fit": {
+      "base": 2.3,
+      "keywordOverlapWeight": 1.2,
+      "formatOverlapWeight": 0.9,
+      "historicalWinBonus": 0.4,
+      "historicalWeakPenalty": 0.7,
+      "confidence": 0.72
+    },
+    "rewrite": {
+      "base": 2.0,
+      "contentAngleWeight": 0.5,
+      "contentAngleCap": 3,
+      "framingBonus": 0.5,
+      "framingKeywords": ["mistake", "before", "rewrite"],
+      "confidence": 0.66
+    },
+    "series": {
+      "base": 1.9,
+      "expandabilityWeight": 2.1,
+      "seriesModeBonus": 0.5,
+      "evergreenBonus": 0.25,
+      "confidence": 0.74
+    },
+    "searchCapture": {
+      "base": 1.8,
+      "searchSignalWeight": 0.35,
+      "searchSignalCap": 6,
+      "persistenceBonus": {
+        "daily": 0.0,
+        "weekly": 0.35,
+        "evergreen": 0.65
+      },
+      "contentGapBonus": 0.25,
+      "richSignalConfidence": 0.8,
+      "sparseSignalConfidence": 0.6
+    },
+    "longform": {
+      "base": 1.8,
+      "expandabilityWeight": 1.8,
+      "evergreenBonus": 0.45,
+      "searchIntentBonus": {
+        "case": 0.35,
+        "comparison": 0.35
+      },
+      "confidence": 0.62
+    },
+    "feasibility": {
+      "base": 3.2,
+      "productionComplexityWeight": 1.6,
+      "formatOverlapWeight": 0.7,
+      "capabilityOverlapWeight": 0.3,
+      "fastTurnaroundBonus": 0.45,
+      "dependencyRiskBonus": {
+        "low": 0.2,
+        "medium": 0.0,
+        "high": -0.5
+      },
+      "confidence": 0.82
+    }
+  },
+  "recommendedUse": {
+    "searchCaptureThreshold": 4.2,
+    "seriesThreshold": 4.3,
+    "longformThreshold": 4.2
+  },
+  "nextAction": {
+    "generateScriptPriority": "P0",
+    "generateScriptFeasibilityThreshold": 3.5,
+    "backupPriorities": ["P0", "P1"]
+  },
+  "riskFlags": {
+    "highCompetitionThreshold": 3.8,
+    "executionRiskThreshold": 3.0,
+    "weakSearchCaptureThreshold": 2.8,
+    "dailyFreshnessValue": "daily"
+  },
+  "rerank": {
+    "duplicateRecommendedUsePenalty": 0.18,
+    "duplicateTopicTypePenalty": 0.12,
+    "duplicatePrimaryAnglePenalty": 0.06,
+    "lowFeasibilityThreshold": 3.3,
+    "lowFeasibilityPenalty": 0.08,
+    "rejectedPenalty": 0.9
+  }
+}

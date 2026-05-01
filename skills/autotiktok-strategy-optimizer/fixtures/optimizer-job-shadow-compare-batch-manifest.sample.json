@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "optimizer-job-shadow-compare-batch-manifest.sample.v1",
+  "manifestId": "optimizer-job-shadow-compare-batch-manifest.autotiktok.fixture.2026-04-18",
+  "generatedAt": "2026-04-18T06:10:00Z",
+  "comparisonDimension": "candidateSchedulerRolloutIntent",
+  "batchWindowLabel": "2026-04-18.daily-weekly",
+  "generatedFrom": {
+    "compareArtifactCount": 2
+  },
+  "compareArtifactPaths": [
+    "skills/autotiktok-strategy-optimizer/fixtures/optimizer-job-shadow-compare.daily.sample.json",
+    "skills/autotiktok-strategy-optimizer/fixtures/optimizer-job-shadow-compare.weekly.sample.json"
+  ]
+}
