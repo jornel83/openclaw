@@ -55,6 +55,23 @@ python3 {baseDir}/scripts/dry_run_ranking.py --output {baseDir}/fixtures/ranking
 python3 {baseDir}/scripts/ranking_profile_matrix.py --output {baseDir}/fixtures/ranking-profile-matrix.sample.json
 ```
 
+For a user-facing AutoTikTok report with downloaded / understood MP4 evidence,
+render the score table through the report helper so the table includes the local
+video filename:
+
+```bash
+python3 {baseDir}/scripts/build_ranking_report.py \
+  --ranking <ranking-dry-run.json> \
+  --discovery <discovery-dry-run.json> \
+  --video-content-analysis <video-content-analysis.json> \
+  --output <report.md>
+```
+
+The generated table has a `视频文件` column. It uses `ranking-dry-run.json` for
+rank and score order, `discovery-dry-run.json` for topic-to-video-sample
+evidence, and `video-content-analysis.json` for `videoPath`. Only the filename
+is rendered in the table, not the full local path.
+
 With no explicit profile, the runner resolves the profile from `scoringContext.stageMode`.
 
 The runner also records where the candidate input came from, for example:

@@ -1,0 +1,53 @@
+{
+  "skill": "tiktok-video-download",
+  "out_dir": "tiktok-downloads/autotiktok-sample",
+  "captured_at": "2026-05-02T18:43:00Z",
+  "summary": {
+    "ok": 2,
+    "skipped": 1,
+    "error": 1,
+    "total": 4
+  },
+  "downloads": [
+    {
+      "url": "https://www.tiktok.com/@ghz8fluaa7/video/7625369819713408270",
+      "video_id": "7625369819713408270",
+      "author": "ghz8fluaa7",
+      "status": "ok",
+      "file": "tiktok-downloads/autotiktok-sample/7625369819713408270.mp4",
+      "size_bytes": 4829132,
+      "duration_sec": 13,
+      "title": "#nuggetice #nuggeticemaker #icemaker",
+      "format_id": "downloaded-mp4"
+    },
+    {
+      "url": "https://www.tiktok.com/@ghz8fluaa7/video/7625369819713408270",
+      "video_id": "7625369819713408270",
+      "author": "ghz8fluaa7",
+      "status": "skipped",
+      "file": "tiktok-downloads/autotiktok-sample/7625369819713408270.mp4",
+      "size_bytes": 4829132,
+      "duration_sec": 13,
+      "title": "#nuggetice #nuggeticemaker #icemaker",
+      "format_id": "downloaded-mp4"
+    },
+    {
+      "url": "https://www.tiktok.com/@livingroomfx/video/7625000000000000000",
+      "video_id": "7625000000000000000",
+      "author": "livingroomfx",
+      "status": "error",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.tiktok.com/@courtdance/video/7625999999999999999",
+      "video_id": "7625999999999999999",
+      "author": "courtdance",
+      "status": "ok",
+      "file": "tiktok-downloads/autotiktok-sample/7625999999999999999.webm",
+      "size_bytes": 0,
+      "duration_sec": 12,
+      "title": "#dancechallenge #handmoves",
+      "format_id": "downloaded-webm"
+    }
+  ]
+}

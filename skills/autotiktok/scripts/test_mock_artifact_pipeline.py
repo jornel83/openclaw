@@ -39,6 +39,26 @@ class TestMockArtifactPipeline(TestCase):
         self.assertIn("Validated all AutoTikTok mock artifacts", result.stdout)
         self.assertIn("validate_artifact_provenance_chain.py", result.stdout)
         self.assertIn(
+            "validate_trending_discovery_adapter_contract_alignment.py",
+            result.stdout,
+        )
+        self.assertIn(
+            "validate_trending_source_snapshots_alignment.py",
+            result.stdout,
+        )
+        self.assertIn(
+            "validate_trending_video_samples_alignment.py",
+            result.stdout,
+        )
+        self.assertIn(
+            "validate_trending_signal_items_alignment.py",
+            result.stdout,
+        )
+        self.assertIn(
+            "validate_trending_discovery_ranking_integration.py",
+            result.stdout,
+        )
+        self.assertIn(
             "validate_discovery_snapshot_materialization_alignment.py",
             result.stdout,
         )

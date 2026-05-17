@@ -17,16 +17,23 @@ from pathlib import Path
 from typing import Any
 
 try:
-    import yt_dlp
-except ImportError as exc:  # pragma: no cover - handled at runtime
-    print("yt-dlp is required. Install with: pip install yt-dlp", file=sys.stderr)
-    raise SystemExit(1) from exc
+    import yt_dlp as _yt_dlp
+except ImportError:  # pragma: no cover - handled at runtime
+    _yt_dlp = None
 
 
 TIKTOK_VIDEO_URL_RE = re.compile(
     r"https?://(?:www\.|m\.|vm\.|vt\.)?tiktok\.com/[^\s\"']+",
     re.IGNORECASE,
 )
+BAKEOFF_VIEW_CHOICES = ("all", "both", "absolute_hot", "fresh_hot")
+
+
+def load_yt_dlp() -> Any:
+    if _yt_dlp is None:
+        print("yt-dlp is required. Install with: pip install yt-dlp", file=sys.stderr)
+        raise SystemExit(1)
+    return _yt_dlp
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,6 +41,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--url", action="append", default=[], help="TikTok video URL (repeatable)")
     parser.add_argument("--urls-file", help="Text file with one TikTok URL per line")
     parser.add_argument("--from-bakeoff", help="tiktok-trending bakeoff JSON to read URLs from")
+    parser.add_argument(
+        "--bakeoff-view",
+        choices=BAKEOFF_VIEW_CHOICES,
+        default="all",
+        help=(
+            "Trending view to read from --from-bakeoff. Use both/all for the "
+            "deduped absolute_hot + fresh_hot union."
+        ),
+    )
+    parser.add_argument(
+        "--per-view-max",
+        type=int,
+        default=0,
+        help=(
+            "Cap URLs per selected bakeoff view before merging (0 = no cap). "
+            "Use with --bakeoff-view both for TopN absolute_hot plus TopN fresh_hot."
+        ),
+    )
     parser.add_argument("--out-dir", required=True, help="Directory for downloaded videos")
     parser.add_argument("--manifest", required=True, help="JSON manifest output path")
     parser.add_argument("--max", type=int, default=0, help="Hard cap on URLs (0 = no cap)")
@@ -60,22 +85,91 @@ def collect_urls_from_text(path: Path) -> list[str]:
     return urls
 
 
-def collect_urls_from_bakeoff(path: Path) -> list[str]:
+def normalize_bakeoff_view(view: str | None) -> tuple[str, ...]:
+    normalized = (view or "all").strip().lower()
+    if normalized in ("all", "both"):
+        return ("absolute_hot", "fresh_hot")
+    if normalized in ("absolute_hot", "fresh_hot"):
+        return (normalized,)
+    raise ValueError("bakeoff view must be one of " + ", ".join(BAKEOFF_VIEW_CHOICES))
+
+
+def _video_url(row: Any) -> str:
+    if not isinstance(row, dict):
+        return ""
+    url = row.get("url") or row.get("share_url") or row.get("shareUrl")
+    if isinstance(url, str) and url:
+        return url
+    raw_meta = row.get("rawMeta")
+    if isinstance(raw_meta, dict):
+        raw_url = (
+            raw_meta.get("url")
+            or raw_meta.get("share_url")
+            or raw_meta.get("shareUrl")
+        )
+        if isinstance(raw_url, str) and raw_url:
+            return raw_url
+    return ""
+
+
+def _extend_raw_video_urls(target: list[str], rows: Any) -> None:
+    if not isinstance(rows, list):
+        return
+    for row in rows:
+        url = _video_url(row)
+        if url:
+            target.append(url)
+
+
+def _extend_video_sample_urls(target: list[str], artifact: Any) -> None:
+    if not isinstance(artifact, dict):
+        return
+    _extend_raw_video_urls(target, artifact.get("videoSamples"))
+
+
+def collect_urls_from_bakeoff(
+    path: Path,
+    *,
+    view: str | None = None,
+    per_view_max: int = 0,
+) -> list[str]:
     data = json.loads(path.read_text(encoding="utf-8"))
-    urls: list[str] = []
+    selected_views = normalize_bakeoff_view(view)
+    urls_by_view: dict[str, list[str]] = {selected_view: [] for selected_view in selected_views}
+
     routes = data.get("routes") or []
     for route in routes:
-        for key in ("videos", "fresh_hot_videos"):
-            for video in route.get(key, []) or []:
-                url = video.get("url") or video.get("share_url")
-                if isinstance(url, str) and url:
-                    urls.append(url)
-        for sample_key in ("absolute_hot_video_samples", "fresh_hot_video_samples"):
-            artifact = route.get(sample_key) or {}
-            for sample in artifact.get("videoSamples", []) or []:
-                url = sample.get("shareUrl") or sample.get("rawMeta", {}).get("url")
-                if isinstance(url, str) and url:
-                    urls.append(url)
+        if not isinstance(route, dict):
+            continue
+        if "absolute_hot" in urls_by_view:
+            _extend_raw_video_urls(urls_by_view["absolute_hot"], route.get("videos"))
+            _extend_video_sample_urls(
+                urls_by_view["absolute_hot"],
+                route.get("absolute_hot_video_samples"),
+            )
+        if "fresh_hot" in urls_by_view:
+            _extend_raw_video_urls(urls_by_view["fresh_hot"], route.get("fresh_hot_videos"))
+            _extend_video_sample_urls(
+                urls_by_view["fresh_hot"],
+                route.get("fresh_hot_video_samples"),
+            )
+
+    if "absolute_hot" in urls_by_view:
+        _extend_raw_video_urls(urls_by_view["absolute_hot"], data.get("videos"))
+        _extend_video_sample_urls(
+            urls_by_view["absolute_hot"],
+            data.get("absolute_hot_video_samples"),
+        )
+    if "fresh_hot" in urls_by_view:
+        _extend_raw_video_urls(urls_by_view["fresh_hot"], data.get("fresh_hot_videos"))
+        _extend_video_sample_urls(urls_by_view["fresh_hot"], data.get("fresh_hot_video_samples"))
+
+    urls: list[str] = []
+    for selected_view in selected_views:
+        view_urls = dedupe_urls(urls_by_view[selected_view])
+        if per_view_max and per_view_max > 0:
+            view_urls = view_urls[:per_view_max]
+        urls.extend(view_urls)
     return urls
 
 
@@ -106,6 +200,7 @@ def extract_author(url: str) -> str:
 
 
 def download_one(url: str, out_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
+    yt_dlp = load_yt_dlp()
     video_id = extract_video_id(url)
     author = extract_author(url)
     base_record: dict[str, Any] = {
@@ -180,7 +275,13 @@ def main() -> int:
     if args.urls_file:
         urls.extend(collect_urls_from_text(Path(args.urls_file)))
     if args.from_bakeoff:
-        urls.extend(collect_urls_from_bakeoff(Path(args.from_bakeoff)))
+        urls.extend(
+            collect_urls_from_bakeoff(
+                Path(args.from_bakeoff),
+                view=args.bakeoff_view,
+                per_view_max=args.per_view_max,
+            )
+        )
     urls = dedupe_urls([u for u in urls if u and TIKTOK_VIDEO_URL_RE.search(u)])
     if args.max and args.max > 0:
         urls = urls[: args.max]

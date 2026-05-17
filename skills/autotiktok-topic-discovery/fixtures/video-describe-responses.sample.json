@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "openclaw-video-describe-responses.sample.v1",
+  "responses": [
+    {
+      "videoSampleId": "tt:7625369819713408270",
+      "ok": true,
+      "capability": "video.describe",
+      "transport": "local",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "attempts": [],
+      "outputs": [
+        {
+          "path": "tiktok-downloads/autotiktok-sample/7625369819713408270.mp4",
+          "text": "The video showcases a portable ice maker that creates flavored ice in several shapes. It uses green soda, a red drink, and a blue sports drink to produce sticks, skulls, and ice-cream-cone-shaped frozen treats in outdoor and stadium settings. Each segment ends with someone enjoying the flavored ice as an alternative to store-bought popsicles.",
+          "kind": "video.description"
+        }
+      ]
+    }
+  ]
+}

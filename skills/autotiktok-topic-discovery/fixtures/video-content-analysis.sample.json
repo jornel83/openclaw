@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "discovery-video-content-analysis.sample.v1",
+  "snapshotId": "snap.discovery.tiktok-trending.us.20260502t183100z",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-05-02T18:43:00Z",
+  "videoUnderstanding": {
+    "capability": "video.describe",
+    "transport": "openclaw-infer",
+    "provider": "google",
+    "model": "gemini-3-flash-preview",
+    "selectionSource": "config_default",
+    "configPath": "skills/autotiktok-topic-discovery/config/video-understanding.v1.json"
+  },
+  "generatedFrom": {
+    "sourceSkill": "autotiktok-video-download",
+    "inputVideoSamplesSchemaVersion": "discovery-video-samples.v1",
+    "downloadManifestSchemaVersion": "discovery-video-download-manifest.sample.v1",
+    "derivationMode": "mp4_multimodal_sidecar",
+    "enhancementMode": "sidecar_only",
+    "fallbackLane": "metadata_only_signal_items"
+  },
+  "analyses": [
+    {
+      "analysisId": "vca.tt.7625369819713408270.google.gemini-3-flash-preview",
+      "videoSampleId": "tt:7625369819713408270",
+      "platformVideoId": "7625369819713408270",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoPath": "tiktok-downloads/autotiktok-sample/7625369819713408270.mp4",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "download": {
+        "manifestEntryId": "download.tt.7625369819713408270",
+        "status": "downloaded",
+        "mimeType": "video/mp4",
+        "fileSizeBytes": 4829132,
+        "downloadedAt": null
+      },
+      "status": "analysis_succeeded",
+      "descriptionText": "The video showcases a portable ice maker that creates flavored ice in several shapes. It uses green soda, a red drink, and a blue sports drink to produce sticks, skulls, and ice-cream-cone-shaped frozen treats in outdoor and stadium settings. Each segment ends with someone enjoying the flavored ice as an alternative to store-bought popsicles.",
+      "contentSummary": "The video showcases a portable ice maker that creates flavored ice in several shapes.",
+      "visualEvidence": [
+        "The video showcases a portable ice maker that creates flavored ice in several shapes.",
+        "It uses green soda, a red drink, and a blue sports drink to produce sticks, skulls, and ice-cream-cone-shaped frozen treats in outdoor and stadium settings.",
+        "Each segment ends with someone enjoying the flavored ice as an alternative to store-bought popsicles."
+      ],
+      "replicationHints": [
+        "reuse the clearest visual transformation described in the reference video",
+        "capture close-up proof shots that make the topic immediately legible",
+        "package the hook around the concrete object, action, or scene in the video"
+      ],
+      "analysisConfidence": 0.84,
+      "provenance": {
+        "inputVideoSampleReference": "tt:7625369819713408270",
+        "inputDownloadManifestReference": "download.tt.7625369819713408270",
+        "command": "openclaw infer video describe",
+        "rawOutputKind": "video.description",
+        "rawOutputSource": "response_fixture"
+      },
+      "errors": []
+    },
+    {
+      "analysisId": "vca.tt.7625618372616555808.google.gemini-3-flash-preview",
+      "videoSampleId": "tt:7625618372616555808",
+      "platformVideoId": "7625618372616555808",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoPath": null,
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "download": {
+        "manifestEntryId": "download.tt.7625618372616555808",
+        "status": "missing",
+        "mimeType": null,
+        "fileSizeBytes": null,
+        "downloadedAt": null
+      },
+      "status": "download_missing",
+      "descriptionText": "",
+      "contentSummary": "",
+      "visualEvidence": [],
+      "replicationHints": [],
+      "analysisConfidence": 0.0,
+      "provenance": {
+        "inputVideoSampleReference": "tt:7625618372616555808",
+        "inputDownloadManifestReference": "download.tt.7625618372616555808",
+        "command": "openclaw infer video describe",
+        "rawOutputKind": "video.description",
+        "rawOutputSource": "not_invoked"
+      },
+      "errors": [
+        {
+          "code": "download_missing",
+          "message": "No raw download record matched this video sample."
+        }
+      ]
+    },
+    {
+      "analysisId": "vca.tt.7625000000000000000.google.gemini-3-flash-preview",
+      "videoSampleId": "tt:7625000000000000000",
+      "platformVideoId": "7625000000000000000",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoPath": null,
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "download": {
+        "manifestEntryId": "download.tt.7625000000000000000",
+        "status": "error",
+        "mimeType": null,
+        "fileSizeBytes": null,
+        "downloadedAt": null
+      },
+      "status": "analysis_failed",
+      "descriptionText": "",
+      "contentSummary": "",
+      "visualEvidence": [],
+      "replicationHints": [],
+      "analysisConfidence": 0.0,
+      "provenance": {
+        "inputVideoSampleReference": "tt:7625000000000000000",
+        "inputDownloadManifestReference": "download.tt.7625000000000000000",
+        "command": "openclaw infer video describe",
+        "rawOutputKind": "video.description",
+        "rawOutputSource": "not_invoked"
+      },
+      "errors": [
+        {
+          "code": "download_error",
+          "message": "HTTP Error 403: Forbidden"
+        }
+      ]
+    },
+    {
+      "analysisId": "vca.tt.7625999999999999999.google.gemini-3-flash-preview",
+      "videoSampleId": "tt:7625999999999999999",
+      "platformVideoId": "7625999999999999999",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoPath": "tiktok-downloads/autotiktok-sample/7625999999999999999.webm",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "download": {
+        "manifestEntryId": "download.tt.7625999999999999999",
+        "status": "invalid_file",
+        "mimeType": "video/webm",
+        "fileSizeBytes": 0,
+        "downloadedAt": null
+      },
+      "status": "analysis_failed",
+      "descriptionText": "",
+      "contentSummary": "",
+      "visualEvidence": [],
+      "replicationHints": [],
+      "analysisConfidence": 0.0,
+      "provenance": {
+        "inputVideoSampleReference": "tt:7625999999999999999",
+        "inputDownloadManifestReference": "download.tt.7625999999999999999",
+        "command": "openclaw infer video describe",
+        "rawOutputKind": "video.description",
+        "rawOutputSource": "not_invoked"
+      },
+      "errors": [
+        {
+          "code": "invalid_file",
+          "message": "Downloaded file must be a non-empty MP4 before video understanding can run."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "requested": 4,
+    "analysisSucceeded": 1,
+    "downloadMissing": 1,
+    "analysisFailed": 2,
+    "fallbackToMetadataOnly": 3
+  }
+}

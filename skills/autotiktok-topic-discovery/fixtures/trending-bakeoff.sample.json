@@ -1,0 +1,80 @@
+{
+  "experiment_type": "tiktok_hot_video_bakeoff",
+  "window": "24h",
+  "region": "US",
+  "language": "en",
+  "routes": [
+    {
+      "route_id": "direct-hot",
+      "status": "ok",
+      "observed_at": "2026-05-02T18:31:00Z",
+      "window": "24h",
+      "region": "US",
+      "language": "en",
+      "absolute_hot_video_samples": {
+        "schemaVersion": "discovery-video-samples.v1",
+        "snapshotId": "snap.tiktok.direct-hot.absolute_hot.us.20260502t183100z",
+        "market": "US",
+        "language": "en",
+        "capturedAt": "2026-05-02T18:31:00Z",
+        "videoSamples": [
+          {
+            "videoSampleId": "tt:7625618372616555808",
+            "platformVideoId": "7625618372616555808",
+            "sourceSnapshotId": "snap.tiktok.direct-hot.absolute_hot.us.20260502t183100z",
+            "publishedAt": "2026-05-02T16:42:00Z",
+            "title": "#eyefilter #doeeyes #eyemakeup",
+            "desc": "#eyefilter #doeeyes #eyemakeup",
+            "hashtags": ["eyefilter", "doeeyes", "eyemakeup"],
+            "authorId": "7123456789",
+            "authorHandle": "paulinettee.s",
+            "authorDisplayName": "Pauline",
+            "durationSec": 7,
+            "coverUrl": "https://example.com/cover-eyefilter.jpg",
+            "shareUrl": "https://www.tiktok.com/@paulinettee.s/video/7625618372616555808",
+            "metrics": {
+              "views": 182000,
+              "likes": 13200,
+              "shares": 740,
+              "comments": 412
+            },
+            "region": "US",
+            "rawMeta": {}
+          }
+        ]
+      },
+      "fresh_hot_video_samples": {
+        "schemaVersion": "discovery-video-samples.v1",
+        "snapshotId": "snap.tiktok.direct-hot.fresh_hot.us.20260502t183100z",
+        "market": "US",
+        "language": "en",
+        "capturedAt": "2026-05-02T18:31:00Z",
+        "videoSamples": [
+          {
+            "videoSampleId": "tt:7631352147166104853",
+            "platformVideoId": "7631352147166104853",
+            "sourceSnapshotId": "snap.tiktok.direct-hot.fresh_hot.us.20260502t183100z",
+            "publishedAt": "2026-05-02T17:10:00Z",
+            "title": "Taylor Swift tour style idea",
+            "desc": "I think I might be trying that #fun #swifttok #taylorswifttourstyle",
+            "hashtags": ["fun", "swifttok", "taylorswifttourstyle"],
+            "authorId": "7012345678",
+            "authorHandle": "andrea.swift815",
+            "authorDisplayName": "Andrea Swift",
+            "durationSec": 7,
+            "coverUrl": "https://example.com/cover-swifttok.jpg",
+            "shareUrl": "https://www.tiktok.com/@andrea.swift815/video/7631352147166104853",
+            "metrics": {
+              "views": 94000,
+              "likes": 8400,
+              "shares": 520,
+              "comments": 128
+            },
+            "region": "US",
+            "rawMeta": {}
+          }
+        ]
+      }
+    }
+  ]
+}

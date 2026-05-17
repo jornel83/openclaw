@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "discovery-video-download-manifest.sample.v1",
+  "snapshotId": "snap.discovery.tiktok-trending.us.20260502t183100z",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-05-02T18:43:00Z",
+  "generatedFrom": {
+    "sourceSkill": "autotiktok-video-download",
+    "inputVideoSamplesSchemaVersion": "discovery-video-samples.v1",
+    "rawDownloadManifestSkill": "tiktok-video-download",
+    "rawDownloadManifestSummary": {
+      "ok": 2,
+      "skipped": 1,
+      "error": 1,
+      "total": 4
+    },
+    "joinRule": "platformVideoId_primary_shareUrl_secondary_fileStem_fallback",
+    "fallbackLane": "metadata_only_signal_items"
+  },
+  "downloads": [
+    {
+      "manifestEntryId": "download.tt.7625369819713408270",
+      "videoSampleId": "tt:7625369819713408270",
+      "platformVideoId": "7625369819713408270",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "shareUrl": "https://www.tiktok.com/@ghz8fluaa7/video/7625369819713408270",
+      "status": "downloaded",
+      "joinStatus": "matched_by_platform_video_id",
+      "matchStrategy": "platform_video_id",
+      "videoPath": "tiktok-downloads/autotiktok-sample/7625369819713408270.mp4",
+      "mimeType": "video/mp4",
+      "fileSizeBytes": 4829132,
+      "durationSec": 13,
+      "downloadStatus": "ok",
+      "rawDownloadIndexes": [0],
+      "duplicateRawDownloadIndexes": [1],
+      "downloadedAt": null,
+      "warnings": [
+        {
+          "code": "duplicate_download",
+          "message": "Multiple raw download records matched this video sample; the first usable record was kept."
+        }
+      ],
+      "errors": []
+    },
+    {
+      "manifestEntryId": "download.tt.7625618372616555808",
+      "videoSampleId": "tt:7625618372616555808",
+      "platformVideoId": "7625618372616555808",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "shareUrl": "https://www.tiktok.com/@paulinettee.s/video/7625618372616555808",
+      "status": "download_missing",
+      "joinStatus": "missing_download",
+      "matchStrategy": "none",
+      "videoPath": null,
+      "mimeType": null,
+      "fileSizeBytes": null,
+      "durationSec": null,
+      "downloadStatus": "missing",
+      "rawDownloadIndexes": [],
+      "duplicateRawDownloadIndexes": [],
+      "downloadedAt": null,
+      "warnings": [],
+      "errors": [
+        {
+          "code": "download_missing",
+          "message": "No raw download record matched this video sample."
+        }
+      ]
+    },
+    {
+      "manifestEntryId": "download.tt.7625000000000000000",
+      "videoSampleId": "tt:7625000000000000000",
+      "platformVideoId": "7625000000000000000",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "shareUrl": "https://www.tiktok.com/@livingroomfx/video/7625000000000000000",
+      "status": "download_error",
+      "joinStatus": "matched_by_platform_video_id",
+      "matchStrategy": "platform_video_id",
+      "videoPath": null,
+      "mimeType": null,
+      "fileSizeBytes": null,
+      "durationSec": null,
+      "downloadStatus": "error",
+      "rawDownloadIndexes": [2],
+      "duplicateRawDownloadIndexes": [],
+      "downloadedAt": null,
+      "warnings": [],
+      "errors": [
+        {
+          "code": "download_error",
+          "message": "HTTP Error 403: Forbidden"
+        }
+      ]
+    },
+    {
+      "manifestEntryId": "download.tt.7625999999999999999",
+      "videoSampleId": "tt:7625999999999999999",
+      "platformVideoId": "7625999999999999999",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "shareUrl": "https://www.tiktok.com/@courtdance/video/7625999999999999999",
+      "status": "invalid_file",
+      "joinStatus": "matched_by_platform_video_id",
+      "matchStrategy": "platform_video_id",
+      "videoPath": "tiktok-downloads/autotiktok-sample/7625999999999999999.webm",
+      "mimeType": "video/webm",
+      "fileSizeBytes": 0,
+      "durationSec": 12,
+      "downloadStatus": "ok",
+      "rawDownloadIndexes": [3],
+      "duplicateRawDownloadIndexes": [],
+      "downloadedAt": null,
+      "warnings": [],
+      "errors": [
+        {
+          "code": "invalid_file",
+          "message": "Downloaded file must be a non-empty MP4 before video understanding can run."
+        }
+      ]
+    }
+  ],
+  "unmatchedRawDownloads": [],
+  "summary": {
+    "requested": 4,
+    "downloaded": 1,
+    "downloadMissing": 1,
+    "downloadError": 1,
+    "invalidFile": 1,
+    "duplicateRawDownloads": 1,
+    "unmatchedRawDownloads": 0,
+    "fallbackToMetadataOnly": 3
+  }
+}

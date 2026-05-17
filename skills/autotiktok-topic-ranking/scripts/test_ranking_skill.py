@@ -176,6 +176,21 @@ class TestRankingSkill(TestCase):
             self.assertEqual(stages["scale"]["profileId"], "scale-default")
             self.assertEqual(stages["search_priority"]["profileId"], "search-priority-default")
 
+    def test_ranking_report_builder_outputs_score_table(self):
+        with tempfile.TemporaryDirectory(prefix="autotiktok-ranking-report-") as temp_dir:
+            out_path = Path(temp_dir) / "report.md"
+            result = self.run_script(
+                "skills/autotiktok-topic-ranking/scripts/build_ranking_report.py",
+                "--top",
+                "2",
+                "--output",
+                str(out_path),
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = out_path.read_text(encoding="utf-8")
+            self.assertIn("| 排名 | Topic | 视频文件 | ScoreTotal |", report)
+            self.assertIn("3 ad creative mistakes that kill watch time", report)
+
 
 if __name__ == "__main__":
     main()

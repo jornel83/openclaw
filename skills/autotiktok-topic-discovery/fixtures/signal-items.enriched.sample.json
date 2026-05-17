@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "discovery-signal-items.sample.v1",
+  "snapshotId": "snap.discovery.tiktok-trending.us.20260502t183100z",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-05-02T18:43:00Z",
+  "signalItems": [
+    {
+      "signalId": "sig.discovery.tiktok_trending.nuggetice.13408270",
+      "capturedAt": "2026-05-02T18:43:00Z",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoSampleId": "tt:7625369819713408270",
+      "signalConfidence": 0.84,
+      "topicId": "tp_trend_tiktok_nuggetice",
+      "topicFingerprint": "fp.trend.tiktok_trending.nuggetice",
+      "topicTitle": "TikTok trend: #nuggetice #nuggeticemaker #icemaker",
+      "topicSummary": "Metadata-only TikTok trend signal derived from public video sample tt:7625369819713408270 with 124000 observed views. MP4 analysis adds: The video showcases a portable ice maker that creates flavored ice in several shapes.",
+      "topicType": "trend",
+      "sourceType": "public_video_sample",
+      "keywords": ["nuggetice", "nuggeticemaker", "icemaker"],
+      "contentAngles": [
+        "trend reaction around #nuggetice #nuggeticemaker #icemaker",
+        "why this video is gaining attention",
+        "video proof: The video showcases a portable ice maker that creates flavored ice in several shapes.",
+        "video proof: It uses green soda, a red drink, and a blue sports drink to produce sticks, skulls, and ice-cream-cone-shaped frozen treats in outdoor and stadium settings."
+      ],
+      "seedQueries": ["nuggetice", "nuggeticemaker"],
+      "relatedQueries": [
+        "tiktok #nuggetice #nuggeticemaker #icemaker",
+        "#nuggetice #nuggeticemaker #icemaker trend"
+      ],
+      "contentGapQueries": [],
+      "searchIntentType": "trend_reaction",
+      "searchPersistenceHint": "daily",
+      "recommendedMode": "growth",
+      "freshnessWindow": "daily",
+      "expandabilityHint": 0.87,
+      "recommendedFormats": ["talking_head", "image_plus_voiceover", "reference_video_breakdown"],
+      "requiredAssets": [
+        "reference video",
+        "trend screenshots",
+        "local MP4 reference",
+        "video understanding sidecar"
+      ],
+      "requiredCapabilities": [
+        "trend commentary",
+        "fast edit packaging",
+        "video content interpretation"
+      ],
+      "productionComplexity": 0.38,
+      "dependencyRisk": "medium",
+      "fastTurnaround": true,
+      "executionNotes": "metadata-derived synthetic signal from autotiktok-trending; replace or enrich with MP4 multimodal analysis when available. Enriched with videoContentAnalysis vca.tt.7625369819713408270.google.gemini-3-flash-preview from google/gemini-3-flash-preview.",
+      "rawMeta": {
+        "enrichmentLane": "video_content_analysis",
+        "videoContentAnalysisReference": {
+          "analysisId": "vca.tt.7625369819713408270.google.gemini-3-flash-preview",
+          "videoSampleId": "tt:7625369819713408270",
+          "platformVideoId": "7625369819713408270",
+          "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+          "status": "analysis_succeeded",
+          "provider": "google",
+          "model": "gemini-3-flash-preview",
+          "analysisConfidence": 0.84
+        },
+        "videoContentEvidence": {
+          "contentSummary": "The video showcases a portable ice maker that creates flavored ice in several shapes.",
+          "visualEvidence": [
+            "The video showcases a portable ice maker that creates flavored ice in several shapes.",
+            "It uses green soda, a red drink, and a blue sports drink to produce sticks, skulls, and ice-cream-cone-shaped frozen treats in outdoor and stadium settings.",
+            "Each segment ends with someone enjoying the flavored ice as an alternative to store-bought popsicles."
+          ],
+          "replicationHints": [
+            "reuse the clearest visual transformation described in the reference video",
+            "capture close-up proof shots that make the topic immediately legible"
+          ]
+        }
+      }
+    },
+    {
+      "signalId": "sig.discovery.tiktok_trending.eyefilter.16555808",
+      "capturedAt": "2026-05-02T18:43:00Z",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoSampleId": "tt:7625618372616555808",
+      "signalConfidence": 0.87,
+      "topicId": "tp_trend_tiktok_eyefilter",
+      "topicFingerprint": "fp.trend.tiktok_trending.eyefilter",
+      "topicTitle": "TikTok trend: #eyefilter #doeeyes #eyemakeup",
+      "topicSummary": "Metadata-only TikTok trend signal derived from public video sample tt:7625618372616555808 with 182000 observed views.",
+      "topicType": "trend",
+      "sourceType": "public_video_sample",
+      "keywords": ["eyefilter", "doeeyes", "eyemakeup"],
+      "contentAngles": [
+        "trend reaction around #eyefilter #doeeyes #eyemakeup",
+        "why this video is gaining attention"
+      ],
+      "seedQueries": ["eyefilter", "doeeyes"],
+      "relatedQueries": [
+        "tiktok #eyefilter #doeeyes #eyemakeup",
+        "#eyefilter #doeeyes #eyemakeup trend"
+      ],
+      "contentGapQueries": [],
+      "searchIntentType": "trend_reaction",
+      "searchPersistenceHint": "daily",
+      "recommendedMode": "growth",
+      "freshnessWindow": "daily",
+      "expandabilityHint": 0.81,
+      "recommendedFormats": ["talking_head", "image_plus_voiceover"],
+      "requiredAssets": ["reference video", "trend screenshots"],
+      "requiredCapabilities": ["trend commentary", "fast edit packaging"],
+      "productionComplexity": 0.38,
+      "dependencyRisk": "medium",
+      "fastTurnaround": true,
+      "executionNotes": "metadata-derived synthetic signal from autotiktok-trending; replace or enrich with MP4 multimodal analysis when available. MP4 analysis status download_missing; metadata-only fallback preserved.",
+      "rawMeta": {
+        "enrichmentLane": "metadata_only_fallback",
+        "videoContentAnalysisReference": {
+          "analysisId": "vca.tt.7625618372616555808.google.gemini-3-flash-preview",
+          "videoSampleId": "tt:7625618372616555808",
+          "platformVideoId": "7625618372616555808",
+          "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+          "status": "download_missing",
+          "provider": "google",
+          "model": "gemini-3-flash-preview",
+          "analysisConfidence": 0.0
+        },
+        "videoContentFallback": {
+          "status": "download_missing",
+          "errorCodes": ["download_missing"]
+        }
+      }
+    },
+    {
+      "signalId": "sig.discovery.tiktok_trending.download_error.00000000",
+      "capturedAt": "2026-05-02T18:43:00Z",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoSampleId": "tt:7625000000000000000",
+      "signalConfidence": 0.62,
+      "topicId": "tp_trend_tiktok_download_error",
+      "topicFingerprint": "fp.trend.tiktok_trending.download_error",
+      "topicTitle": "TikTok trend: unavailable download sample",
+      "topicSummary": "Metadata-only TikTok trend signal retained when the matching MP4 download failed.",
+      "topicType": "trend",
+      "sourceType": "public_video_sample",
+      "keywords": ["download", "unavailable", "fallback"],
+      "contentAngles": [
+        "metadata-only fallback when video download fails",
+        "preserve collector evidence for ranking"
+      ],
+      "seedQueries": ["download", "fallback"],
+      "relatedQueries": ["tiktok unavailable video"],
+      "contentGapQueries": [],
+      "searchIntentType": "trend_reaction",
+      "searchPersistenceHint": "daily",
+      "recommendedMode": "growth",
+      "freshnessWindow": "daily",
+      "expandabilityHint": 0.48,
+      "recommendedFormats": ["talking_head", "image_plus_voiceover"],
+      "requiredAssets": ["reference video", "trend screenshots"],
+      "requiredCapabilities": ["trend commentary", "fast edit packaging"],
+      "productionComplexity": 0.54,
+      "dependencyRisk": "medium",
+      "fastTurnaround": true,
+      "executionNotes": "metadata-derived synthetic signal from autotiktok-trending; replace or enrich with MP4 multimodal analysis when available. MP4 analysis status analysis_failed; metadata-only fallback preserved.",
+      "rawMeta": {
+        "enrichmentLane": "metadata_only_fallback",
+        "videoContentAnalysisReference": {
+          "analysisId": "vca.tt.7625000000000000000.google.gemini-3-flash-preview",
+          "videoSampleId": "tt:7625000000000000000",
+          "platformVideoId": "7625000000000000000",
+          "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+          "status": "analysis_failed",
+          "provider": "google",
+          "model": "gemini-3-flash-preview",
+          "analysisConfidence": 0.0
+        },
+        "videoContentFallback": {
+          "status": "analysis_failed",
+          "errorCodes": ["download_error"]
+        }
+      }
+    },
+    {
+      "signalId": "sig.discovery.tiktok_trending.invalid_file.99999999",
+      "capturedAt": "2026-05-02T18:43:00Z",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "videoSampleId": "tt:7625999999999999999",
+      "signalConfidence": 0.58,
+      "topicId": "tp_trend_tiktok_invalid_file",
+      "topicFingerprint": "fp.trend.tiktok_trending.invalid_file",
+      "topicTitle": "TikTok trend: invalid media sidecar sample",
+      "topicSummary": "Metadata-only TikTok trend signal retained when the media sidecar is not a valid MP4.",
+      "topicType": "trend",
+      "sourceType": "public_video_sample",
+      "keywords": ["invalid", "media", "fallback"],
+      "contentAngles": [
+        "metadata-only fallback when MP4 validation fails",
+        "preserve collector evidence for ranking"
+      ],
+      "seedQueries": ["invalid", "media"],
+      "relatedQueries": ["tiktok media fallback"],
+      "contentGapQueries": [],
+      "searchIntentType": "trend_reaction",
+      "searchPersistenceHint": "daily",
+      "recommendedMode": "growth",
+      "freshnessWindow": "daily",
+      "expandabilityHint": 0.44,
+      "recommendedFormats": ["talking_head", "image_plus_voiceover"],
+      "requiredAssets": ["reference video", "trend screenshots"],
+      "requiredCapabilities": ["trend commentary", "fast edit packaging"],
+      "productionComplexity": 0.54,
+      "dependencyRisk": "medium",
+      "fastTurnaround": true,
+      "executionNotes": "metadata-derived synthetic signal from autotiktok-trending; replace or enrich with MP4 multimodal analysis when available. MP4 analysis status analysis_failed; metadata-only fallback preserved.",
+      "rawMeta": {
+        "enrichmentLane": "metadata_only_fallback",
+        "videoContentAnalysisReference": {
+          "analysisId": "vca.tt.7625999999999999999.google.gemini-3-flash-preview",
+          "videoSampleId": "tt:7625999999999999999",
+          "platformVideoId": "7625999999999999999",
+          "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+          "status": "analysis_failed",
+          "provider": "google",
+          "model": "gemini-3-flash-preview",
+          "analysisConfidence": 0.0
+        },
+        "videoContentFallback": {
+          "status": "analysis_failed",
+          "errorCodes": ["invalid_file"]
+        }
+      }
+    }
+  ],
+  "generatedFrom": {
+    "sourceSkill": "autotiktok-topic-discovery",
+    "derivationMode": "video_content_analysis_enriched_signal_items",
+    "inputSignalItemsSchemaVersion": "discovery-signal-items.sample.v1",
+    "videoContentAnalysisSchemaVersion": "discovery-video-content-analysis.sample.v1",
+    "videoContentAnalysisSnapshotId": "snap.discovery.tiktok-trending.us.20260502t183100z",
+    "fallbackPolicy": "preserve_metadata_only_signal_item"
+  },
+  "summary": {
+    "requested": 4,
+    "enriched": 1,
+    "metadataOnlyFallback": 3,
+    "metadataOnlyUnmatched": 0
+  }
+}

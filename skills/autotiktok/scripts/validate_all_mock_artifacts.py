@@ -12,6 +12,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 VALIDATION_SCRIPTS = [
+    "skills/autotiktok/scripts/validate_trending_discovery_adapter_contract_alignment.py",
+    "skills/autotiktok/scripts/validate_trending_source_snapshots_alignment.py",
+    "skills/autotiktok/scripts/validate_trending_video_samples_alignment.py",
+    "skills/autotiktok/scripts/validate_trending_signal_items_alignment.py",
+    "skills/autotiktok/scripts/validate_trending_discovery_ranking_integration.py",
+    "skills/autotiktok/scripts/validate_video_download_manifest_adapter_alignment.py",
+    "skills/autotiktok/scripts/validate_video_content_analysis_contract_alignment.py",
+    "skills/autotiktok/scripts/validate_video_content_analysis_batch_runner_alignment.py",
+    "skills/autotiktok/scripts/validate_enriched_signal_items_alignment.py",
+    "skills/autotiktok/scripts/validate_enriched_discovery_ranking_integration.py",
+    "skills/autotiktok/scripts/validate_video_understanding_live_smoke_docs_alignment.py",
     "skills/autotiktok/scripts/validate_discovery_snapshot_materialization_alignment.py",
     "skills/autotiktok/scripts/validate_discovery_snapshot_ingest_alignment.py",
     "skills/autotiktok/scripts/validate_discovery_output_alignment.py",

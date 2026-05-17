@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "discovery-video-samples.v1",
+  "snapshotId": "snap.discovery.tiktok-trending.us.20260502t183100z",
+  "market": "US",
+  "language": "en",
+  "capturedAt": "2026-05-02T18:31:00Z",
+  "videoSamples": [
+    {
+      "videoSampleId": "tt:7625369819713408270",
+      "platformVideoId": "7625369819713408270",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "publishedAt": "2026-05-02T15:55:00Z",
+      "title": "#nuggetice #nuggeticemaker #icemaker #smallappliances #lifeupgrade",
+      "desc": "#nuggetice #nuggeticemaker #icemaker #smallappliances #lifeupgrade",
+      "hashtags": ["nuggetice", "nuggeticemaker", "icemaker", "smallappliances", "lifeupgrade"],
+      "authorId": "7234567890",
+      "authorHandle": "ghz8fluaa7",
+      "authorDisplayName": "Kitchen Finds",
+      "metrics": {
+        "views": 124000,
+        "likes": 9700,
+        "comments": 205,
+        "shares": 680
+      },
+      "durationSec": 13,
+      "shareUrl": "https://www.tiktok.com/@ghz8fluaa7/video/7625369819713408270"
+    },
+    {
+      "videoSampleId": "tt:7625618372616555808",
+      "platformVideoId": "7625618372616555808",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "publishedAt": "2026-05-02T16:42:00Z",
+      "title": "#eyefilter #doeeyes #eyemakeup",
+      "desc": "#eyefilter #doeeyes #eyemakeup",
+      "hashtags": ["eyefilter", "doeeyes", "eyemakeup"],
+      "authorId": "7123456789",
+      "authorHandle": "paulinettee.s",
+      "authorDisplayName": "Pauline",
+      "metrics": {
+        "views": 182000,
+        "likes": 13200,
+        "comments": 412,
+        "shares": 740
+      },
+      "durationSec": 7,
+      "shareUrl": "https://www.tiktok.com/@paulinettee.s/video/7625618372616555808"
+    },
+    {
+      "videoSampleId": "tt:7625000000000000000",
+      "platformVideoId": "7625000000000000000",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "publishedAt": "2026-05-02T17:10:00Z",
+      "title": "#cinematicbag #fantrick",
+      "desc": "#cinematicbag #fantrick",
+      "hashtags": ["cinematicbag", "fantrick"],
+      "authorId": "7345678901",
+      "authorHandle": "livingroomfx",
+      "authorDisplayName": "Living Room FX",
+      "metrics": {
+        "views": 91000,
+        "likes": 5100,
+        "comments": 88,
+        "shares": 290
+      },
+      "durationSec": 10,
+      "shareUrl": "https://www.tiktok.com/@livingroomfx/video/7625000000000000000"
+    },
+    {
+      "videoSampleId": "tt:7625999999999999999",
+      "platformVideoId": "7625999999999999999",
+      "sourceSnapshotId": "snap.tiktok.consolidated-hot.20260502",
+      "publishedAt": "2026-05-02T17:24:00Z",
+      "title": "#dancechallenge #handmoves",
+      "desc": "#dancechallenge #handmoves",
+      "hashtags": ["dancechallenge", "handmoves"],
+      "authorId": "7456789012",
+      "authorHandle": "courtdance",
+      "authorDisplayName": "Court Dance",
+      "metrics": {
+        "views": 77000,
+        "likes": 6400,
+        "comments": 144,
+        "shares": 310
+      },
+      "durationSec": 12,
+      "shareUrl": "https://www.tiktok.com/@courtdance/video/7625999999999999999"
+    }
+  ]
+}

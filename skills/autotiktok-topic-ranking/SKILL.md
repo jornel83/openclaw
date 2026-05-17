@@ -32,6 +32,11 @@ Use this skill when the task is about converting structured topic candidates int
 - Preserve `searchEvidence` and `executionProfile` as first-class ranking inputs.
 - Prefer deterministic logic and configuration over opaque freeform model decisions.
 - Do not redesign signal collection here unless the ranking contract cannot be satisfied otherwise.
+- For user-facing AutoTikTok reports that include downloaded / understood MP4s,
+  the ranking score summary table must include a `视频文件` column. Build it by
+  joining `ranking-dry-run.json` with `discovery-dry-run.json` and
+  `video-content-analysis.json`; do not omit the local MP4 filename when the
+  analysis sidecar has `videoPath`.
 
 ## Output Expectations
 
@@ -48,6 +53,7 @@ Ranking work should usually end with one or more of these:
 - Run `python3 {baseDir}/scripts/validate_ranking_fixtures.py` to validate the default discovery-driven ranking input plus the shared ranking fixtures and profile weights.
 - Pass `--candidates`, `--context`, `--profiles`, or `--rubric` to point at alternate fixture files.
 - Run `python3 {baseDir}/scripts/dry_run_ranking.py` to score the committed discovery artifact and produce ranked sample outputs.
+- Run `python3 {baseDir}/scripts/build_ranking_report.py --ranking <ranking-dry-run.json> --discovery <discovery-dry-run.json> --video-content-analysis <video-content-analysis.json> --output <report.md>` to render the standard Markdown score table with downloaded MP4 filenames.
 - Run `python3 {baseDir}/scripts/ranking_profile_matrix.py` to replay the same candidates across `growth`, `scale`, and `search_priority` stage modes and compare ranking behavior.
 - The profile-matrix runner defaults to `skills/autotiktok/fixtures/scoring-context-matrix.fixture.json` so stage-specific assumptions stay visible and editable in data, not hidden in code.
 - Use `python3 skills/autotiktok/scripts/validate_ranking_optimizer_contract.py` when you want to confirm ranking output still satisfies the fields and invariants consumed by the optimizer layer.

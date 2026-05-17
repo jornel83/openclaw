@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "autotiktok-video-understanding-config.v1",
+  "capability": "video.describe",
+  "transport": "openclaw-infer",
+  "defaultProvider": "google",
+  "defaultModel": "gemini-3-flash-preview",
+  "modelSelection": {
+    "selectionSource": "config_default",
+    "overrideArgs": ["--provider", "--model"],
+    "defaultModelRef": "google/gemini-3-flash-preview"
+  },
+  "prompt": {
+    "mode": "provider_default",
+    "defaultText": "Describe the video."
+  },
+  "fallbackPolicy": {
+    "missingDownload": "keep_metadata_only_signal",
+    "analysisFailure": "keep_metadata_only_signal",
+    "timeout": "keep_metadata_only_signal"
+  },
+  "artifactDefaults": {
+    "schemaVersion": "discovery-video-content-analysis.v1",
+    "statusValues": ["analysis_succeeded", "download_missing", "analysis_failed"],
+    "sidecarOnly": true
+  }
+}

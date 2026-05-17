@@ -1,5 +1,5 @@
 ---
-name: tiktok-trending
+name: autotiktok-trending
 description: >
   Capture TikTok absolute_hot and fresh_hot public videos using TikTokApi trending-feed
   sampling, then save contract-aligned video sample artifacts for downstream discovery.
@@ -55,9 +55,57 @@ about **capturing globally hot and relatively fresh hot public TikTok videos**.
 - If `topic-first` is used, treat it as a debug / comparison route only.
 - Do not switch to unrelated fallback discovery methods in the same run.
 
+## Request Count Scope Rules
+
+- Extract the requested video count `N` from any clear bounded user request, not
+  only from the exact phrase `TopN`.
+- Treat these as count requests: `Top5`, `Top 5`, `前5`, `5条热门视频`,
+  `获取50个热门视频`, `从50个热门视频里`, `分析50条`, `download 10 videos`,
+  `analyze 20 trending videos`, and `top 30 samples`.
+- When a clear count `N` is present, set `--direct-keep N` and `--top-n N`
+  together. `--top-n` is summary-only; never use it by itself to satisfy a
+  bounded retained-video request.
+- Choose `--direct-count` and `--direct-batches` large enough to have a
+  reasonable chance of retaining `N` unique videos. `--direct-keep N` is still a
+  maximum, not a guarantee; report the actual retained count when fewer than `N`
+  useful videos survive filtering.
+- If the user gives two different counts, preserve the distinction. For example,
+  "collect 50 and download the top 5" means collector scope `N=50` and
+  downstream download / video-understanding scope `N=5`; "collect Top5 and
+  analyze those 5" means both scopes are `N=5`.
+- If the wording is ambiguous, choose the smallest explicit count as the
+  downstream analysis scope, keep any larger explicit count as the broader
+  collector scope, and state the chosen scopes in the output.
+- If no count is present, use the current default operating point.
+
+## Request Ranking View Scope Rules
+
+- Treat `absolute_hot` and `fresh_hot` as separate ranking views, not as an
+  automatic combined candidate pool.
+- If the user asks for generic "TopN hot / trending / hottest videos" without
+  naming a freshness view, use `absolute_hot` as the downstream scope.
+- If the user explicitly asks for fresh or rising videos, use `fresh_hot` as the
+  downstream scope.
+- If the user asks to compare both views, keep `absolute_hot` and `fresh_hot`
+  outputs separate in the report unless they also ask for a merged pool.
+- For any run that downloads or understands MP4s, downstream `videoSamples` must
+  be built from the same ranking view that was downloaded / understood. Do not
+  merge `fresh_hot_video_samples` into an `absolute_hot` TopN run as a fallback
+  or supplement.
+- If multiple views are intentionally merged before discovery or ranking, every
+  sample entering the merged ranking must have a valid downloaded MP4 and
+  `analysis_succeeded`. Download and understand the deduped union of
+  `absolute_hot_video_samples` and `fresh_hot_video_samples`; do not cap the
+  downloader with a global `--max N` at the original per-view TopN count if that
+  would leave `fresh_hot` as `download_missing`. Prefer
+  `autotiktok-video-download --from-bakeoff ... --bakeoff-view both --per-view-max N`
+  for merged TopN runs. If that is not possible, keep the
+  metadata-only items in diagnostics and label the run as a mixed metadata-only
+  recall lane instead of a video-understanding TopN run.
+
 ## Main runtime
 
-- Main script: `skills/tiktok-trending/scripts/bakeoff.py`
+- Main script: `skills/autotiktok-trending/scripts/bakeoff.py`
 - Main route: `direct-hot`
 - Optional debug route: `topic-first`
 - Ranking outputs:
@@ -66,6 +114,10 @@ about **capturing globally hot and relatively fresh hot public TikTok videos**.
 - Contract artifacts:
   - `absolute_hot_video_samples`
   - `fresh_hot_video_samples`
+- These are separate view artifacts. Choose one for downstream discovery unless
+  the user explicitly asks to merge or compare views. If you choose both, the
+  downstream download / Gemini understanding scope is the deduped union of both
+  artifacts, not just the first `N` absolute-hot URLs.
 
 ## Quick start
 
@@ -92,12 +144,15 @@ Useful options:
 - `--direct-count`: requested raw trending-feed batch size
 - `--direct-batches`: number of trending-feed batches to sample
 - `--direct-batch-pause-seconds`: pause between batches
-- `--direct-keep`: max retained results per ranking view
+- `--direct-keep`: max retained results per ranking view; set this from a clear
+  user-requested count `N`
 - `--per-author-limit`: avoid one creator dominating a category/topic
 - `--region`: best-effort region filter
 - `--language`: language tag for output video sample artifacts
 - `--min-likes`: optional compatibility filter for low-signal videos
 - `--headful`: useful when headless trending-feed sampling returns empty results
+- `--top-n`: summary / overlap slice only; pair it with `--direct-keep N` for
+  any bounded TopN request
 
 Output JSON:
 

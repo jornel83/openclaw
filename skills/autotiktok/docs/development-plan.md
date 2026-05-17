@@ -4,10 +4,11 @@
 
 AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、可验证、可调度、可观测”的工程化阶段。
 
-接下来的工作分成两条线：
+接下来的工作集中到外部集成线：
 
-- 外部集成线：继续把模块 1 接到真实 collector / snapshot artifact
-- 内部优化线：把 AutoTikTok 的 recurring job runtime 从自定义 scheduler-facing control plane 迁到 OpenClaw 标准 cron
+- 把模块 1 接到真实 collector / snapshot artifact
+- 先用 `autotiktok-trending` metadata 跑通 `sourceSnapshots + videoSamples + synthetic signalItems -> discovery -> ranking`
+- 当前正在用 `autotiktok-video-download` 下载的 MP4 和多模态模型增强 `signalItems`
 
 当前已经成型的基础能力主要集中在模块 2 和调度/运维层：
 
@@ -28,7 +29,7 @@ AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、
 - planner / scheduler 侧已经推进到 policy 驱动，而不是只靠脚本参数硬编码。
 - 模块 1 当前已经有 discovery-owned contract 和 deterministic dry-run scaffold，但还没有接入真实采集器和真实快照存储。
 
-一句话总结：前五个阶段已经把模块 2、scheduler orchestration、weekly realism、rollout/cutover、ops aggregate、以及模块 1 的 repo 内实现全部做完；接下来一条线是对接真实上游输入，另一条线是把 AutoTikTok 的定时运行收口到 OpenClaw 标准 cron。
+一句话总结：前六个阶段已经把模块 2、scheduler orchestration、weekly realism、rollout/cutover、ops aggregate、模块 1 的 repo 内实现、以及 OpenClaw 标准 cron runtime 都做完；接下来进入真实上游输入接线。
 
 ## 2. 已完成部分
 
@@ -369,7 +370,7 @@ AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、
 - `signalItems`
 - `videoSamples`
 
-当前 discovery 仍然主要消费 `skills/autotiktok-topic-discovery/fixtures/raw-signals.sample.json` 这类 stand-in 输入，而不是真实 collector artifact。
+当前 discovery 已经支持从 `sourceSnapshots + signalItems + videoSamples` materialize 输入，但这三份 artifact 仍主要来自 fixture / stand-in。下一步要把 `autotiktok-trending` 的真实 hot-video 输出转成 discovery 可消费的三输入。
 
 ### 3.2 模块 1 真实流水线
 
@@ -382,7 +383,7 @@ AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、
 5. `Merge & Dedupe`
 6. `Tagging & Packaging`
 
-当前 `discovery_dry_run.py` 只覆盖 deterministic packaging scaffold，不抓真实源，也不替代最终模块 1 实现。
+当前 `discovery_dry_run.py` 已覆盖 deterministic ingest、normalization、topic abstraction、merge / dedupe、evidence packaging scaffold，但还没有在真实 collector 输出上跑通。
 
 ### 3.3 模块 1 -> Ranking 的真实 Handoff
 
@@ -397,14 +398,14 @@ AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、
 当前最适合并行开发的边界是：
 
 - 上游同事负责：
-  - TikTok 采集器
+  - `autotiktok-trending` 热门视频采集器
+  - `autotiktok-video-download` 视频下载 sidecar
   - 快照与原始信号存储
 - 当前模块可以继续推进：
-  - discovery ingest adapter
-  - normalization / abstraction
-  - merge / dedupe
-  - evidence packaging
-  - discovery -> ranking 的真实输入 handoff
+  - trending metadata -> discovery 三输入 adapter
+  - metadata-only synthetic `signalItems` builder
+  - discovery -> ranking 的真实输入 handoff smoke
+  - 后续 MP4 多模态内容分析 artifact
 
 也就是说，模块 1 不需要等上游全部完工才开始，但最终的真实 E2E 需要和 collector / snapshot contract 对齐。
 
@@ -911,20 +912,300 @@ AutoTikTok 现在已经完成了“模块 2 可开发、可回放、可比较、
 - AutoTikTok 现有 scheduler-facing artifact 不再被视为真实调度主入口
 - daily / weekly recurring runs 可以只通过 OpenClaw 标准 cron 完成
 
+### 阶段 7（已完成）：`autotiktok-trending` metadata bootstrap 接入 discovery
+
+目标：
+
+- 先不用多模态模型，只基于 `autotiktok-trending` 已经采集到的 metadata，把真实热门视频输入接到 discovery。
+- 跑通第一条真实 collector 链路：
+  - `autotiktok-trending output -> sourceSnapshots -> videoSamples -> synthetic signalItems -> discovery -> ranking`
+- 明确 `autotiktok-video-download` 当前是媒体下载 sidecar，不作为 discovery 主输入。
+
+输入范围：
+
+- 支持标准 bakeoff 输出：
+  - `routes[*].absolute_hot_video_samples`
+  - `routes[*].fresh_hot_video_samples`
+- 支持 consolidated top-N 输出：
+  - 顶层 `absolute_hot_video_samples`
+  - 其中 `videoSamples[*]` 可能仍是 raw/ranked row，需要 adapter 归一化。
+
+建议拆分：
+
+- 开发包 1（已完成）：trending 输出形状识别与 adapter contract
+  - 识别两类输入：
+    - 标准 canonical `discovery-video-samples.v1`
+    - consolidated raw/ranked rows
+  - 明确哪些字段来自 collector 原始输出，哪些字段由 adapter 生成。
+  - 建立 focused fixture，覆盖至少一个 canonical bakeoff 样例和一个 consolidated top-N 样例。
+- 开发包 2（已完成）：`sourceSnapshots` 生成
+  - 从 trending artifact 的 `snapshotId`、`market`、`language`、`capturedAt` 生成 discovery source snapshot artifact。
+  - `source` 固定为 `public_tiktok`。
+  - `sourceSubtype` 按输入视图区分：
+    - `absolute_hot_video_sample`
+    - `fresh_hot_video_sample`
+    - `consolidated_hot_video_sample`
+  - 保证所有 normalized video sample 的 `sourceSnapshotId` 都能回指到 `sourceSnapshots[*].sourceSnapshotId`。
+- 开发包 3（已完成）：`videoSamples` 字段归一化
+  - 把 raw/ranked row 机械映射成 canonical `videoSamples[*]`。
+  - 核心映射：
+    - `video_id -> platformVideoId`
+    - `video_id -> videoSampleId=tt:<video_id>`
+    - `create_time -> publishedAt`
+    - `description -> title / desc`
+    - `author_id -> authorId`
+    - `author -> authorHandle`
+    - `author_display_name -> authorDisplayName`
+    - `view_count / like_count / share_count / comment_count -> metrics`
+    - `share_url || url -> shareUrl`
+  - `hot_score`、`ranking_mode`、`ranking_rank`、`route_rank` 等 collector 排名诊断只进入 `rawMeta`，不进入 canonical 顶层。
+  - 对 `hashtags` 做轻量清洗；缺失时从 `description` 的 `#tag` 提取。
+  - 按 `videoSampleId` 去重，保留稳定、可解释的优先级。
+- 开发包 4（已完成）：metadata-only synthetic `signalItems`
+  - 每条 normalized video sample 先生成一条 synthetic public-video signal。
+  - 动态生成字段：
+    - `signalId`
+    - `topicId`
+    - `topicFingerprint`
+    - `topicTitle`
+    - `topicSummary`
+    - `keywords`
+    - `contentAngles`
+    - `relatedQueries`
+    - `signalConfidence`
+    - `expandabilityHint`
+  - 默认字段先固定：
+    - `topicType=trend`
+    - `sourceType=public_video_sample`
+    - `searchIntentType=trend_reaction`
+    - `searchPersistenceHint=daily`
+    - `recommendedMode=growth`
+    - `freshnessWindow=daily`
+    - `recommendedFormats=[talking_head, image_plus_voiceover]`
+    - `requiredAssets=[reference video, trend screenshots]`
+    - `requiredCapabilities=[trend commentary, fast edit packaging]`
+  - `executionNotes` 必须显式标注这是 metadata-derived synthetic signal，避免和后续多模态分析结果混淆。
+- 开发包 5（已完成）：discovery / ranking 联调和 validator 收口
+  - 新增 adapter 脚本：
+    - `skills/autotiktok-topic-discovery/scripts/build_discovery_inputs_from_trending.py`
+  - 输出三份文件：
+    - `source-snapshots.from-trending.json`
+    - `video-samples.from-trending.json`
+    - `signal-items.from-trending.synthetic.json`
+  - 用现有入口验证：
+    - `build_discovery_snapshot_materialization.py`
+    - `discovery_dry_run.py`
+    - `dry_run_ranking.py`
+  - 新增 focused alignment gate，证明 trending output 可以稳定进入 discovery / ranking。
+
+完成标准：
+
+- consolidated top-N trending 输出可以转成合法 `sourceSnapshots`、`videoSamples`、`signalItems`。
+- `videoSamples` 通过 discovery 当前字段校验，不再把 raw/ranked row 伪装成 canonical video sample。
+- `signalItems` 第一版先以 metadata-derived synthetic signal 形式跑通链路。
+- discovery 能产出 `topicCandidates`，ranking 能消费这些 candidates。
+- 输出 provenance 能追溯到原始 `videoSampleId` / `platformVideoId` / `sourceSnapshotId`。
+
+后续阶段预留：
+
+- 阶段 7 完成后，再进入 MP4 多模态内容分析：
+  - `videoSamples + download manifest -> videoContentAnalysis -> enriched signalItems`
+  - 多模态模型只增强题材理解，不直接替代 deterministic adapter。
+
+### 阶段 8（已完成）：MP4 多模态内容分析接入
+
+目标：
+
+- 基于 `autotiktok-video-download` 下载到本地的 MP4，生成可追溯的 `videoContentAnalysis` artifact。
+- 默认使用 OpenClaw media-understanding：
+  - `provider=google`
+  - `model=gemini-3-flash-preview`
+- 模型选择必须是配置默认值，而不是写死在业务逻辑深处；脚本需要支持 CLI 参数覆盖，后续可切换到 `kimi-k2.6`、`gemini-3.1-pro-preview` 或 shadow compare。
+- 第一版只做 sidecar enhancement，不替代阶段 7 已完成的 deterministic metadata adapter。
+- 输出结果用于增强 synthetic `signalItems`，让 discovery / ranking 在原有 metadata-only 链路之外获得视频内容理解证据。
+
+输入范围：
+
+- 阶段 7 已生成的 `videoSamples`：
+  - `videoSampleId`
+  - `platformVideoId`
+  - `sourceSnapshotId`
+  - `shareUrl`
+  - `hashtags`
+  - `metrics`
+  - `rawMeta`
+- `autotiktok-video-download` 的下载 manifest 或下载目录：
+  - 本地 MP4 路径
+  - 下载状态
+  - 原始 TikTok video id / URL
+  - 下载时间
+  - 文件大小 / MIME 信息
+- OpenClaw video describe 输出：
+  - `ok`
+  - `provider`
+  - `model`
+  - `outputs[*].text`
+  - `attempts`
+  - `errors`
+
+建议拆分：
+
+- 开发包 1（已完成）：`videoContentAnalysis` contract 与 focused fixture
+  - 定义 `videoContentAnalysis.v1` artifact 形状。
+  - 每条分析结果至少包含：
+    - `analysisId`
+    - `videoSampleId`
+    - `platformVideoId`
+    - `sourceSnapshotId`
+    - `videoPath`
+    - `provider`
+    - `model`
+    - `status`
+    - `descriptionText`
+    - `contentSummary`
+    - `visualEvidence`
+    - `replicationHints`
+    - `analysisConfidence`
+    - `provenance`
+    - `errors`
+  - 新增 sample artifact，覆盖：
+    - 成功分析的视频
+    - 下载缺失的视频
+    - 模型调用失败的视频
+  - 明确 `provider/model` 默认来自配置，例如：
+    - `videoUnderstanding.provider=google`
+    - `videoUnderstanding.model=gemini-3-flash-preview`
+  - 已新增 focused artifact、默认配置和 gate：
+    - `skills/autotiktok-topic-discovery/config/video-understanding.v1.json`
+    - `skills/autotiktok-topic-discovery/fixtures/video-content-analysis.sample.json`
+    - `skills/autotiktok-topic-discovery/references/video-content-analysis-contract.md`
+    - `skills/autotiktok-topic-discovery/scripts/validate_video_content_analysis_contract.py`
+    - `skills/autotiktok/scripts/validate_video_content_analysis_contract_alignment.py`
+  - focused fixture 已覆盖成功分析、下载缺失、模型调用失败三种状态。
+- 开发包 2（已完成）：download manifest adapter
+  - 把 `autotiktok-video-download` 的下载产物归一化成 `videoDownloadManifest`。
+  - 建立 `videoSamples[*] -> downloaded MP4` 的 deterministic join 规则。
+  - 优先用 `platformVideoId` 匹配，其次用 share URL / filename fallback。
+  - 对缺失、重复、无效 MP4 产出结构化状态，不中断主链路。
+  - 已新增 focused artifact、adapter builder 和 gate：
+    - `skills/autotiktok-topic-discovery/fixtures/video-samples.download-adapter.sample.json`
+    - `skills/autotiktok-topic-discovery/fixtures/video-download-raw.sample.json`
+    - `skills/autotiktok-topic-discovery/fixtures/video-download-manifest.sample.json`
+    - `skills/autotiktok-topic-discovery/references/video-download-manifest-contract.md`
+    - `skills/autotiktok-topic-discovery/scripts/build_video_download_manifest.py`
+    - `skills/autotiktok-topic-discovery/scripts/validate_video_download_manifest_adapter.py`
+    - `skills/autotiktok/scripts/validate_video_download_manifest_adapter_alignment.py`
+  - focused fixture 已覆盖 `downloaded`、`download_missing`、`download_error`、`invalid_file` 和 duplicate raw download。
+- 开发包 3（已完成）：视频理解 batch runner
+  - 新增脚本按 manifest 批量调用：
+    - `openclaw infer video describe --file <mp4> --model google/gemini-3-flash-preview --json`
+  - 支持参数覆盖：
+    - `--provider`
+    - `--model`
+    - `--limit`
+    - `--force`
+    - `--cache-dir`
+    - `--continue-on-error`
+  - 第一版可以只依赖 OpenClaw CLI，不直接接 Google API。
+  - 加入缓存和幂等输出，避免重复分析同一个 MP4。
+  - 已新增 batch runner、response fixture、fixture alignment gate：
+    - `skills/autotiktok-topic-discovery/fixtures/video-describe-responses.sample.json`
+    - `skills/autotiktok-topic-discovery/scripts/run_video_content_analysis_batch.py`
+    - `skills/autotiktok-topic-discovery/scripts/validate_video_content_analysis_batch_runner.py`
+    - `skills/autotiktok/scripts/validate_video_content_analysis_batch_runner_alignment.py`
+  - runner 当前行为：
+    - 默认从 `skills/autotiktok-topic-discovery/config/video-understanding.v1.json` 读取 `google/gemini-3-flash-preview`
+    - 对 `downloaded` MP4 调用 OpenClaw CLI 或读取 response fixture / cache
+    - 对 `download_missing`、`download_error`、`invalid_file` 生成结构化 fallback，不阻塞 metadata-only 主链路
+    - 产物和 `videoContentAnalysis` focused fixture 保持 deterministic 对齐
+- 开发包 4（已完成）：`videoContentAnalysis -> enriched signalItems`
+  - 在现有 metadata-only synthetic `signalItems` 基础上做增强，不替换原始字段。
+  - 重点增强：
+    - `topicSummary`
+    - `contentAngles`
+    - `requiredAssets`
+    - `executionNotes`
+    - `recommendedFormats`
+    - `expandabilityHint`
+  - 新增 evidence 字段或 `rawMeta.videoContentAnalysisReference`，保留可追溯引用。
+  - 当 MP4 分析缺失或失败时，自动回退阶段 7 的 metadata-only signal。
+  - 已新增 focused base / enriched fixture、builder 和 gate：
+    - `skills/autotiktok-topic-discovery/fixtures/signal-items.video-content-analysis-base.sample.json`
+    - `skills/autotiktok-topic-discovery/fixtures/signal-items.enriched.sample.json`
+    - `skills/autotiktok-topic-discovery/scripts/build_enriched_signal_items.py`
+    - `skills/autotiktok-topic-discovery/scripts/validate_enriched_signal_items.py`
+    - `skills/autotiktok/scripts/validate_enriched_signal_items_alignment.py`
+  - 当前 fixture 覆盖：
+    - 1 条 `analysis_succeeded`，增强 `topicSummary / contentAngles / requiredAssets / recommendedFormats / requiredCapabilities / expandabilityHint / executionNotes`
+    - 1 条 `download_missing` fallback
+    - 2 条 `analysis_failed` fallback，分别覆盖 download error 与 invalid file
+  - 所有 enriched / fallback 项都写入 `rawMeta.videoContentAnalysisReference`，保留 `analysisId / videoSampleId / platformVideoId / sourceSnapshotId / provider / model / status`。
+- 开发包 5（已完成）：discovery / ranking 联调
+  - 跑通完整链路：
+    - `trending output -> sourceSnapshots -> videoSamples -> download manifest -> videoContentAnalysis -> enriched signalItems -> discovery -> ranking`
+  - 新增对比输出：
+    - metadata-only `signalItems`
+    - enriched `signalItems`
+    - ranking result diff
+  - 确保 enriched lane 不改变既有 contract，只增加可消费证据。
+  - 已新增 focused integration gate：
+    - `skills/autotiktok/scripts/validate_enriched_discovery_ranking_integration.py`
+    - `skills/autotiktok/scripts/test_enriched_discovery_ranking_integration.py`
+  - 当前 gate 会同时跑 metadata-only lane 和 enriched lane，并验证：
+    - enriched lane 仍能通过 snapshot materialization 进入 discovery
+    - ranking 仍消费 discovery artifact
+    - candidate count 保持一致
+    - 成功视频的 `topicSummary / executionProfile / rewrite score` 出现视频理解证据带来的差异
+    - 3 条失败/缺失样本仍走 metadata-only fallback
+- 开发包 6（已完成）：validator / docs / live-ish smoke 收口
+  - 新增 focused validator，证明：
+    - download manifest 和 videoSamples 可稳定 join
+    - `videoContentAnalysis` artifact 可重复校验
+    - enriched signalItems 可回退
+    - discovery / ranking 可以消费 enriched lane
+  - 新增小样本 live-ish 调试说明，用已下载 MP4 验证 `gemini-3-flash-preview` 链路。
+  - 更新 skill 文档，明确模型配置方式、失败降级策略和成本控制边界。
+  - 已新增 live-ish runbook 和 docs gate：
+    - `skills/autotiktok-topic-discovery/references/video-understanding-live-smoke.md`
+    - `skills/autotiktok-topic-discovery/scripts/validate_video_understanding_live_smoke_docs.py`
+    - `skills/autotiktok/scripts/validate_video_understanding_live_smoke_docs_alignment.py`
+  - runbook 明确默认先跑 deterministic gates；真实视频理解必须显式带 `--limit 1`、`--cache-dir`、`--continue-on-error` 和 `--output`，避免默认触发批量付费调用。
+  - 已补齐 merged view 规则：当 `absolute_hot` 与 `fresh_hot` 同时进入 discovery / ranking 时，必须先下载并理解两个 view 的去重并集。
+  - `autotiktok-video-download` 已支持 `--bakeoff-view both --per-view-max N`，用于 TopN absolute-hot + TopN fresh-hot 的合并下载，避免全局 `--max N` 只截取 absolute-hot 导致 `fresh_hot` 变成 `download_missing`。
+  - 已新增 ranking report builder：`skills/autotiktok-topic-ranking/scripts/build_ranking_report.py` 会把 `ranking-dry-run.json`、`discovery-dry-run.json` 和 `video-content-analysis.json` join 起来，在排名分数总表中输出 `视频文件` 列，只展示本地 MP4 文件名。
+
+完成标准：
+
+- `videoSamples + download manifest` 可以稳定生成 `videoContentAnalysis`。
+- 默认模型为 `google/gemini-3-flash-preview`，但可通过配置或 CLI 参数覆盖。
+- MP4 缺失、模型失败、单条超时不会阻塞 metadata-only 主链路。
+- enriched `signalItems` 保留阶段 7 的 provenance，并新增视频理解证据引用。
+- discovery / ranking 能消费 enriched lane，并可和 metadata-only lane 做对比。
+
 ## 5. 建议执行顺序
 
-当前阶段 1-6 已全部完成。
+当前阶段 1-8 已全部完成。下一步进入真实环境收口：把同事开发的真实 `autotiktok-trending` / `autotiktok-video-download` 产物和快照存储接到当前 enriched lane，并做小样本 live-ish 验证。
 
 建议按下面顺序推进：
 
-1. 对接真实 collector / snapshot artifact
-2. 在现有 seam 上做真实输入联调
+1. 已完成：定义 `videoContentAnalysis` contract 和 sample artifact
+2. 已完成：对齐 `autotiktok-video-download` manifest 与 `videoSamples`
+3. 已完成：接入 OpenClaw `infer video describe` batch runner，默认使用 `google/gemini-3-flash-preview`
+4. 已完成：用多模态分析结果增强 synthetic `signalItems`
+5. 已完成：跑 discovery / ranking enriched lane 联调
+6. 已完成：validator / docs / live-ish smoke 收口
+7. 已完成：merged absolute/fresh view 的下载与视频理解路由补强
+8. 已完成：ranking report 总表补充下载后视频文件名
+9. 下一步：和真实快照存储 / 长期 retention 接线，并跑真实小样本 live-ish 验证
 
 ## 6. 下一步直接执行内容
 
 下一步优先执行：
 
-- 准备真实输入接线
-  - 让同事负责的采集器和快照存储通过当前 discovery seam 接进来
-  - 保持 discovery -> ranking -> optimizer contract 不变
-  - 在真实 source 上重跑现有 validator / workflow smoke
+- 真实环境收口：
+  - 用同事的真实 `autotiktok-trending` 输出替换 focused fixture，跑 `build_discovery_inputs_from_trending.py`
+  - 用真实 `autotiktok-video-download` 输出替换 focused download raw fixture，跑 `build_video_download_manifest.py`
+  - 如需同时纳入 `fresh_hot`，用 `--bakeoff-view both --per-view-max N` 先下载两个 view 的去重并集，再进入 manifest 归一化
+  - 按 `video-understanding-live-smoke.md` 先跑 `--limit 1` live-ish video understanding
+  - 再跑 enriched lane integration，确认真实 `sourceSnapshots + videoSamples + signalItems + videoContentAnalysis` 能进入 discovery / ranking
+  - 最后再接快照存储、retention 和真实目录约定
